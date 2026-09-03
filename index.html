@@ -260,6 +260,36 @@
   }
   .gcal-link:hover{ border-color:var(--ink); }
 
+  .comments{ margin-top:10px; border-top:1px solid var(--line); padding-top:8px; }
+  .comments-toggle{
+    background:none; border:none; padding:0; margin:0;
+    font-family:var(--font-body); font-size:12.5px; font-weight:600; color:var(--muted);
+    cursor:pointer; display:inline-flex; align-items:center; gap:4px;
+  }
+  .comments-toggle:hover{ color:var(--ink); }
+  .comments-body{ margin-top:10px; }
+  .comment-item{ padding:8px 0; border-bottom:1px solid var(--line); }
+  .comment-item:last-child{ border-bottom:none; }
+  .comment-head{ display:flex; justify-content:space-between; gap:8px; font-size:12px; }
+  .comment-author{ font-weight:600; color:var(--ink); }
+  .comment-time{ color:var(--muted); font-family:var(--font-mono); font-size:11px; }
+  .comment-body{ font-size:13px; color:var(--ink); margin-top:2px; white-space:pre-wrap; word-break:break-word; }
+  .comment-empty{ font-size:12.5px; color:var(--muted); padding:6px 0; margin:0; }
+  .comment-form{ margin-top:8px; display:flex; flex-direction:column; gap:6px; }
+  .comment-form .hp{ position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+  .comment-form input[type="text"], .comment-form textarea{
+    width:100%; font-family:var(--font-body); font-size:13px; color:var(--ink);
+    background:var(--surface-2); border:1px solid var(--line); border-radius:8px; padding:7px 9px;
+    resize:vertical;
+  }
+  .comment-form button{
+    align-self:flex-end;
+    background:var(--ink); color:var(--surface); border:1px solid var(--ink);
+    border-radius:8px; padding:6px 12px; font-size:12.5px; font-weight:600; cursor:pointer;
+  }
+  .comment-form button:disabled{ opacity:.6; cursor:default; }
+  .comment-error{ font-size:12px; color:var(--cat-suspension); }
+
   #footer{ padding:22px 20px 8px; text-align:center; }
   .updated{ font-size:12px; color:var(--muted); margin:0 0 10px; }
   .contact{ font-size:12.5px; color:var(--muted); text-align:left; background:var(--surface-2); border-radius:var(--radius-sm); padding:4px 12px; margin-bottom:14px; }
@@ -308,9 +338,16 @@
   </footer>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 (function(){
   "use strict";
+
+  var SUPABASE_URL = 'https://cbnpvgoyfvococimyksl.supabase.co';
+  var SUPABASE_ANON_KEY = 'sb_publishable_uzvYQxfZa-qSpG9_uWdtZg_ZPif-X_M';
+  var supabaseClient = (window.supabase && window.supabase.createClient)
+    ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+    : null;
 
   var CATEGORIES = {
     hito:        { label:'Fecha clave',            short:'Clave' },
@@ -331,6 +368,8 @@
   var EVENTS = [];
   var LAST_UPDATED = '';
   var activeFilter = 'todos';
+  var ALL_COMMENTS = [];
+  var OPEN_COMMENTS = {};
 
   function getStoredTheme(){
     try{ return localStorage.getItem('cclt11-theme'); }catch(e){ return null; }
@@ -475,6 +514,120 @@
     return '<a class="gcal-link" href="' + url + '" target="_blank" rel="noopener">➕ Agregar a Google Calendar</a>';
   }
 
+  function commentsFor(eventId){
+    return ALL_COMMENTS.filter(function(c){ return c.event_id === eventId; })
+      .sort(function(a,b){ return a.created_at < b.created_at ? -1 : 1; });
+  }
+
+  function fmtCommentTime(iso){
+    var d = new Date(iso);
+    var hh = String(d.getHours()).padStart(2,'0');
+    var mm = String(d.getMinutes()).padStart(2,'0');
+    return d.getDate() + ' ' + MONTHS_SHORT[d.getMonth()] + ', ' + hh + ':' + mm;
+  }
+
+  function commentsBodyHTML(eventId){
+    var list = commentsFor(eventId);
+    var itemsHtml = list.length
+      ? list.map(function(c){
+          return '<div class="comment-item">' +
+            '<div class="comment-head"><span class="comment-author">' + esc(c.author_name) + '</span>' +
+            '<span class="comment-time">' + fmtCommentTime(c.created_at) + '</span></div>' +
+            '<div class="comment-body">' + esc(c.body) + '</div>' +
+          '</div>';
+        }).join('')
+      : '<p class="comment-empty">Sé el primero en comentar.</p>';
+    var formHtml = supabaseClient
+      ? '<form class="comment-form" novalidate>' +
+          '<input type="text" name="website" class="hp" tabindex="-1" autocomplete="off">' +
+          '<input type="text" name="author" placeholder="Tu nombre" maxlength="60" required>' +
+          '<textarea name="body" rows="2" placeholder="Escribe un comentario…" maxlength="1000" required></textarea>' +
+          '<div class="comment-error" hidden></div>' +
+          '<button type="submit">Comentar</button>' +
+        '</form>'
+      : '<p class="comment-empty">Los comentarios no están disponibles en este momento.</p>';
+    return itemsHtml + formHtml;
+  }
+
+  function commentsSectionHTML(e){
+    var n = commentsFor(e.id).length;
+    var isOpen = !!OPEN_COMMENTS[e.id];
+    var label = '💬 ' + (n > 0 ? ('Comentarios (' + n + ')') : 'Comentarios');
+    return '<div class="comments" data-event="' + esc(e.id) + '">' +
+      '<button type="button" class="comments-toggle" data-action="toggle-comments" aria-expanded="' + isOpen + '">' + label + '</button>' +
+      '<div class="comments-body"' + (isOpen ? '' : ' hidden') + '>' + (isOpen ? commentsBodyHTML(e.id) : '') + '</div>' +
+    '</div>';
+  }
+
+  function refreshCardComments(eventId){
+    var wrapper = $('.comments[data-event="' + eventId + '"]');
+    if(!wrapper) return;
+    var n = commentsFor(eventId).length;
+    var toggle = wrapper.querySelector('.comments-toggle');
+    toggle.textContent = '💬 ' + (n > 0 ? ('Comentarios (' + n + ')') : 'Comentarios');
+    toggle.setAttribute('aria-expanded', !!OPEN_COMMENTS[eventId]);
+    var body = wrapper.querySelector('.comments-body');
+    if(OPEN_COMMENTS[eventId]){
+      body.hidden = false;
+      body.innerHTML = commentsBodyHTML(eventId);
+    } else {
+      body.hidden = true;
+      body.innerHTML = '';
+    }
+  }
+
+  function fetchComments(){
+    if(!supabaseClient) return;
+    supabaseClient.from('comments').select('*').order('created_at', { ascending: true })
+      .then(function(res){
+        if(res.error){ return; }
+        ALL_COMMENTS = res.data || [];
+        renderTimeline();
+      });
+  }
+
+  function wireComments(){
+    var timeline = $('#timeline');
+    timeline.addEventListener('click', function(ev){
+      var btn = ev.target.closest('[data-action="toggle-comments"]');
+      if(!btn) return;
+      var wrapper = btn.closest('.comments');
+      var eventId = wrapper.getAttribute('data-event');
+      OPEN_COMMENTS[eventId] = !OPEN_COMMENTS[eventId];
+      refreshCardComments(eventId);
+    });
+    timeline.addEventListener('submit', function(ev){
+      var form = ev.target.closest('.comment-form');
+      if(!form) return;
+      ev.preventDefault();
+      var wrapper = form.closest('.comments');
+      var eventId = wrapper.getAttribute('data-event');
+      var errEl = form.querySelector('.comment-error');
+      errEl.hidden = true;
+      if(form.website.value){ form.reset(); return; }
+      var author = form.author.value.trim();
+      var body = form.body.value.trim();
+      if(!author || !body || !supabaseClient) return;
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Enviando…';
+      supabaseClient.from('comments').insert({ event_id: eventId, author_name: author, body: body }).select()
+        .then(function(res){
+          btn.disabled = false;
+          btn.textContent = 'Comentar';
+          if(res.error){
+            errEl.hidden = false;
+            errEl.textContent = 'No se pudo enviar. Intenta de nuevo.';
+            return;
+          }
+          var row = (res.data && res.data[0]) || { id: 'local' + Date.now(), event_id: eventId, author_name: author, body: body, created_at: new Date().toISOString() };
+          ALL_COMMENTS.push(row);
+          OPEN_COMMENTS[eventId] = true;
+          refreshCardComments(eventId);
+        });
+    });
+  }
+
   function eventCardHTML(e){
     var cat = CATEGORIES[e.category] || CATEGORIES.admin;
     var tags = '<span class="tag">' + esc(cat.label) + '</span>';
@@ -487,6 +640,7 @@
         (e.note ? '<div class="event-note">' + esc(e.note) + '</div>' : '') +
         '<div class="tag-row">' + tags + '</div>' +
         gcalLink(e) +
+        commentsSectionHTML(e) +
       '</div>' +
     '</div>';
   }
@@ -557,6 +711,7 @@
   }
 
   wireThemeToggle();
+  wireComments();
 
   fetch('events.json', { cache: 'no-store' })
     .then(function(r){ return r.json(); })
@@ -564,6 +719,7 @@
       EVENTS = data.events || [];
       LAST_UPDATED = data.updated || '';
       renderAll();
+      fetchComments();
     })
     .catch(renderError);
 })();
