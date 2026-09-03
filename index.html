@@ -229,6 +229,10 @@
     background:var(--cat-color, var(--muted));
   }
   .event-card.tbd{ border-style:dashed; }
+  .event-card.g11{
+    background:var(--brass-soft);
+    border-color:var(--brass);
+  }
   .date-badge{
     flex:0 0 52px;
     display:flex; flex-direction:column; align-items:center; justify-content:center;
@@ -475,7 +479,7 @@
     var cat = CATEGORIES[e.category] || CATEGORIES.admin;
     var tags = '<span class="tag">' + esc(cat.label) + '</span>';
     if(e.highlight) tags += '<span class="tag g11">🎓 Grupo 1.1</span>';
-    return '<div class="event-card' + (!e.dateStart ? ' tbd' : '') + '" data-cat="' + e.category + '">' +
+    return '<div class="event-card' + (!e.dateStart ? ' tbd' : '') + (e.highlight ? ' g11' : '') + '" data-cat="' + e.category + '">' +
       dateBadgeHTML(e) +
       '<div class="event-body">' +
         '<div class="event-title">' + esc(e.title) + '</div>' +
