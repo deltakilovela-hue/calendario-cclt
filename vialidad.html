@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turnos de Vialidad · 1.1</title>
+<meta name="description" content="Anótate en un turno de la semana de vialidad del Grupo 1.1, Secundaria CCLT Tepic (SPAUN).">
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('cclt11-theme');
+    if(t === 'dark' || t === 'light'){ document.documentElement.setAttribute('data-theme', t); }
+  }catch(e){}
+})();
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+  :root{
+    --ink:#16233d;
+    --bg:#eef1f5;
+    --surface:#ffffff;
+    --surface-2:#f7f8fa;
+    --muted:#5b6579;
+    --line:#dce1e8;
+    --brass:#a9812e;
+    --brass-soft:#f3ead1;
+    --brass-ink:#5c4415;
+    --danger:#b23a48;
+    --font-display:'Fraunces', Georgia, serif;
+    --font-body:'Work Sans', system-ui, -apple-system, sans-serif;
+    --font-mono:'Space Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    --shadow:0 1px 2px rgba(22,35,61,.06), 0 10px 24px -14px rgba(22,35,61,.28);
+    --radius:16px;
+    --radius-sm:10px;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#edeff3;
+      --bg:#0e1420;
+      --surface:#182233;
+      --surface-2:#141d2b;
+      --muted:#9aa5b8;
+      --line:#2a3547;
+      --brass:#d9b566;
+      --brass-soft:#332913;
+      --brass-ink:#e9d29c;
+      --danger:#e3808e;
+      --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 24px -14px rgba(0,0,0,.7);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#edeff3;
+    --bg:#0e1420;
+    --surface:#182233;
+    --surface-2:#141d2b;
+    --muted:#9aa5b8;
+    --line:#2a3547;
+    --brass:#d9b566;
+    --brass-soft:#332913;
+    --brass-ink:#e9d29c;
+    --danger:#e3808e;
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 24px -14px rgba(0,0,0,.7);
+    color-scheme: dark;
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; }
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.45;
+    -webkit-font-smoothing:antialiased;
+  }
+  #shell{ max-width:640px; margin:0 auto; padding-bottom:48px; }
+
+  #header{
+    background:var(--surface);
+    border-bottom:1px solid var(--line);
+    padding:18px 20px 16px;
+  }
+  .back-link{
+    display:inline-flex; align-items:center; gap:4px;
+    font-size:12.5px; font-weight:600; color:var(--muted);
+    text-decoration:none; margin-bottom:10px;
+  }
+  .back-link:hover{ color:var(--ink); }
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:6px;
+  }
+  #header h1{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:26px;
+    margin:0;
+    color:var(--ink);
+    text-wrap:balance;
+  }
+  .badge{
+    display:inline-flex; align-items:center; justify-content:center;
+    font-family:var(--font-mono);
+    font-size:13px;
+    font-weight:700;
+    color:var(--brass-ink);
+    background:var(--brass-soft);
+    border:1.5px solid var(--brass);
+    border-radius:999px;
+    padding:2px 10px;
+    margin-left:6px;
+    vertical-align:middle;
+  }
+  .subtitle{ color:var(--muted); font-size:13.5px; margin-top:6px; }
+
+  main{ padding:18px 20px 0; }
+
+  .day-section{ margin-bottom:22px; }
+  .day-title{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:16px;
+    color:var(--ink);
+    margin:0 0 10px;
+    text-transform:capitalize;
+  }
+  .shift-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:12px;
+  }
+  .shift-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius-sm);
+    padding:13px 14px;
+    box-shadow:var(--shadow);
+  }
+  .shift-head{
+    display:flex; justify-content:space-between; align-items:baseline; gap:8px;
+    margin-bottom:8px;
+  }
+  .shift-name{ font-weight:600; font-size:14px; color:var(--ink); }
+  .shift-time{ font-family:var(--font-mono); font-size:11.5px; color:var(--brass-ink); background:var(--brass-soft); border-radius:6px; padding:2px 6px; white-space:nowrap; }
+  .shift-names{ list-style:none; margin:0 0 8px; padding:0; }
+  .shift-names li{
+    font-size:13px; color:var(--ink); padding:4px 0; border-bottom:1px solid var(--line);
+  }
+  .shift-names li:last-child{ border-bottom:none; }
+  .shift-names li::before{ content:"✅ "; }
+  .shift-empty{ font-size:12.5px; color:var(--muted); margin:0 0 8px; }
+  .shift-form{ display:flex; gap:6px; flex-wrap:wrap; }
+  .shift-form .hp{ position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+  .shift-form input[type="text"]{
+    flex:1; min-width:120px;
+    font-family:var(--font-body); font-size:13px; color:var(--ink);
+    background:var(--surface-2); border:1px solid var(--line); border-radius:8px; padding:7px 9px;
+  }
+  .shift-form button{
+    background:var(--ink); color:var(--surface); border:1px solid var(--ink);
+    border-radius:8px; padding:7px 12px; font-size:12.5px; font-weight:600; cursor:pointer;
+  }
+  .shift-form button:disabled{ opacity:.6; cursor:default; }
+  .shift-error{ width:100%; font-size:12px; color:var(--danger); }
+
+  a:focus-visible, button:focus-visible, input:focus-visible{
+    outline:2px solid var(--brass); outline-offset:2px;
+  }
+
+  #footer{ padding:22px 20px 8px; text-align:center; }
+  .credit{ font-size:11px; color:var(--muted); opacity:.7; margin:0; }
+  .note{
+    font-size:12.5px; color:var(--muted); background:var(--surface-2);
+    border-radius:var(--radius-sm); padding:10px 14px; margin-bottom:18px;
+  }
+</style>
+</head>
+<body>
+<div id="shell">
+  <header id="header">
+    <a class="back-link" href="index.html">← Agenda 1.1</a>
+    <div class="eyebrow">SPAUN &middot; Semana de vialidad</div>
+    <h1>Turnos de vialidad<span class="badge">7–11 sep</span></h1>
+    <div class="subtitle">Grupo 1.1 &middot; anótate en el turno que puedas cubrir. Pueden anotarse varios papás en el mismo turno.</div>
+  </header>
+
+  <main>
+    <p class="note">Mañana: 7:30–7:45 am &middot; Tarde: 2:55–3:15 pm. Si te equivocaste al anotarte, avísale a Delta Kilo para corregirlo — desde aquí no se puede borrar.</p>
+    <div id="days"></div>
+  </main>
+
+  <footer id="footer">
+    <p class="credit">Hecho por Delta Kilo</p>
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function(){
+  "use strict";
+
+  var SUPABASE_URL = 'https://cbnpvgoyfvococimyksl.supabase.co';
+  var SUPABASE_ANON_KEY = 'sb_publishable_uzvYQxfZa-qSpG9_uWdtZg_ZPif-X_M';
+  var supabaseClient = (window.supabase && window.supabase.createClient)
+    ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+    : null;
+
+  var DAYS = [
+    { date: '2026-09-07', label: 'Lunes 7 de septiembre' },
+    { date: '2026-09-08', label: 'Martes 8 de septiembre' },
+    { date: '2026-09-09', label: 'Miércoles 9 de septiembre' },
+    { date: '2026-09-10', label: 'Jueves 10 de septiembre' },
+    { date: '2026-09-11', label: 'Viernes 11 de septiembre' }
+  ];
+  var SHIFTS = [
+    { id: 'am', label: '🌅 Mañana', time: '7:30 – 7:45 am' },
+    { id: 'pm', label: '🌇 Tarde', time: '2:55 – 3:15 pm' }
+  ];
+
+  var SIGNUPS = [];
+
+  function esc(s){
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+      return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+    });
+  }
+
+  function namesFor(date, shiftId){
+    return SIGNUPS.filter(function(s){ return s.day_date === date && s.shift === shiftId; });
+  }
+
+  function shiftCardHTML(date, shift){
+    var list = namesFor(date, shift.id);
+    var namesHtml = list.length
+      ? '<ul class="shift-names">' + list.map(function(s){ return '<li>' + esc(s.parent_name) + '</li>'; }).join('') + '</ul>'
+      : '<p class="shift-empty">Nadie se ha anotado todavía.</p>';
+    var formHtml = supabaseClient
+      ? '<form class="shift-form" data-day="' + date + '" data-shift="' + shift.id + '">' +
+          '<input type="text" name="website" class="hp" tabindex="-1" autocomplete="off">' +
+          '<input type="text" name="name" placeholder="Tu nombre" maxlength="60" required>' +
+          '<button type="submit">Anotarme</button>' +
+          '<div class="shift-error" hidden></div>' +
+        '</form>'
+      : '<p class="shift-empty">No disponible en este momento.</p>';
+    return '<div class="shift-card">' +
+      '<div class="shift-head"><span class="shift-name">' + shift.label + '</span><span class="shift-time">' + shift.time + '</span></div>' +
+      namesHtml + formHtml +
+    '</div>';
+  }
+
+  function renderDays(){
+    var html = DAYS.map(function(d){
+      return '<section class="day-section"><h2 class="day-title">' + d.label + '</h2><div class="shift-grid">' +
+        SHIFTS.map(function(sh){ return shiftCardHTML(d.date, sh); }).join('') +
+      '</div></section>';
+    }).join('');
+    document.getElementById('days').innerHTML = html;
+  }
+
+  function fetchSignups(){
+    if(!supabaseClient){ renderDays(); return; }
+    supabaseClient.from('vialidad_signups').select('*').order('created_at', { ascending: true })
+      .then(function(res){
+        if(!res.error){ SIGNUPS = res.data || []; }
+        renderDays();
+      });
+  }
+
+  document.getElementById('days').addEventListener('submit', function(ev){
+    var form = ev.target.closest('.shift-form');
+    if(!form) return;
+    ev.preventDefault();
+    if(form.website.value){ form.reset(); return; }
+    var name = form.name.value.trim();
+    if(!name || !supabaseClient) return;
+    var day = form.getAttribute('data-day');
+    var shift = form.getAttribute('data-shift');
+    var btn = form.querySelector('button');
+    var err = form.querySelector('.shift-error');
+    err.hidden = true;
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+    supabaseClient.from('vialidad_signups').insert({ day_date: day, shift: shift, parent_name: name }).select()
+      .then(function(res){
+        btn.disabled = false;
+        btn.textContent = 'Anotarme';
+        if(res.error){
+          err.hidden = false;
+          err.textContent = 'No se pudo enviar. Intenta de nuevo.';
+          return;
+        }
+        var row = (res.data && res.data[0]) || { day_date: day, shift: shift, parent_name: name, created_at: new Date().toISOString() };
+        SIGNUPS.push(row);
+        renderDays();
+      });
+  });
+
+  fetchSignups();
+})();
+</script>
+</body>
+</html>

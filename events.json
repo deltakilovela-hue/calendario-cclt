@@ -7,7 +7,7 @@
     { "id": "e4",  "dateStart": "2026-08-31", "dateEnd": "2026-09-04", "category": "admin",       "title": "Semana de apoyo en vialidad", "note": "A cargo del personal del colegio.", "highlight": false },
     { "id": "e5",  "dateStart": "2026-09-01", "category": "admin",       "title": "Toma de foto para credencial", "note": "Alumnos y personal de Secundaria.", "highlight": false },
     { "id": "e6",  "dateStart": "2026-09-03", "time": "10:00",         "category": "convivencia", "title": "Convivencia de Bienvenida", "note": "Grupos 1.1, 1.3 y 1.5.", "highlight": true },
-    { "id": "e7",  "dateStart": "2026-09-07", "dateEnd": "2026-09-11", "category": "vialidad",    "title": "Semana de apoyo en vialidad", "note": "Le toca al Grupo 1.1. ¡Gracias por su apoyo!", "highlight": true },
+    { "id": "e7",  "dateStart": "2026-09-07", "dateEnd": "2026-09-11", "category": "vialidad",    "title": "Semana de apoyo en vialidad", "note": "Le toca al Grupo 1.1. ¡Gracias por su apoyo!", "highlight": true, "extraLinkUrl": "vialidad.html", "extraLinkLabel": "📋 Ver / anotarse en los turnos" },
     { "id": "e8",  "dateStart": "2026-09-11", "time": "08:00",         "category": "reunion",     "title": "Consejo Escolar de Participación en la Educación", "note": "Primera reunión (audiovisual).", "highlight": false },
     { "id": "e9",  "dateStart": "2026-09-14", "category": "honores",     "title": "Honores a la Bandera", "note": "A cargo de Primaria.", "highlight": false },
     { "id": "e10", "dateStart": "2026-09-16", "category": "suspension",  "title": "Suspensión de labores", "note": "", "highlight": false },
