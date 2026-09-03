@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Agenda CCLT 1.1</title>
 <meta name="description" content="Calendario de actividades para padres del Grupo 1.1, Secundaria, Colegio de Ciencias y Letras Tepic (SPAUN).">
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('cclt11-theme');
+    if(t === 'dark' || t === 'light'){ document.documentElement.setAttribute('data-theme', t); }
+  }catch(e){}
+})();
+</script>
 <style id="app-style">
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
@@ -97,6 +105,14 @@
     border-bottom:1px solid var(--line);
     padding:18px 20px 16px;
   }
+  #theme-toggle{
+    position:absolute; top:16px; right:18px;
+    width:32px; height:32px; border-radius:50%;
+    border:1px solid var(--line); background:var(--surface); color:var(--ink);
+    font-size:14px; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+  }
+  #theme-toggle:hover{ border-color:var(--brass); }
   .eyebrow{
     font-family:var(--font-mono);
     font-size:11px;
@@ -260,6 +276,7 @@
 <body>
 <div id="shell">
   <header id="header">
+    <button id="theme-toggle" title="Cambiar tema" aria-label="Cambiar a modo oscuro">🌙</button>
     <div class="eyebrow">SPAUN &middot; Colegio de Ciencias y Letras Tepic</div>
     <div class="title-row">
       <h1>Agenda <span class="badge">1.1</span></h1>
@@ -310,6 +327,37 @@
   var EVENTS = [];
   var LAST_UPDATED = '';
   var activeFilter = 'todos';
+
+  function getStoredTheme(){
+    try{ return localStorage.getItem('cclt11-theme'); }catch(e){ return null; }
+  }
+  function setStoredTheme(v){
+    try{ localStorage.setItem('cclt11-theme', v); }catch(e){}
+  }
+  function isDarkNow(theme){
+    if(theme === 'dark') return true;
+    if(theme === 'light') return false;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  function applyTheme(theme){
+    if(theme === 'dark' || theme === 'light'){
+      document.documentElement.setAttribute('data-theme', theme);
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+    var btn = $('#theme-toggle');
+    var dark = isDarkNow(theme);
+    btn.textContent = dark ? '☀️' : '🌙';
+    btn.setAttribute('aria-label', dark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+  }
+  function wireThemeToggle(){
+    applyTheme(getStoredTheme());
+    $('#theme-toggle').addEventListener('click', function(){
+      var next = isDarkNow(getStoredTheme()) ? 'light' : 'dark';
+      setStoredTheme(next);
+      applyTheme(next);
+    });
+  }
 
   function $(sel, root){ return (root||document).querySelector(sel); }
   function $all(sel, root){ return Array.prototype.slice.call((root||document).querySelectorAll(sel)); }
@@ -503,6 +551,8 @@
   function renderError(){
     $('#timeline').innerHTML = '<p style="color:var(--muted);font-size:13.5px;text-align:center;padding:24px 0;">No se pudo cargar el calendario (events.json). Intenta recargar la página.</p>';
   }
+
+  wireThemeToggle();
 
   fetch('events.json', { cache: 'no-store' })
     .then(function(r){ return r.json(); })
