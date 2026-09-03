@@ -233,6 +233,14 @@
     background:var(--brass-soft);
     border-color:var(--brass);
   }
+  .event-card.past{
+    opacity:.5;
+    padding-top:9px;
+    padding-bottom:9px;
+  }
+  .event-card.past.g11{ background:var(--surface); border-color:var(--line); }
+  .event-card.past .event-title{ text-decoration:line-through; text-decoration-color:var(--muted); }
+  .event-card.past .date-badge .day{ font-size:15px; }
   .date-badge{
     flex:0 0 52px;
     display:flex; flex-direction:column; align-items:center; justify-content:center;
@@ -417,6 +425,11 @@
   function startOfDay(d){ return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
   function daysBetween(a,b){ return Math.round((startOfDay(b) - startOfDay(a)) / 86400000); }
   function fmtDateLong(d){ return d.getDate() + ' de ' + MONTHS[d.getMonth()] + ' de ' + d.getFullYear(); }
+  function isPastEvent(e){
+    if(!e.dateStart) return false;
+    var end = parseDate(e.dateEnd || e.dateStart);
+    return end < startOfDay(new Date());
+  }
 
   function sortedEvents(){
     return EVENTS.slice().sort(function(a,b){
@@ -632,14 +645,16 @@
     var cat = CATEGORIES[e.category] || CATEGORIES.admin;
     var tags = '<span class="tag">' + esc(cat.label) + '</span>';
     if(e.highlight) tags += '<span class="tag g11">🎓 Grupo 1.1</span>';
-    return '<div class="event-card' + (!e.dateStart ? ' tbd' : '') + (e.highlight ? ' g11' : '') + '" data-cat="' + e.category + '">' +
+    var past = isPastEvent(e);
+    var cls = 'event-card' + (!e.dateStart ? ' tbd' : '') + (e.highlight ? ' g11' : '') + (past ? ' past' : '');
+    return '<div class="' + cls + '" data-cat="' + e.category + '">' +
       dateBadgeHTML(e) +
       '<div class="event-body">' +
         '<div class="event-title">' + esc(e.title) + '</div>' +
         (e.dateStart ? '<div class="event-note">' + esc(fmtDateRangeLabel(e)) + (e.time ? ' · ' + esc(e.time) + ' h' : '') + '</div>' : '') +
-        (e.note ? '<div class="event-note">' + esc(e.note) + '</div>' : '') +
+        (e.note && !past ? '<div class="event-note">' + esc(e.note) + '</div>' : '') +
         '<div class="tag-row">' + tags + '</div>' +
-        gcalLink(e) +
+        (past ? '' : gcalLink(e)) +
         commentsSectionHTML(e) +
       '</div>' +
     '</div>';
