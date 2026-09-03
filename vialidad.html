@@ -151,10 +151,19 @@
   .shift-time{ font-family:var(--font-mono); font-size:11.5px; color:var(--brass-ink); background:var(--brass-soft); border-radius:6px; padding:2px 6px; white-space:nowrap; }
   .shift-names{ list-style:none; margin:0 0 8px; padding:0; }
   .shift-names li{
+    display:flex; align-items:center; justify-content:space-between; gap:8px;
     font-size:13px; color:var(--ink); padding:4px 0; border-bottom:1px solid var(--line);
   }
   .shift-names li:last-child{ border-bottom:none; }
   .shift-names li::before{ content:"✅ "; }
+  .name-text{ flex:1; min-width:0; }
+  .remove-btn{
+    flex:0 0 auto;
+    background:none; border:1px solid var(--line); border-radius:7px;
+    padding:3px 8px; font-size:11px; font-weight:600; color:var(--danger);
+    cursor:pointer;
+  }
+  .remove-btn:hover{ border-color:var(--danger); }
   .shift-empty{ font-size:12.5px; color:var(--muted); margin:0 0 8px; }
   .shift-form{ display:flex; gap:6px; flex-wrap:wrap; }
   .shift-form .hp{ position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
@@ -192,7 +201,7 @@
   </header>
 
   <main>
-    <p class="note">Mañana: 7:30–7:45 am &middot; Tarde: 2:55–3:15 pm. Si te equivocaste al anotarte, avísale a Delta Kilo para corregirlo — desde aquí no se puede borrar.</p>
+    <p class="note">Mañana: 7:30–7:45 am &middot; Tarde: 2:55–3:15 pm. Junto a tu nombre vas a ver un botón para quitarte si te equivocaste o cambias de opinión (solo funciona en el mismo celular/navegador donde te anotaste).</p>
     <div id="days"></div>
   </main>
 
@@ -232,14 +241,36 @@
     });
   }
 
+  function getMine(){
+    try{ return JSON.parse(localStorage.getItem('vialidad-mine') || '[]'); }catch(e){ return []; }
+  }
+  function addMine(id){
+    try{
+      var mine = getMine();
+      mine.push(id);
+      localStorage.setItem('vialidad-mine', JSON.stringify(mine));
+    }catch(e){}
+  }
+  function removeMine(id){
+    try{
+      localStorage.setItem('vialidad-mine', JSON.stringify(getMine().filter(function(x){ return x !== id; })));
+    }catch(e){}
+  }
+
   function namesFor(date, shiftId){
     return SIGNUPS.filter(function(s){ return s.day_date === date && s.shift === shiftId; });
   }
 
   function shiftCardHTML(date, shift){
     var list = namesFor(date, shift.id);
+    var mine = getMine();
     var namesHtml = list.length
-      ? '<ul class="shift-names">' + list.map(function(s){ return '<li>' + esc(s.parent_name) + '</li>'; }).join('') + '</ul>'
+      ? '<ul class="shift-names">' + list.map(function(s){
+          var canRemove = mine.indexOf(s.id) !== -1;
+          return '<li><span class="name-text">' + esc(s.parent_name) + '</span>' +
+            (canRemove ? '<button type="button" class="remove-btn" data-action="remove-signup" data-id="' + esc(s.id) + '" title="Quitarme de este turno">✕ Quitarme</button>' : '') +
+          '</li>';
+        }).join('') + '</ul>'
       : '<p class="shift-empty">Nadie se ha anotado todavía.</p>';
     var formHtml = supabaseClient
       ? '<form class="shift-form" data-day="' + date + '" data-shift="' + shift.id + '">' +
@@ -298,6 +329,29 @@
         }
         var row = (res.data && res.data[0]) || { day_date: day, shift: shift, parent_name: name, created_at: new Date().toISOString() };
         SIGNUPS.push(row);
+        if(row.id) addMine(row.id);
+        renderDays();
+      });
+  });
+
+  document.getElementById('days').addEventListener('click', function(ev){
+    var btn = ev.target.closest('[data-action="remove-signup"]');
+    if(!btn || !supabaseClient) return;
+    var id = btn.getAttribute('data-id');
+    if(!window.confirm('¿Quitarte de este turno?')) return;
+    btn.disabled = true;
+    btn.textContent = 'Quitando…';
+    supabaseClient.from('vialidad_signups').delete().eq('id', id).select()
+      .then(function(res){
+        var removed = !res.error && res.data && res.data.length > 0;
+        if(!removed){
+          btn.disabled = false;
+          btn.textContent = '✕ Quitarme';
+          window.alert('No se pudo quitar. Avísale a Delta Kilo para corregirlo.');
+          return;
+        }
+        SIGNUPS = SIGNUPS.filter(function(s){ return s.id !== id; });
+        removeMine(id);
         renderDays();
       });
   });
