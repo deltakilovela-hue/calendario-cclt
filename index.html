@@ -97,7 +97,7 @@
     line-height:1.45;
     -webkit-font-smoothing:antialiased;
   }
-  #shell{ max-width:560px; margin:0 auto; padding-bottom:48px; }
+  #shell{ max-width:560px; margin:0 auto; padding-bottom:84px; }
 
   #header{
     position:sticky; top:0; z-index:5;
@@ -302,10 +302,82 @@
 
   #footer{ padding:22px 20px 8px; text-align:center; }
   .updated{ font-size:12px; color:var(--muted); margin:0 0 10px; }
-  .contact{ font-size:12.5px; color:var(--muted); text-align:left; background:var(--surface-2); border-radius:var(--radius-sm); padding:4px 12px; margin-bottom:14px; }
-  .contact summary{ cursor:pointer; padding:8px 0; font-weight:600; color:var(--ink); }
-  .contact p{ margin:0 0 10px; }
   .credit{ font-size:11px; color:var(--muted); opacity:.7; }
+
+  /* ---- bottom tab bar ---- */
+  #bottom-tabs{
+    position:fixed; left:0; right:0; bottom:0; z-index:10;
+    max-width:560px; margin:0 auto;
+    display:flex;
+    background:var(--surface);
+    border-top:1px solid var(--line);
+    box-shadow:var(--shadow);
+    padding-bottom:env(safe-area-inset-bottom);
+  }
+  .tab-btn{
+    flex:1;
+    display:flex; flex-direction:column; align-items:center; gap:2px;
+    background:none; border:none; cursor:pointer;
+    padding:9px 4px 8px;
+    font-family:var(--font-body); font-size:11px; font-weight:600; color:var(--muted);
+  }
+  .tab-btn .tab-icon{ font-size:19px; line-height:1; }
+  .tab-btn[aria-selected="true"]{ color:var(--brass-ink); }
+
+  main[hidden], section.tab-content[hidden]{ display:none; }
+  #tab-horario, #tab-contactos{ padding:16px 20px 0; }
+
+  /* ---- horario ---- */
+  .day-pills{
+    display:flex; gap:6px; overflow-x:auto; margin-bottom:14px;
+    scrollbar-width:none;
+  }
+  .day-pills::-webkit-scrollbar{ display:none; }
+  .day-pill{
+    flex:0 0 auto;
+    font-family:var(--font-body); font-size:13px; font-weight:600; color:var(--ink);
+    background:var(--surface); border:1px solid var(--line); border-radius:999px;
+    padding:7px 14px; cursor:pointer;
+  }
+  .day-pill[aria-pressed="true"]{ background:var(--ink); color:var(--surface); border-color:var(--ink); }
+  .period-row{
+    display:flex; gap:12px; align-items:center;
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-sm);
+    padding:11px 14px; margin-bottom:8px;
+  }
+  .period-time{
+    flex:0 0 100px; font-family:var(--font-mono); font-size:11.5px; color:var(--muted); white-space:nowrap;
+  }
+  .period-subject{ font-size:14px; font-weight:600; color:var(--ink); }
+  .period-row.recess{
+    background:var(--surface-2); border-style:dashed; justify-content:center;
+  }
+  .period-row.recess .period-subject{
+    font-family:var(--font-mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--muted); font-weight:600;
+  }
+
+  /* ---- contactos ---- */
+  .contact-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-sm);
+    margin-bottom:10px; overflow:hidden;
+  }
+  .contact-row{
+    display:flex; align-items:flex-start; gap:12px;
+    padding:13px 14px; text-decoration:none; color:var(--ink);
+    border-bottom:1px solid var(--line);
+  }
+  .contact-row:last-child{ border-bottom:none; }
+  a.contact-row:hover{ background:var(--surface-2); }
+  .contact-icon{ font-size:18px; flex:0 0 auto; line-height:1.3; }
+  .contact-label{ font-size:12px; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:.04em; }
+  .contact-value{ font-size:14px; color:var(--ink); margin-top:2px; }
+  .contact-value.pending{ color:var(--muted); font-style:italic; }
+  .section-label{
+    font-family:var(--font-display); font-weight:600; font-size:15px; color:var(--muted);
+    margin:20px 0 10px;
+  }
+  .section-label:first-child{ margin-top:4px; }
 
   [data-cat="hito"]{ --cat-color:var(--cat-hito); }
   [data-cat="consejo"]{ --cat-color:var(--cat-consejo); }
@@ -328,24 +400,75 @@
     <div class="subtitle">Secundaria &middot; Turno Matutino &middot; Ciclo 2026&ndash;2027</div>
   </header>
 
-  <main>
+  <main id="tab-agenda" class="tab-content">
     <section id="hero" aria-live="polite"></section>
     <nav id="chips" aria-label="Filtrar actividades"></nav>
     <div id="timeline"></div>
+
+    <footer id="footer">
+      <p class="updated">Cronograma sujeto a cambios de la Secretar&iacute;a de Educaci&oacute;n.<br>&Uacute;ltima actualizaci&oacute;n: <span id="updated-date"></span></p>
+      <p class="credit">Hecho por Delta Kilo</p>
+    </footer>
   </main>
 
-  <footer id="footer">
-    <p class="updated">Cronograma sujeto a cambios de la Secretar&iacute;a de Educaci&oacute;n.<br>&Uacute;ltima actualizaci&oacute;n: <span id="updated-date"></span></p>
-    <details class="contact">
-      <summary>Contacto del colegio</summary>
-      <p>
-        Ofna. Humana #105, Col. Spauan, C.P. 63115 &middot; Tepic, Nayarit<br>
-        Tel. (311) 216-5820 &middot; ciencias_secundaria@hotmail.com<br>
-        www.cclt.edu.mx &middot; Facebook: @CCLTsecundaria
-      </p>
-    </details>
-    <p class="credit">Hecho por Delta Kilo</p>
-  </footer>
+  <section id="tab-horario" class="tab-content" hidden>
+    <nav class="day-pills" id="day-pills" aria-label="Elegir día"></nav>
+    <div id="horario-list"></div>
+    <p class="credit" style="text-align:center;margin-top:16px;">Hecho por Delta Kilo</p>
+  </section>
+
+  <section id="tab-contactos" class="tab-content" hidden>
+    <div class="section-label">Secundaria</div>
+    <div class="contact-card">
+      <a class="contact-row" href="https://identity.santillanaconnect.com/" target="_blank" rel="noopener">
+        <span class="contact-icon">💻</span>
+        <span><span class="contact-label">Plataforma de secundaria</span><br><span class="contact-value">Santillana Connect</span></span>
+      </a>
+      <a class="contact-row" href="tel:+523112165820">
+        <span class="contact-icon">📞</span>
+        <span><span class="contact-label">Teléfono secundaria</span><br><span class="contact-value">+52 311 216 5820</span></span>
+      </a>
+      <div class="contact-row">
+        <span class="contact-icon">🩺</span>
+        <span><span class="contact-label">Teléfono enfermería</span><br><span class="contact-value pending">Pendiente</span></span>
+      </div>
+      <a class="contact-row" href="mailto:ciencias_secundaria@hotmail.com">
+        <span class="contact-icon">✉️</span>
+        <span><span class="contact-label">Correo</span><br><span class="contact-value">ciencias_secundaria@hotmail.com</span></span>
+      </a>
+    </div>
+
+    <div class="section-label">Ubicación</div>
+    <div class="contact-card">
+      <div class="contact-row">
+        <span class="contact-icon">📍</span>
+        <span><span class="contact-label">Dirección</span><br><span class="contact-value">Ofna. Humana #105, Col. Spauan, C.P. 63115, Tepic, Nayarit</span></span>
+      </div>
+      <a class="contact-row" href="https://maps.app.goo.gl/qzUhoPwLPVoU7hwf6" target="_blank" rel="noopener">
+        <span class="contact-icon">🗺️</span>
+        <span><span class="contact-label">Cómo llegar</span><br><span class="contact-value">Abrir en Google Maps</span></span>
+      </a>
+    </div>
+
+    <div class="section-label">Más del colegio</div>
+    <div class="contact-card">
+      <a class="contact-row" href="https://www.cclt.edu.mx" target="_blank" rel="noopener">
+        <span class="contact-icon">🌐</span>
+        <span><span class="contact-label">Sitio web</span><br><span class="contact-value">www.cclt.edu.mx</span></span>
+      </a>
+      <a class="contact-row" href="https://www.facebook.com/CCLTsecundaria" target="_blank" rel="noopener">
+        <span class="contact-icon">📘</span>
+        <span><span class="contact-label">Facebook</span><br><span class="contact-value">@CCLTsecundaria</span></span>
+      </a>
+    </div>
+    <p class="credit" style="text-align:center;margin-top:16px;">Hecho por Delta Kilo</p>
+  </section>
+
+  <nav id="bottom-tabs" aria-label="Secciones">
+    <button type="button" class="tab-btn" data-tab="agenda" aria-selected="true"><span class="tab-icon">📅</span>Agenda</button>
+    <button type="button" class="tab-btn" data-tab="horario" aria-selected="false"><span class="tab-icon">🕐</span>Horario</button>
+    <button type="button" class="tab-btn" data-tab="contactos" aria-selected="false"><span class="tab-icon">📞</span>Contactos</button>
+  </nav>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -374,6 +497,28 @@
   var MONTHS = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
   var MONTHS_SHORT = ['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'];
   var WEEKDAYS = ['dom','lun','mar','mié','jue','vie','sáb'];
+
+  var SCHOOL_DAYS = [
+    { id: 'lun', label: 'Lunes' },
+    { id: 'mar', label: 'Martes' },
+    { id: 'mie', label: 'Miércoles' },
+    { id: 'jue', label: 'Jueves' },
+    { id: 'vie', label: 'Viernes' }
+  ];
+  var SCHEDULE = [
+    { time: '7:45 – 8:35',   lun: 'Ciencias Biología', mar: 'Lengua Materna', mie: 'Artes', jue: 'Artes', vie: 'Actitud Sustentable' },
+    { time: '8:35 – 9:25',   lun: 'Matemáticas', mar: 'Educación Física', mie: 'Geografía', jue: 'Ciencias Biología', vie: 'Lengua Materna' },
+    { time: '9:25 – 10:15',  lun: 'Lengua Materna', mar: 'Inglés', mie: 'Educación Socioemocional', jue: 'Educación Física', vie: 'Ciencias Biología' },
+    { recess: true, time: '10:15 – 10:40', label: 'Receso' },
+    { time: '10:40 – 11:30', lun: 'Inglés', mar: 'Historia', mie: 'Inglés', jue: 'Inglés', vie: 'Inglés' },
+    { time: '11:30 – 12:20', lun: 'Geografía', mar: 'Matemáticas', mie: 'Historia', jue: 'Geografía', vie: 'Formación Cívica y Ética' },
+    { time: '12:20 – 13:10', lun: 'Tecnología', mar: 'Francés', mie: 'Ciencias Biología', jue: 'Matemáticas', vie: 'Matemáticas' },
+    { recess: true, time: '13:10 – 13:25', label: 'Receso' },
+    { time: '13:25 – 14:10', lun: 'Formación Cívica y Ética', mar: 'Geografía', mie: 'Lengua Materna', jue: 'Inglés', vie: 'Artes' },
+    { time: '14:10 – 15:00', lun: 'Francés', mar: 'Tecnología', mie: 'Matemáticas', jue: 'Lengua Materna', vie: 'Tecnología' }
+  ];
+  var activeDay = ['dom','lun','mar','mie','jue','vie','sab'][new Date().getDay()] || 'lun';
+  if(['lun','mar','mie','jue','vie'].indexOf(activeDay) === -1) activeDay = 'lun';
 
   var EVENTS = [];
   var LAST_UPDATED = '';
@@ -719,6 +864,48 @@
     $('#updated-date').textContent = d ? fmtDateLong(d) : LAST_UPDATED;
   }
 
+  function renderDayPills(){
+    var html = SCHOOL_DAYS.map(function(d){
+      return '<button type="button" class="day-pill" data-day="' + d.id + '" aria-pressed="' + (activeDay === d.id) + '">' + d.label + '</button>';
+    }).join('');
+    $('#day-pills').innerHTML = html;
+    $all('.day-pill', $('#day-pills')).forEach(function(btn){
+      btn.addEventListener('click', function(){
+        activeDay = btn.getAttribute('data-day');
+        renderDayPills();
+        renderHorario();
+      });
+    });
+  }
+
+  function renderHorario(){
+    var html = SCHEDULE.map(function(row){
+      if(row.recess){
+        return '<div class="period-row recess"><span class="period-time">' + esc(row.time) + '</span><span class="period-subject">' + esc(row.label) + '</span></div>';
+      }
+      return '<div class="period-row"><span class="period-time">' + esc(row.time) + '</span><span class="period-subject">' + esc(row[activeDay] || '') + '</span></div>';
+    }).join('');
+    $('#horario-list').innerHTML = html;
+  }
+
+  function wireTabs(){
+    var panels = { agenda: $('#tab-agenda'), horario: $('#tab-horario'), contactos: $('#tab-contactos') };
+    $all('.tab-btn', $('#bottom-tabs')).forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var tab = btn.getAttribute('data-tab');
+        $all('.tab-btn', $('#bottom-tabs')).forEach(function(b){ b.setAttribute('aria-selected', b === btn ? 'true' : 'false'); });
+        Object.keys(panels).forEach(function(key){ panels[key].hidden = key !== tab; });
+        try{ sessionStorage.setItem('cclt11-tab', tab); }catch(e){}
+      });
+    });
+    var saved = null;
+    try{ saved = sessionStorage.getItem('cclt11-tab'); }catch(e){}
+    if(saved && panels[saved]){
+      var btn = $('.tab-btn[data-tab="' + saved + '"]', $('#bottom-tabs'));
+      if(btn) btn.click();
+    }
+  }
+
   function renderAll(){
     renderHero();
     renderChips();
@@ -732,6 +919,9 @@
 
   wireThemeToggle();
   wireComments();
+  renderDayPills();
+  renderHorario();
+  wireTabs();
 
   fetch('events.json', { cache: 'no-store' })
     .then(function(r){ return r.json(); })
