@@ -144,10 +144,47 @@
     hero.appendChild(el('div', { 'class': 'season-countdown season-only' }, html));
   }
 
+  var CANDY = ['🍬', '🍭', '🍫', '🎃', '🦇', '👻', '🕷️', '🍿', '🍪', '💀', '🧙', '🍬', '🎃', '🍭'];
+  var LAUGHS = ['HA HA HA', '¡HA!', 'MUAJAJA', '¡HA HA!', '¡BU!', 'JA JA JA'];
+
+  function explosion(){
+    var flash = el('div', { 'class': 'season-flash' });
+    flash.addEventListener('animationend', function(){ flash.remove(); });
+    ui.bats.appendChild(flash);
+
+    var n = 84;
+    for(var i = 0; i < n; i++){
+      var a = Math.random() * Math.PI * 2;
+      var p = el('span', { 'class': 'cf-piece' }, CANDY[Math.floor(Math.random() * CANDY.length)]);
+      p.style.fontSize = (20 + Math.random() * 30) + 'px';
+      p.style.setProperty('--dx', (Math.cos(a) * (28 + Math.random() * 62)) + 'vw');
+      p.style.setProperty('--dy', (Math.sin(a) * (24 + Math.random() * 52)) + 'vh');
+      p.style.setProperty('--fall', (22 + Math.random() * 42) + 'vh');
+      p.style.setProperty('--s', (.8 + Math.random() * .9).toFixed(2));
+      p.style.setProperty('--rot', ((Math.random() > .5 ? 1 : -1) * (30 + Math.random() * 200)).toFixed(0) + 'deg');
+      p.style.setProperty('--dur', (3.2 + Math.random() * 1.6).toFixed(2) + 's');
+      p.style.setProperty('--delay', (Math.random() * .35).toFixed(2) + 's');
+      p.addEventListener('animationend', function(ev){ ev.target.remove(); });
+      ui.bats.appendChild(p);
+    }
+    for(var j = 0; j < 11; j++){
+      var h = el('span', { 'class': 'ha-pop' }, LAUGHS[Math.floor(Math.random() * LAUGHS.length)]);
+      h.style.left = (8 + Math.random() * 70) + '%';
+      h.style.top = (8 + Math.random() * 78) + '%';
+      h.style.fontSize = (26 + Math.random() * 34) + 'px';
+      h.style.setProperty('--tilt', ((Math.random() - .5) * 30).toFixed(0) + 'deg');
+      h.style.setProperty('--delay', (Math.random() * 1.8).toFixed(2) + 's');
+      h.addEventListener('animationend', function(ev){ ev.target.remove(); });
+      ui.bats.appendChild(h);
+    }
+  }
+
   function celebrate(){
-    bats(22);
     buzz([60, 40, 60, 40, 140]);
     toast('🎉 ¡Encontraste todas las calabazas! Feliz Halloween');
+    if(reduceMotion) return;
+    explosion();
+    bats(22);
   }
 
   function onPumpkin(btn){
@@ -303,5 +340,5 @@
   if(document.readyState === 'complete') scheduleIntro();
   else window.addEventListener('load', scheduleIntro);
 
-  window.SeasonTheme = { refresh: refresh, intro: introBats };
+  window.SeasonTheme = { refresh: refresh, intro: introBats, celebrate: celebrate, explosion: explosion };
 })();
