@@ -10,6 +10,8 @@
   try{
     var t = localStorage.getItem('cclt11-theme');
     if(t === 'dark' || t === 'light'){ document.documentElement.setAttribute('data-theme', t); }
+    var q = /[?&]tema=halloween/.test(location.search), oct = new Date().getMonth() === 9;
+    if((q || oct) && localStorage.getItem('cclt11-season') !== 'off'){ document.documentElement.setAttribute('data-season', 'halloween'); }
   }catch(e){}
 })();
 </script>
@@ -388,6 +390,7 @@
   [data-cat="honores"]{ --cat-color:var(--cat-honores); }
   [data-cat="admin"]{ --cat-color:var(--cat-admin); }
 </style>
+<link rel="stylesheet" href="halloween.css">
 </head>
 <body>
 <div id="shell">
@@ -475,6 +478,7 @@
   </nav>
 </div>
 
+<script src="halloween.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 (function(){
@@ -539,6 +543,7 @@
   function isDarkNow(theme){
     if(theme === 'dark') return true;
     if(theme === 'light') return false;
+    if(document.documentElement.getAttribute('data-season') === 'halloween') return true;
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   }
   function applyTheme(theme){
@@ -842,6 +847,7 @@
       html = '<p style="color:var(--muted);font-size:13.5px;text-align:center;padding:24px 0;">No hay actividades en esta categoría.</p>';
     }
     $('#timeline').innerHTML = html;
+    if(window.SeasonTheme) window.SeasonTheme.refresh(EVENTS.map(function(e){ return e.id; }));
   }
 
   function renderChips(){

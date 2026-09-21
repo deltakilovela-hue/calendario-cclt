@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+/* Tema de temporada: se activa con <html data-season="halloween"> */
+
+:root[data-season="halloween"]{
+  --ink:#2a1440;
+  --bg:#f4ecfa;
+  --surface:#ffffff;
+  --surface-2:#faf5fd;
+  --muted:#6d5a85;
+  --line:#e2d3f0;
+  --brass:#d9560a;
+  --brass-soft:#ffe9d6;
+  --brass-ink:#7a2e00;
+  --cat-hito:#2a1440;
+  --cat-consejo:#6a3fb5;
+  --cat-reunion:#2e6e9e;
+  --cat-convivencia:#3e8a5d;
+  --cat-vialidad:#d9560a;
+  --cat-suspension:#b23a48;
+  --cat-honores:#47707a;
+  --cat-admin:#6d5a85;
+  --danger:#b23a48;
+  --shadow:0 1px 2px rgba(42,20,64,.08), 0 10px 24px -14px rgba(42,20,64,.35);
+  --font-season:'Creepster', 'Fraunces', Georgia, serif;
+}
+/* Halloween arranca en oscuro; solo es claro si la persona lo eligió */
+:root[data-season="halloween"]:not([data-theme="light"]){
+  color-scheme:dark;
+  --ink:#f4eaff;
+  --bg:#0d0716;
+  --surface:#1b1030;
+  --surface-2:#150c26;
+  --muted:#b3a0cc;
+  --line:#3a2657;
+  --brass:#ff8a2b;
+  --brass-soft:#3b200c;
+  --brass-ink:#ffc48a;
+  --cat-hito:#f4eaff;
+  --cat-consejo:#c4a2ff;
+  --cat-reunion:#8fb8ff;
+  --cat-convivencia:#8be0a4;
+  --cat-vialidad:#ff8a2b;
+  --cat-suspension:#ff7a8a;
+  --cat-honores:#9fd6e0;
+  --cat-admin:#b3a0cc;
+  --danger:#ff7a8a;
+  --shadow:0 1px 2px rgba(0,0,0,.6), 0 10px 24px -14px rgba(0,0,0,.8);
+}
+:root[data-season="halloween"][data-theme="dark"]{
+  --ink:#f4eaff;
+  --bg:#120a1c;
+  --surface:#1d1230;
+  --surface-2:#170e27;
+  --muted:#b3a0cc;
+  --line:#3a2657;
+  --brass:#ff8a2b;
+  --brass-soft:#3b200c;
+  --brass-ink:#ffc48a;
+  --cat-hito:#f4eaff;
+  --cat-consejo:#c4a2ff;
+  --cat-reunion:#8fb8ff;
+  --cat-convivencia:#8be0a4;
+  --cat-vialidad:#ff8a2b;
+  --cat-suspension:#ff7a8a;
+  --cat-honores:#9fd6e0;
+  --cat-admin:#b3a0cc;
+  --danger:#ff7a8a;
+  --shadow:0 1px 2px rgba(0,0,0,.6), 0 10px 24px -14px rgba(0,0,0,.8);
+}
+
+:root[data-season="halloween"] body{
+  background-image:radial-gradient(circle at 85% -5%, color-mix(in srgb, var(--brass) 18%, transparent), transparent 42%);
+  background-attachment:fixed;
+}
+:root[data-season="halloween"] #header h1,
+:root[data-season="halloween"] #hero .hero-count{
+  font-family:var(--font-season);
+  font-weight:400;
+  letter-spacing:.03em;
+}
+:root[data-season="halloween"] #header h1{ font-size:32px; }
+:root[data-season="halloween"] .eyebrow{ padding-right:84px; }
+:root[data-season="halloween"] .badge{ cursor:pointer; }
+:root[data-season="halloween"] .chip[aria-pressed="true"],
+:root[data-season="halloween"] .day-pill[aria-pressed="true"]{
+  background:var(--brass); border-color:var(--brass); color:#1b0d00;
+}
+:root[data-season="halloween"] .chip[aria-pressed="true"] .dot{ background:#1b0d00; }
+
+/* emoji por tipo de actividad */
+:root[data-season="halloween"] .event-card::after{
+  position:absolute; top:7px; right:9px; font-size:15px; line-height:1; opacity:.9; pointer-events:none;
+}
+:root[data-season="halloween"] .event-card .event-title{ padding-right:22px; }
+:root[data-season="halloween"] .event-card[data-cat="consejo"]::after{ content:"🦉"; }
+:root[data-season="halloween"] .event-card[data-cat="reunion"]::after{ content:"🕸️"; }
+:root[data-season="halloween"] .event-card[data-cat="convivencia"]::after{ content:"🎃"; }
+:root[data-season="halloween"] .event-card[data-cat="vialidad"]::after{ content:"🧟"; }
+:root[data-season="halloween"] .event-card[data-cat="suspension"]::after{ content:"👻"; }
+:root[data-season="halloween"] .event-card[data-cat="honores"]::after{ content:"🦇"; }
+:root[data-season="halloween"] .event-card[data-cat="hito"]::after{ content:"🔮"; }
+:root[data-season="halloween"] .event-card[data-cat="admin"]::after{ content:"📜"; }
+
+/* elementos que solo existen con el tema activo */
+:root:not([data-season="halloween"]) .season-only{ display:none !important; }
+
+#season-toggle{
+  position:absolute; top:16px; right:58px;
+  width:32px; height:32px; border-radius:50%;
+  border:1px solid var(--line); background:var(--surface); color:var(--ink);
+  font-size:14px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+}
+#season-toggle[aria-pressed="false"]{ opacity:.45; filter:grayscale(1); }
+#season-toggle:hover{ border-color:var(--brass); }
+
+.season-web{
+  position:absolute; top:0; left:0; width:46px; height:46px; z-index:-1;
+  color:var(--muted); opacity:.4; pointer-events:none;
+}
+.season-bat-deco{
+  position:absolute; left:-30px; z-index:-1; pointer-events:none;
+  font-size:16px; opacity:.6;
+  animation:batdrift 16s linear infinite;
+}
+.season-bat-deco.b2{ top:54px; font-size:12px; animation-duration:22s; animation-delay:-9s; }
+.season-web svg{ width:100%; height:100%; }
+.season-web.tl{ width:58px; height:58px; }
+.season-web.tr{ left:auto; right:0; width:58px; height:58px; transform:scaleX(-1); }
+.season-web.fixed{ position:fixed; z-index:-1; width:90px; height:90px; opacity:.32; }
+.season-web.bl{ top:auto; bottom:64px; left:calc(50% - min(50vw, 280px)); transform:scaleY(-1); }
+.season-web.br{ top:auto; bottom:64px; left:auto; right:calc(50% - min(50vw, 280px)); transform:scale(-1,-1); }
+
+/* humo / niebla */
+.season-smoke{
+  position:fixed; left:-20vw; width:140vw; height:55vh; z-index:-1; pointer-events:none;
+  background:radial-gradient(ellipse at 50% 100%, rgba(176,140,230,.30), transparent 68%);
+  animation:smokedrift 19s ease-in-out infinite alternate;
+}
+.season-smoke.s1{ bottom:-18vh; }
+.season-smoke.s2{
+  bottom:-26vh; height:48vh;
+  background:radial-gradient(ellipse at 40% 100%, color-mix(in srgb, var(--brass) 26%, transparent), transparent 66%);
+  animation-duration:27s; animation-delay:-8s; animation-direction:alternate-reverse;
+}
+.season-smoke.s3{
+  top:-22vh; bottom:auto; height:42vh;
+  background:radial-gradient(ellipse at 60% 0%, rgba(150,110,210,.22), transparent 66%);
+  animation-duration:23s; animation-delay:-4s;
+}
+.season-fog-front{
+  position:fixed; left:-20vw; bottom:52px; width:140vw; height:22vh; z-index:4; pointer-events:none;
+  background:radial-gradient(ellipse at 50% 100%, rgba(190,160,235,.16), transparent 70%);
+  animation:smokedrift 15s ease-in-out infinite alternate-reverse;
+}
+@keyframes smokedrift{
+  0%{ transform:translateX(-7vw) scaleY(.9); opacity:.75; }
+  50%{ opacity:1; }
+  100%{ transform:translateX(7vw) scaleY(1.12); opacity:.8; }
+}
+
+/* araña caminando por detrás */
+.season-spider{
+  position:fixed; top:58vh; left:0; z-index:-1; pointer-events:none; width:74px; height:52px;
+  animation:spiderwalk 34s linear infinite;
+}
+.season-spider svg{ width:100%; height:100%; overflow:visible; animation:spiderbob .36s ease-in-out infinite; }
+.season-spider .legs-a{ transform-origin:37px 26px; animation:legsA .36s ease-in-out infinite; }
+.season-spider .legs-b{ transform-origin:37px 26px; animation:legsB .36s ease-in-out infinite; }
+@keyframes spiderwalk{
+  0%{ transform:translateX(-90px) scaleX(1); top:58vh; }
+  22%{ top:64vh; }
+  46%{ transform:translateX(calc(100vw + 20px)) scaleX(1); top:52vh; }
+  50%{ transform:translateX(calc(100vw + 20px)) scaleX(-1); top:52vh; }
+  74%{ top:70vh; }
+  96%{ transform:translateX(-90px) scaleX(-1); top:60vh; }
+  100%{ transform:translateX(-90px) scaleX(1); top:58vh; }
+}
+@keyframes spiderbob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-2.5px); } }
+@keyframes legsA{ 0%,100%{ transform:rotate(-9deg); } 50%{ transform:rotate(9deg); } }
+@keyframes legsB{ 0%,100%{ transform:rotate(9deg); } 50%{ transform:rotate(-9deg); } }
+
+#hero{ position:relative; }
+:root[data-season="halloween"] #hero::after{
+  content:""; position:absolute; top:0; right:0; width:54px; height:54px; opacity:.4; pointer-events:none;
+  transform:scaleX(-1);
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23b3a0cc' stroke-width='1'%3E%3Cpath d='M0 0L64 0M0 0L0 64M0 0L58 40M0 0L40 58'/%3E%3Cpath d='M14 0Q12 12 0 14M28 0Q24 24 0 28M42 0Q36 36 0 42M56 0Q48 48 0 56'/%3E%3C/g%3E%3C/svg%3E") no-repeat;
+  background-size:100% 100%;
+}
+@keyframes batdrift{
+  from{ transform:translateX(0) translateY(0); }
+  25%{ transform:translateX(25vw) translateY(6px); }
+  50%{ transform:translateX(50vw) translateY(-4px); }
+  75%{ transform:translateX(75vw) translateY(6px); }
+  to{ transform:translateX(calc(min(100vw, 560px) + 40px)) translateY(0); }
+}
+
+#season-ghost{
+  position:fixed; bottom:82px; left:calc(50% + min(50vw, 280px) - 62px); z-index:9;
+  font-size:38px; line-height:1; background:none; border:none; padding:6px; cursor:pointer;
+  animation:ghostfloat 4s ease-in-out infinite;
+  filter:drop-shadow(0 4px 8px rgba(0,0,0,.35));
+}
+#season-ghost.boo{ animation:ghostboo .55s ease-out; }
+@keyframes ghostfloat{
+  0%,100%{ transform:translateY(0) rotate(-4deg); }
+  50%{ transform:translateY(-12px) rotate(4deg); }
+}
+@keyframes ghostboo{
+  0%{ transform:scale(1); }
+  30%{ transform:scale(1.6) rotate(-10deg); }
+  60%{ transform:scale(.9) rotate(8deg); }
+  100%{ transform:scale(1); }
+}
+
+#pumpkin-counter{
+  position:fixed; bottom:86px; left:calc(50% - min(50vw, 280px) + 12px); z-index:9;
+  font-family:var(--font-mono); font-size:12px; font-weight:700; color:var(--brass-ink);
+  background:var(--brass-soft); border:1.5px solid var(--brass); border-radius:999px;
+  padding:5px 11px; cursor:pointer;
+}
+
+.hidden-pumpkin{
+  position:absolute; z-index:2;
+  font-size:16px; line-height:1; background:none; border:none; padding:5px; margin:0;
+  opacity:.5; cursor:pointer; filter:saturate(.75);
+}
+.hidden-pumpkin.pop{ animation:pumpkinpop .35s ease-out forwards; }
+@keyframes pumpkinpop{
+  0%{ transform:scale(1); opacity:.9; }
+  60%{ transform:scale(2.2) rotate(15deg); opacity:1; }
+  100%{ transform:scale(2.6) translateY(-14px); opacity:0; }
+}
+
+.season-countdown{
+  margin-top:12px; padding-top:10px; border-top:1px dashed var(--brass);
+  display:flex; flex-direction:column; gap:4px;
+  font-family:var(--font-mono); font-size:12px; color:var(--brass-ink);
+}
+
+#season-toast{
+  position:fixed; top:74px; left:50%; transform:translate(-50%,-8px); z-index:30;
+  background:var(--ink); color:var(--surface); font-size:13px; font-weight:600;
+  border-radius:999px; padding:9px 16px; max-width:88vw; text-align:center;
+  opacity:0; pointer-events:none; transition:opacity .2s, transform .2s;
+}
+#season-toast.show{ opacity:1; transform:translate(-50%,0); }
+
+#season-bats{ position:fixed; inset:0; z-index:25; pointer-events:none; overflow:hidden; }
+.fly-bat{
+  position:absolute; left:0; line-height:1;
+  animation:batfly var(--dur,3s) linear var(--delay,0s) forwards;
+}
+@keyframes batfly{
+  0%{ transform:translate(-60px, 0) rotate(-8deg); opacity:0; }
+  8%{ opacity:1; }
+  25%{ transform:translate(25vw, var(--wave,-30px)) rotate(8deg); }
+  50%{ transform:translate(50vw, calc(var(--wave,-30px) * -1)) rotate(-8deg); }
+  75%{ transform:translate(75vw, var(--wave,-30px)) rotate(8deg); }
+  100%{ transform:translate(112vw, 0) rotate(-6deg); opacity:1; }
+}
+
+/* sorpresa de entrada: murciélagos del centro hacia afuera */
+.burst-bat{
+  position:absolute; left:50%; top:50%; line-height:1; opacity:0;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.5));
+  animation:batburst var(--dur,2s) cubic-bezier(.2,.7,.3,1) var(--delay,0s) forwards;
+}
+@keyframes batburst{
+  0%{ transform:translate(-50%,-50%) scale(.15) rotate(0deg); opacity:0; }
+  12%{ opacity:1; }
+  55%{ transform:translate(calc(-50% + var(--dx) * .55), calc(-50% + var(--dy) * .55)) scale(var(--s,1)) rotate(calc(var(--rot,10deg) * -1)); opacity:1; }
+  100%{ transform:translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(calc(var(--s,1) * 1.5)) rotate(var(--rot,10deg)); opacity:0; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  #season-ghost, .season-bat-deco, .season-smoke, .season-fog-front{ animation:none; }
+  .season-spider, .season-spider svg, .season-spider .legs-a, .season-spider .legs-b{ animation:none; }
+  .season-spider{ display:none; }
+  #season-ghost.boo{ animation:none; }
+  .hidden-pumpkin.pop{ animation:none; opacity:0; }
+}
