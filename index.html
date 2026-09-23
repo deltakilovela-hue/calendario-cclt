@@ -179,6 +179,36 @@
   #hero .hero-meta{ font-size:13px; color:var(--muted); margin-top:2px; }
   #hero.empty .hero-count{ font-size:16px; font-weight:500; color:var(--muted); }
 
+  #birthdays{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:14px 16px;
+    margin-bottom:18px;
+  }
+  #birthdays.empty{ display:none; }
+  .bday-title{
+    font-family:var(--font-mono);
+    font-size:11px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--brass-ink);
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  .bday-list{ display:flex; flex-direction:column; gap:10px; }
+  .bday-item{ display:flex; align-items:center; gap:10px; }
+  .bday-icon{
+    flex:0 0 auto;
+    width:34px; height:34px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:17px;
+    background:var(--brass-soft);
+    border:1px solid var(--brass);
+  }
+  .bday-name{ font-size:13.5px; font-weight:600; color:var(--ink); }
+  .bday-role{ font-size:12px; color:var(--muted); margin-top:1px; }
+
   #chips{
     display:flex; gap:8px; overflow-x:auto;
     padding-bottom:10px; margin-bottom:6px;
@@ -409,6 +439,7 @@
 
   <main id="tab-agenda" class="tab-content">
     <section id="hero" aria-live="polite"></section>
+    <section id="birthdays"></section>
     <nav id="chips" aria-label="Filtrar actividades"></nav>
     <div id="timeline"></div>
 
@@ -582,6 +613,8 @@
 
   var EVENTS = [];
   var LAST_UPDATED = '';
+  var BIRTHDAYS_MONTH = '';
+  var BIRTHDAYS = [];
   var activeFilter = 'todos';
   var ALL_COMMENTS = [];
   var OPEN_COMMENTS = {};
@@ -668,6 +701,26 @@
     var d = daysBetween(today, start);
     if(d === 1) return 'Es mañana';
     return 'Faltan ' + d + ' días';
+  }
+
+  function renderBirthdays(){
+    var el = $('#birthdays');
+    if(!BIRTHDAYS.length){
+      el.className = 'empty';
+      el.innerHTML = '';
+      return;
+    }
+    el.className = '';
+    var items = BIRTHDAYS.map(function(b){
+      return '<div class="bday-item">' +
+        '<span class="bday-icon">' + esc(b.icon || '🎂') + '</span>' +
+        '<span><div class="bday-name">' + esc(b.role ? (b.role + ' ' + b.name) : b.name) + '</div>' +
+        '<div class="bday-role">' + esc(b.subject || '') + '</div></span>' +
+      '</div>';
+    }).join('');
+    el.innerHTML =
+      '<div class="bday-title">🎂 Cumpleañeros de ' + esc(BIRTHDAYS_MONTH) + '</div>' +
+      '<div class="bday-list">' + items + '</div>';
   }
 
   function renderHero(){
@@ -970,6 +1023,7 @@
 
   function renderAll(){
     renderHero();
+    renderBirthdays();
     renderChips();
     renderTimeline();
     renderUpdated();
@@ -990,6 +1044,8 @@
     .then(function(data){
       EVENTS = data.events || [];
       LAST_UPDATED = data.updated || '';
+      BIRTHDAYS_MONTH = data.birthdaysMonth || '';
+      BIRTHDAYS = data.birthdays || [];
       renderAll();
       fetchComments();
     })
