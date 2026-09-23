@@ -10,8 +10,10 @@
   try{
     var t = localStorage.getItem('cclt11-theme');
     if(t === 'dark' || t === 'light'){ document.documentElement.setAttribute('data-theme', t); }
-    var q = /[?&]tema=halloween/.test(location.search), oct = new Date().getMonth() === 9;
-    if((q || oct) && localStorage.getItem('cclt11-season') !== 'off'){ document.documentElement.setAttribute('data-season', 'halloween'); }
+    var q = /[?&]tema=halloween/.test(location.search);
+    var dc = new Date(); dc = dc.getMonth() * 100 + dc.getDate();
+    var inSeason = dc >= 815 && dc <= 1002;
+    if((q || inSeason) && localStorage.getItem('cclt11-season') !== 'off'){ document.documentElement.setAttribute('data-season', 'halloween'); }
   }catch(e){}
 })();
 </script>
@@ -431,25 +433,57 @@
         <span class="contact-icon">💳</span>
         <span><span class="contact-label">Plataforma de pagos secundaria</span><br><span class="contact-value">Servicios en línea CCLT</span></span>
       </a>
-      <a class="contact-row" href="tel:+523112165820">
-        <span class="contact-icon">📞</span>
-        <span><span class="contact-label">Teléfono secundaria</span><br><span class="contact-value">+52 311 216 5820</span></span>
-      </a>
-      <a class="contact-row" href="https://wa.me/523111205909" target="_blank" rel="noopener">
-        <span class="contact-icon">💬</span>
-        <span><span class="contact-label">WhatsApp oficial del colegio</span><br><span class="contact-value">+52 311 120 5909</span></span>
-      </a>
-      <a class="contact-row" href="https://wa.me/523111056983" target="_blank" rel="noopener">
-        <span class="contact-icon">💰</span>
-        <span><span class="contact-label">WhatsApp finanzas</span><br><span class="contact-value">+52 311 105 6983</span></span>
-      </a>
-      <a class="contact-row" href="tel:+523111602932">
-        <span class="contact-icon">🩺</span>
-        <span><span class="contact-label">Teléfono enfermería</span><br><span class="contact-value">+52 311 160 2932</span></span>
-      </a>
       <a class="contact-row" href="mailto:ciencias_secundaria@hotmail.com">
         <span class="contact-icon">✉️</span>
         <span><span class="contact-label">Correo</span><br><span class="contact-value">ciencias_secundaria@hotmail.com</span></span>
+      </a>
+    </div>
+
+    <div class="section-label">Oficina secundaria</div>
+    <div class="contact-card">
+      <a class="contact-row" href="tel:+523112165820">
+        <span class="contact-icon">📞</span>
+        <span><span class="contact-label">Teléfono</span><br><span class="contact-value">+52 311 216 5820</span></span>
+      </a>
+      <a class="contact-row" href="tel:+523112180172">
+        <span class="contact-icon">📞</span>
+        <span><span class="contact-label">Teléfono</span><br><span class="contact-value">+52 311 218 0172</span></span>
+      </a>
+      <a class="contact-row" href="https://wa.me/523111205909" target="_blank" rel="noopener">
+        <span class="contact-icon">💬</span>
+        <span><span class="contact-label">WhatsApp</span><br><span class="contact-value">+52 311 120 5909</span></span>
+      </a>
+    </div>
+
+    <div class="section-label">Finanzas</div>
+    <div class="contact-card">
+      <a class="contact-row" href="tel:+523111331443">
+        <span class="contact-icon">📞</span>
+        <span><span class="contact-label">Teléfono</span><br><span class="contact-value">+52 311 133 1443</span></span>
+      </a>
+      <a class="contact-row" href="https://wa.me/523111056983" target="_blank" rel="noopener">
+        <span class="contact-icon">💬</span>
+        <span><span class="contact-label">WhatsApp</span><br><span class="contact-value">+52 311 105 6983</span></span>
+      </a>
+    </div>
+
+    <div class="section-label">Enfermería</div>
+    <div class="contact-card">
+      <a class="contact-row" href="tel:+523111602932">
+        <span class="contact-icon">🩺</span>
+        <span><span class="contact-label">Teléfono</span><br><span class="contact-value">+52 311 160 2932</span></span>
+      </a>
+    </div>
+
+    <div class="section-label">Loncherías</div>
+    <div class="contact-card">
+      <a class="contact-row" href="tel:+523111396208">
+        <span class="contact-icon">🍽️</span>
+        <span><span class="contact-label">Sra. Rocío · cancha de fútbol</span><br><span class="contact-value">+52 311 139 6208</span></span>
+      </a>
+      <a class="contact-row" href="tel:+523111749556">
+        <span class="contact-icon">🍽️</span>
+        <span><span class="contact-label">Sra. Gaby · alberca</span><br><span class="contact-value">+52 311 174 9556</span></span>
       </a>
     </div>
 
