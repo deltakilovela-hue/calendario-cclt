@@ -532,7 +532,7 @@
     <div class="contact-card">
       <div class="contact-row">
         <span class="contact-icon">📍</span>
-        <span><span class="contact-label">Dirección</span><br><span class="contact-value">Ofna. Humana #105, Col. Spauan, C.P. 63115, Tepic, Nayarit</span></span>
+        <span><span class="contact-label">Dirección</span><br><span class="contact-value">Medicina Humana #105, Col. Spauan, C.P. 63115, Tepic, Nayarit</span></span>
       </div>
       <a class="contact-row" href="https://maps.app.goo.gl/qzUhoPwLPVoU7hwf6" target="_blank" rel="noopener">
         <span class="contact-icon">🗺️</span>
@@ -705,7 +705,8 @@
 
   function renderBirthdays(){
     var el = $('#birthdays');
-    if(!BIRTHDAYS.length){
+    var currentMonth = MONTHS[new Date().getMonth()];
+    if(!BIRTHDAYS.length || String(BIRTHDAYS_MONTH).toLowerCase() !== currentMonth){
       el.className = 'empty';
       el.innerHTML = '';
       return;

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03",
+  "updated": "2026-10-02",
   "birthdaysMonth": "Septiembre",
   "birthdays": [
     { "name": "José Rubén", "role": "Maestro", "subject": "Biología", "icon": "🔬" },
@@ -21,6 +21,17 @@
     { "id": "e12", "dateStart": "2026-09-25", "category": "consejo",     "title": "Consejo Técnico Escolar", "note": "No hay clases para alumnos.", "highlight": false },
     { "id": "e13", "dateStart": "2026-09-28", "category": "honores",     "title": "Honores a la Bandera", "note": "A cargo de Secundaria · Grupo 1.1.", "highlight": true },
     { "id": "e14", "dateStart": "2026-09-30", "category": "admin",       "title": "Fecha límite: elección de Taller de Artes", "note": "", "highlight": false },
-    { "id": "e15", "dateStart": null,         "category": "admin",       "title": "Elección del Comité Ejecutivo Estudiantil", "note": "Fecha por definir, según convocatoria del IEE Nayarit.", "highlight": false }
+    { "id": "e15", "dateStart": "2026-10-01", "category": "hito",        "title": "Jornada Electoral Estudiantil", "note": "Elección del Comité Ejecutivo Estudiantil, 3ra sesión del Consejo Electoral Estudiantil y entrega de constancias de mayoría a la planilla ganadora.", "highlight": false },
+    { "id": "e16", "dateStart": "2026-10-01", "category": "admin",       "title": "Entrega de credencial de estudiante", "note": "", "highlight": false },
+    { "id": "e17", "dateStart": "2026-10-05", "category": "hito",        "title": "Toma de protesta del Comité Estudiantil electo", "note": "", "highlight": false },
+    { "id": "e18", "dateStart": "2026-10-06", "category": "admin",       "title": "Último día para entregar el formato de autorización de vacunación", "note": "Sin el formato no se aplicará la vacuna del día 8.", "highlight": false },
+    { "id": "e19", "dateStart": "2026-10-08", "category": "admin",       "title": "Jornada de vacunación: SR, Hepatitis B y VPH", "note": "Todos los grados, hombres y mujeres. Llevar formato de autorización, cartilla de vacunación y CURP. Si falta alguno de los documentos no se aplicará la vacuna.", "highlight": false },
+    { "id": "e20", "dateStart": "2026-10-08", "time": "19:00",         "category": "reunion",     "title": "Reunión informativa: Campamentos de verano en el extranjero", "note": "Salón Audiovisual.", "highlight": false },
+    { "id": "e21", "dateStart": "2026-10-12", "category": "honores",     "title": "Honores a la Bandera", "note": "A cargo de Primaria.", "highlight": false },
+    { "id": "e22", "dateStart": "2026-10-14", "category": "hito",        "title": "Concurso de Spelling Bee de Zona 2026", "note": "", "highlight": false },
+    { "id": "e23", "dateStart": "2026-10-26", "category": "honores",     "title": "Honores a la Bandera", "note": "A cargo de Secundaria · Grupo 1.2.", "highlight": false },
+    { "id": "e24", "dateStart": "2026-10-29", "time": "13:10",         "category": "admin",       "title": "Salida anticipada de Secundaria", "note": "Ese día hay ensayo general con alumnos a las 8:30 a.m. y la salida es a la 1:10 p.m.", "highlight": false },
+    { "id": "e25", "dateStart": "2026-10-29", "time": "19:00",         "category": "convivencia", "title": "Festival de Día de Muertos", "note": "Primaria y Secundaria.", "highlight": false },
+    { "id": "e26", "dateStart": "2026-10-30", "category": "consejo",     "title": "Consejo Técnico Escolar", "note": "No hay clases para alumnos.", "highlight": false }
   ]
 }
