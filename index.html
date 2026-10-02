@@ -572,9 +572,7 @@
     <section id="alerts" aria-live="polite"></section>
     <section id="hero" aria-live="polite"></section>
     <div class="action-row">
-      <button type="button" class="action-btn" id="btn-subscribe" aria-expanded="false" aria-controls="subscribe-panel">📅 Suscribirme al calendario</button>
-      <button type="button" class="action-btn" id="btn-share-week">📲 Compartir semana</button>
-    </div>
+      <button type="button" class="action-btn" id="btn-subscribe" aria-expanded="false" aria-controls="subscribe-panel">📅 Suscribirme al calendario</button>    </div>
     <div id="subscribe-panel" class="subscribe-panel" hidden>
       <p class="sub-intro">Agrégalo una sola vez y los eventos nuevos aparecerán solos en el calendario de tu celular.</p>
       <a class="sub-option" id="sub-apple" href="#">
@@ -1187,66 +1185,6 @@
     });
   }
 
-  // ---- resumen semanal para WhatsApp ----
-  var CAT_EMOJI = { vialidad:'🚦', reunion:'👥', convivencia:'🎉', honores:'🇲🇽', consejo:'🏫', suspension:'🚫', hito:'⭐', admin:'📌' };
-  var SITE_URL = 'https://calendario-cclt.deltakilo.com.mx';
-
-  function weekRange(){
-    var today = startOfDay(new Date());
-    var dow = today.getDay();
-    var monday = new Date(today);
-    if(dow === 6) monday.setDate(today.getDate() + 2);
-    else if(dow === 0) monday.setDate(today.getDate() + 1);
-    else monday.setDate(today.getDate() - (dow - 1));
-    var friday = new Date(monday); friday.setDate(monday.getDate() + 4);
-    var sunday = new Date(monday); sunday.setDate(monday.getDate() + 6);
-    return { start: monday, end: sunday, friday: friday };
-  }
-
-  function dayLabel(d){
-    var w = WEEKDAYS[d.getDay()];
-    return w.charAt(0).toUpperCase() + w.slice(1) + ' ' + d.getDate();
-  }
-
-  function buildWeekText(){
-    var r = weekRange();
-    var rangeTxt = r.start.getMonth() === r.friday.getMonth()
-      ? r.start.getDate() + ' al ' + r.friday.getDate() + ' de ' + MONTHS[r.friday.getMonth()]
-      : r.start.getDate() + ' de ' + MONTHS[r.start.getMonth()] + ' al ' + r.friday.getDate() + ' de ' + MONTHS[r.friday.getMonth()];
-    var items = sortedEvents().filter(function(e){
-      if(!e.dateStart) return false;
-      var s = parseDate(e.dateStart), en = parseDate(e.dateEnd || e.dateStart);
-      return s <= r.end && en >= r.start;
-    });
-    var lines = ['📅 *Agenda 1.1 · Semana del ' + rangeTxt + '*', ''];
-    if(!items.length){
-      lines.push('Esta semana no hay actividades en el cronograma 🙌');
-    } else {
-      items.forEach(function(e){
-        var s = parseDate(e.dateStart), en = parseDate(e.dateEnd || e.dateStart);
-        var when = (en > s) ? dayLabel(s) + ' – ' + dayLabel(en) : dayLabel(s);
-        if(e.time) when += ' · ' + fmt12h(e.time);
-        var warn = e.alert || (ALERT_CATS[e.category] && e.category !== 'vialidad');
-        var line = (CAT_EMOJI[e.category] || '•') + ' *' + when + '* — ' + (warn ? '⚠️ ' : '') + e.title;
-        if(e.checklist && e.checklist.length) line += ' (' + (e.checklistTitle ? 'pendientes' : 'llevar') + ': ' + e.checklist.join(', ') + ')';
-        lines.push(line);
-      });
-    }
-    lines.push('', 'Más detalles en la app: ' + SITE_URL);
-    return lines.join('\n');
-  }
-
-  function wireShare(){
-    $('#btn-share-week').addEventListener('click', function(){
-      var text = buildWeekText();
-      if(navigator.share){
-        navigator.share({ text: text }).catch(function(){});
-      } else {
-        window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank', 'noopener');
-      }
-    });
-  }
-
   // ---- altar de Día de Muertos ----
   var ALTAR = [];
   function altarSeason(){
@@ -1487,7 +1425,6 @@
   wireChecklists();
   wireAlerts();
   wireSubscribe();
-  wireShare();
   renderDayPills();
   renderHorario();
   wireAltar();
