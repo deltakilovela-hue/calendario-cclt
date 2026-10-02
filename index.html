@@ -359,7 +359,146 @@
   .tab-btn[aria-selected="true"]{ color:var(--brass-ink); }
 
   main[hidden], section.tab-content[hidden]{ display:none; }
-  #tab-horario, #tab-contactos{ padding:16px 20px 0; }
+  #tab-horario, #tab-contactos, #tab-altar{ padding:16px 20px 0; }
+  #tab-altar{ padding-bottom:72px; }
+
+  /* ---- alertas ---- */
+  #alerts{ display:flex; flex-direction:column; gap:8px; margin-bottom:14px; }
+  #alerts:empty{ display:none; }
+  .alert-item{
+    display:flex; align-items:flex-start; gap:10px;
+    background:color-mix(in srgb, var(--cat-suspension) 13%, var(--surface));
+    border:1px solid color-mix(in srgb, var(--cat-suspension) 55%, transparent);
+    border-left:4px solid var(--cat-suspension);
+    border-radius:var(--radius-sm);
+    padding:10px 10px 10px 12px;
+  }
+  .alert-icon{ font-size:17px; line-height:1.3; flex:0 0 auto; }
+  .alert-body{ flex:1; min-width:0; }
+  .alert-when{
+    font-family:var(--font-mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
+    font-weight:700; color:var(--cat-suspension);
+  }
+  .alert-text{ font-size:13.5px; font-weight:600; color:var(--ink); margin-top:1px; }
+  .alert-close{
+    flex:0 0 auto; background:none; border:none; cursor:pointer;
+    color:var(--muted); font-size:14px; padding:2px 4px; line-height:1;
+  }
+
+  /* ---- acciones: suscribirse / compartir ---- */
+  .action-row{ display:flex; gap:8px; margin:-6px 0 18px; }
+  .action-btn{
+    flex:1; min-width:0;
+    font-family:var(--font-body); font-size:12.5px; font-weight:600; color:var(--ink);
+    background:var(--surface); border:1px solid var(--line); border-radius:10px;
+    padding:10px 8px; cursor:pointer;
+  }
+  .action-btn:hover, .action-btn[aria-expanded="true"]{ border-color:var(--brass); }
+  .subscribe-panel{
+    background:var(--surface); border:1px solid var(--brass); border-radius:var(--radius-sm);
+    padding:12px 14px; margin:-8px 0 18px;
+  }
+  .subscribe-panel[hidden]{ display:none; }
+  .sub-intro{ font-size:13px; color:var(--ink); margin:0 0 10px; }
+  .sub-option{
+    display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink);
+    border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin-bottom:8px;
+  }
+  .sub-option:hover{ border-color:var(--brass); }
+  .sub-icon{ font-size:20px; }
+  .sub-title{ font-size:13.5px; font-weight:600; }
+  .sub-desc{ font-size:12px; color:var(--muted); }
+  .sub-note{ font-size:11.5px; color:var(--muted); margin:4px 0 0; }
+
+  /* ---- checklist "qué llevar" ---- */
+  .checklist{
+    margin-top:10px; padding:10px 12px;
+    background:var(--surface-2); border:1px solid var(--line); border-radius:8px;
+  }
+  .checklist-head{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12.5px; font-weight:700; color:var(--ink); margin-bottom:6px;
+  }
+  .checklist-count{ font-family:var(--font-mono); font-size:11px; color:var(--muted); font-weight:700; }
+  .checklist-count.done{ color:var(--cat-convivencia); }
+  .check-item{
+    display:flex; align-items:center; gap:8px; padding:4px 0;
+    font-size:13px; color:var(--ink); cursor:pointer;
+  }
+  .check-item input{ width:17px; height:17px; accent-color:var(--brass); flex:0 0 auto; cursor:pointer; }
+  .check-item input:checked + span{ text-decoration:line-through; color:var(--muted); }
+
+  /* ---- altar de Día de Muertos ---- */
+  .papel-picado{ display:flex; gap:4px; margin:-16px -20px 14px; padding:0 8px; }
+  .papel-picado span{
+    flex:1; height:46px;
+    clip-path:polygon(0 0,100% 0,100% 74%,87.5% 100%,75% 74%,62.5% 100%,50% 74%,37.5% 100%,25% 74%,12.5% 100%,0 74%);
+    -webkit-mask:radial-gradient(circle, transparent 2.2px, #000 2.8px) 0 0/9px 9px;
+    mask:radial-gradient(circle, transparent 2.2px, #000 2.8px) 0 0/9px 9px;
+    transform-origin:top center;
+    animation:picadosway 4s ease-in-out infinite;
+  }
+  .papel-picado span:nth-child(7n+1){ background:#e4007c; }
+  .papel-picado span:nth-child(7n+2){ background:#ff8a2b; animation-delay:-.6s; }
+  .papel-picado span:nth-child(7n+3){ background:#8a3ffc; animation-delay:-1.2s; }
+  .papel-picado span:nth-child(7n+4){ background:#00b3a4; animation-delay:-1.8s; }
+  .papel-picado span:nth-child(7n+5){ background:#ffc928; animation-delay:-2.4s; }
+  .papel-picado span:nth-child(7n+6){ background:#e4007c; animation-delay:-3s; }
+  .papel-picado span:nth-child(7n+7){ background:#ff8a2b; animation-delay:-3.6s; }
+  @keyframes picadosway{ 0%,100%{ transform:rotate(-1.5deg); } 50%{ transform:rotate(1.5deg); } }
+  .altar-title{
+    font-family:var(--font-display); font-size:22px; font-weight:700; color:var(--ink);
+    margin:4px 0 6px; text-align:center;
+  }
+  .altar-intro{ font-size:13.5px; color:var(--muted); text-align:center; margin:0 0 16px; text-wrap:balance; }
+  .altar-candles{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); gap:10px;
+    margin-bottom:16px;
+  }
+  .altar-empty{ grid-column:1/-1; font-size:13px; color:var(--muted); text-align:center; padding:18px 0; margin:0; }
+  .candle{
+    position:relative;
+    background:linear-gradient(180deg, color-mix(in srgb, #ffb347 14%, var(--surface)), var(--surface) 60%);
+    border:1px solid color-mix(in srgb, #ff8a2b 45%, var(--line));
+    border-radius:var(--radius-sm);
+    padding:12px 10px 10px; text-align:center;
+  }
+  .candle-flame{
+    display:inline-block; font-size:30px; line-height:1;
+    filter:drop-shadow(0 0 10px rgba(255,170,60,.75));
+    animation:flicker 2.2s ease-in-out infinite;
+  }
+  .candle:nth-child(3n+2) .candle-flame{ animation-delay:-.7s; }
+  .candle:nth-child(3n+3) .candle-flame{ animation-delay:-1.4s; }
+  @keyframes flicker{
+    0%,100%{ transform:scale(1) rotate(-1deg); filter:drop-shadow(0 0 9px rgba(255,170,60,.7)); }
+    30%{ transform:scale(1.04) rotate(1.5deg); filter:drop-shadow(0 0 14px rgba(255,190,80,.9)); }
+    60%{ transform:scale(.97) rotate(-.5deg); filter:drop-shadow(0 0 7px rgba(255,150,40,.6)); }
+  }
+  .candle-name{ font-family:var(--font-display); font-size:14.5px; font-weight:600; color:var(--ink); margin-top:6px; word-break:break-word; }
+  .candle-msg{ font-size:12px; color:var(--muted); margin-top:3px; word-break:break-word; font-style:italic; }
+  .candle-author{ font-size:11px; color:var(--muted); margin-top:5px; }
+  .candle-remove{
+    margin-top:6px; background:none; border:1px solid var(--line); border-radius:7px;
+    padding:2px 7px; font-size:10.5px; font-weight:600; color:var(--cat-suspension); cursor:pointer;
+  }
+  .altar-form{ display:flex; flex-direction:column; gap:8px; }
+  .altar-form[hidden]{ display:none; }
+  .altar-form .hp{ position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+  .altar-form input[type="text"]{
+    width:100%; font-family:var(--font-body); font-size:14px; color:var(--ink);
+    background:var(--surface); border:1px solid var(--line); border-radius:9px; padding:10px 11px;
+  }
+  .altar-form button{
+    background:linear-gradient(135deg, #ff8a2b, #e4007c); color:#fff; border:none;
+    border-radius:10px; padding:11px; font-family:var(--font-body); font-size:14px; font-weight:700; cursor:pointer;
+  }
+  .altar-form button:disabled{ opacity:.6; cursor:default; }
+  .altar-error{ font-size:12px; color:var(--cat-suspension); }
+
+  @media (prefers-reduced-motion: reduce){
+    .papel-picado span, .candle-flame{ animation:none; }
+  }
 
   /* ---- horario ---- */
   .day-pills{
@@ -438,7 +577,24 @@
   </header>
 
   <main id="tab-agenda" class="tab-content">
+    <section id="alerts" aria-live="polite"></section>
     <section id="hero" aria-live="polite"></section>
+    <div class="action-row">
+      <button type="button" class="action-btn" id="btn-subscribe" aria-expanded="false" aria-controls="subscribe-panel">📅 Suscribirme al calendario</button>
+      <button type="button" class="action-btn" id="btn-share-week">📲 Compartir semana</button>
+    </div>
+    <div id="subscribe-panel" class="subscribe-panel" hidden>
+      <p class="sub-intro">Agrégalo una sola vez y los eventos nuevos aparecerán solos en el calendario de tu celular.</p>
+      <a class="sub-option" id="sub-apple" href="#">
+        <span class="sub-icon">🍎</span>
+        <span><span class="sub-title">iPhone / Apple</span><br><span class="sub-desc">Toca y confirma "Suscribirse"</span></span>
+      </a>
+      <a class="sub-option" id="sub-google" href="#" target="_blank" rel="noopener">
+        <span class="sub-icon">📆</span>
+        <span><span class="sub-title">Google Calendar (Android)</span><br><span class="sub-desc">Se abre en el navegador: toca "Agregar"</span></span>
+      </a>
+      <p class="sub-note">Los calendarios revisan cambios cada cierto tiempo; un evento nuevo puede tardar algunas horas en aparecer.</p>
+    </div>
     <section id="birthdays"></section>
     <nav id="chips" aria-label="Filtrar actividades"></nav>
     <div id="timeline"></div>
@@ -554,10 +710,27 @@
     <p class="credit" style="text-align:center;margin-top:16px;">Hecho por Delta Kilo</p>
   </section>
 
+  <section id="tab-altar" class="tab-content" hidden>
+    <div class="papel-picado" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <h2 class="altar-title">Altar del grupo 1.1</h2>
+    <p class="altar-intro">Enciende una veladora y deja un mensaje para recordar a quienes ya no están con nosotros. 🌼</p>
+    <div id="altar-candles" class="altar-candles"></div>
+    <form id="altar-form" class="altar-form" novalidate hidden>
+      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off">
+      <input type="text" name="name" placeholder="¿A quién recuerdas?" maxlength="60" required>
+      <input type="text" name="message" placeholder="Mensaje (opcional)" maxlength="140">
+      <input type="text" name="author" placeholder="Tu nombre (opcional)" maxlength="60">
+      <div class="altar-error" hidden></div>
+      <button type="submit">🕯️ Encender veladora</button>
+    </form>
+    <p class="credit" style="text-align:center;margin-top:16px;">Hecho por Delta Kilo</p>
+  </section>
+
   <nav id="bottom-tabs" aria-label="Secciones">
     <button type="button" class="tab-btn" data-tab="agenda" aria-selected="true"><span class="tab-icon">📅</span>Agenda</button>
     <button type="button" class="tab-btn" data-tab="horario" aria-selected="false"><span class="tab-icon">🕐</span>Horario</button>
     <button type="button" class="tab-btn" data-tab="contactos" aria-selected="false"><span class="tab-icon">📞</span>Contactos</button>
+    <button type="button" class="tab-btn" data-tab="altar" aria-selected="false" id="tab-btn-altar" hidden><span class="tab-icon">🕯️</span>Altar</button>
   </nav>
 </div>
 
@@ -903,6 +1076,282 @@
     });
   }
 
+  // ---- almacenamiento local (por celular) ----
+  function readJSON(key, fallback){
+    try{ var v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; }catch(e){ return fallback; }
+  }
+  function writeJSON(key, value){
+    try{ localStorage.setItem(key, JSON.stringify(value)); }catch(e){}
+  }
+
+  // ---- checklist "qué llevar" ----
+  function checklistHTML(e){
+    if(!e.checklist || !e.checklist.length) return '';
+    var state = readJSON('cclt11-check', {})[e.id] || [];
+    var done = state.length;
+    var total = e.checklist.length;
+    var items = e.checklist.map(function(label, i){
+      var checked = state.indexOf(i) !== -1;
+      return '<label class="check-item"><input type="checkbox" data-check-event="' + esc(e.id) + '" data-check-index="' + i + '"' + (checked ? ' checked' : '') + '><span>' + esc(label) + '</span></label>';
+    }).join('');
+    return '<div class="checklist">' +
+      '<div class="checklist-head"><span>' + esc(e.checklistTitle || '🎒 Qué llevar') + '</span>' +
+      '<span class="checklist-count' + (done === total ? ' done' : '') + '">' + (done === total ? '✓ Listo' : done + '/' + total) + '</span></div>' +
+      items +
+    '</div>';
+  }
+
+  function wireChecklists(){
+    $('#timeline').addEventListener('change', function(ev){
+      var box = ev.target;
+      if(!box.matches || !box.matches('[data-check-event]')) return;
+      var id = box.getAttribute('data-check-event');
+      var idx = parseInt(box.getAttribute('data-check-index'), 10);
+      var all = readJSON('cclt11-check', {});
+      var list = (all[id] || []).filter(function(i){ return i !== idx; });
+      if(box.checked) list.push(idx);
+      all[id] = list;
+      writeJSON('cclt11-check', all);
+      var ev2 = EVENTS.filter(function(x){ return x.id === id; })[0];
+      var wrap = box.closest('.checklist');
+      if(ev2 && wrap){
+        var count = wrap.querySelector('.checklist-count');
+        var total = ev2.checklist.length;
+        count.textContent = list.length === total ? '✓ Listo' : list.length + '/' + total;
+        count.classList.toggle('done', list.length === total);
+      }
+    });
+  }
+
+  // ---- alertas de lo importante ----
+  var ALERT_CATS = { suspension: 'No hay clases', consejo: 'No hay clases · Consejo Técnico Escolar', vialidad: 'Semana de vialidad del Grupo 1.1' };
+  var ALERT_WINDOW = 3;
+
+  function computeAlerts(){
+    var today = startOfDay(new Date());
+    var dismissed = readJSON('cclt11-dismissed-alerts', []);
+    var out = [];
+    EVENTS.forEach(function(e){
+      if(!e.dateStart) return;
+      if(!e.alert && !ALERT_CATS[e.category]) return;
+      if(dismissed.indexOf(e.id) !== -1) return;
+      var start = parseDate(e.dateStart);
+      var end = parseDate(e.dateEnd || e.dateStart);
+      if(end < today) return;
+      var d = daysBetween(today, start);
+      if(d > ALERT_WINDOW) return;
+      var when;
+      if(start <= today && today <= end && end > start) when = 'En curso';
+      else if(d === 0) when = 'Hoy';
+      else if(d === 1) when = 'Mañana';
+      else when = 'El ' + WEEKDAYS[start.getDay()] + ' ' + start.getDate();
+      if(e.time) when += ' · ' + fmt12h(e.time);
+      out.push({ id: e.id, d: d, when: when, text: e.alertText || ALERT_CATS[e.category] || e.title });
+    });
+    return out.sort(function(a, b){ return a.d - b.d; });
+  }
+
+  function renderAlerts(){
+    var list = computeAlerts();
+    $('#alerts').innerHTML = list.map(function(a){
+      return '<div class="alert-item" role="alert">' +
+        '<span class="alert-icon">⚠️</span>' +
+        '<div class="alert-body"><div class="alert-when">' + esc(a.when) + '</div><div class="alert-text">' + esc(a.text) + '</div></div>' +
+        '<button type="button" class="alert-close" data-dismiss="' + esc(a.id) + '" aria-label="Ocultar aviso">✕</button>' +
+      '</div>';
+    }).join('');
+  }
+
+  function wireAlerts(){
+    $('#alerts').addEventListener('click', function(ev){
+      var btn = ev.target.closest('[data-dismiss]');
+      if(!btn) return;
+      var ids = readJSON('cclt11-dismissed-alerts', []);
+      ids.push(btn.getAttribute('data-dismiss'));
+      writeJSON('cclt11-dismissed-alerts', ids);
+      renderAlerts();
+    });
+  }
+
+  function fmt12h(t){
+    var p = String(t).split(':');
+    var h = parseInt(p[0], 10), m = p[1] || '00';
+    var suffix = h >= 12 ? 'pm' : 'am';
+    h = h % 12 || 12;
+    return h + ':' + m + ' ' + suffix;
+  }
+
+  // ---- suscripción al calendario ----
+  function wireSubscribe(){
+    var icsPath = location.host + location.pathname.replace(/[^\/]*$/, '') + 'calendario.ics';
+    var webcal = 'webcal://' + icsPath;
+    $('#sub-apple').href = webcal;
+    $('#sub-google').href = 'https://calendar.google.com/calendar/render?cid=' + encodeURIComponent(webcal);
+    var btn = $('#btn-subscribe');
+    btn.addEventListener('click', function(){
+      var panel = $('#subscribe-panel');
+      panel.hidden = !panel.hidden;
+      btn.setAttribute('aria-expanded', panel.hidden ? 'false' : 'true');
+    });
+  }
+
+  // ---- resumen semanal para WhatsApp ----
+  var CAT_EMOJI = { vialidad:'🚦', reunion:'👥', convivencia:'🎉', honores:'🇲🇽', consejo:'🏫', suspension:'🚫', hito:'⭐', admin:'📌' };
+  var SITE_URL = 'https://calendario-cclt.deltakilo.com.mx';
+
+  function weekRange(){
+    var today = startOfDay(new Date());
+    var dow = today.getDay();
+    var monday = new Date(today);
+    if(dow === 6) monday.setDate(today.getDate() + 2);
+    else if(dow === 0) monday.setDate(today.getDate() + 1);
+    else monday.setDate(today.getDate() - (dow - 1));
+    var friday = new Date(monday); friday.setDate(monday.getDate() + 4);
+    var sunday = new Date(monday); sunday.setDate(monday.getDate() + 6);
+    return { start: monday, end: sunday, friday: friday };
+  }
+
+  function dayLabel(d){
+    var w = WEEKDAYS[d.getDay()];
+    return w.charAt(0).toUpperCase() + w.slice(1) + ' ' + d.getDate();
+  }
+
+  function buildWeekText(){
+    var r = weekRange();
+    var rangeTxt = r.start.getMonth() === r.friday.getMonth()
+      ? r.start.getDate() + ' al ' + r.friday.getDate() + ' de ' + MONTHS[r.friday.getMonth()]
+      : r.start.getDate() + ' de ' + MONTHS[r.start.getMonth()] + ' al ' + r.friday.getDate() + ' de ' + MONTHS[r.friday.getMonth()];
+    var items = sortedEvents().filter(function(e){
+      if(!e.dateStart) return false;
+      var s = parseDate(e.dateStart), en = parseDate(e.dateEnd || e.dateStart);
+      return s <= r.end && en >= r.start;
+    });
+    var lines = ['📅 *Agenda 1.1 · Semana del ' + rangeTxt + '*', ''];
+    if(!items.length){
+      lines.push('Esta semana no hay actividades en el cronograma 🙌');
+    } else {
+      items.forEach(function(e){
+        var s = parseDate(e.dateStart), en = parseDate(e.dateEnd || e.dateStart);
+        var when = (en > s) ? dayLabel(s) + ' – ' + dayLabel(en) : dayLabel(s);
+        if(e.time) when += ' · ' + fmt12h(e.time);
+        var warn = e.alert || (ALERT_CATS[e.category] && e.category !== 'vialidad');
+        var line = (CAT_EMOJI[e.category] || '•') + ' *' + when + '* — ' + (warn ? '⚠️ ' : '') + e.title;
+        if(e.checklist && e.checklist.length) line += ' (' + (e.checklistTitle ? 'pendientes' : 'llevar') + ': ' + e.checklist.join(', ') + ')';
+        lines.push(line);
+      });
+    }
+    lines.push('', 'Más detalles en la app: ' + SITE_URL);
+    return lines.join('\n');
+  }
+
+  function wireShare(){
+    $('#btn-share-week').addEventListener('click', function(){
+      var text = buildWeekText();
+      if(navigator.share){
+        navigator.share({ text: text }).catch(function(){});
+      } else {
+        window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank', 'noopener');
+      }
+    });
+  }
+
+  // ---- altar de Día de Muertos ----
+  var ALTAR = [];
+  function altarSeason(){
+    if(/[?&](tema=halloween|altar)/.test(location.search)) return true;
+    var d = new Date(), code = d.getMonth() * 100 + d.getDate();
+    return code >= 901 && code <= 1002;
+  }
+
+  function renderAltar(ready){
+    var box = $('#altar-candles');
+    if(!ready){
+      box.innerHTML = '<p class="altar-empty">El altar se abrirá muy pronto 🌼</p>';
+      $('#altar-form').hidden = true;
+      return;
+    }
+    $('#altar-form').hidden = false;
+    var mine = readJSON('cclt11-altar-mine', []);
+    if(!ALTAR.length){
+      box.innerHTML = '<p class="altar-empty">Aún no hay veladoras. Enciende la primera 🕯️</p>';
+      return;
+    }
+    box.innerHTML = ALTAR.map(function(c){
+      return '<div class="candle">' +
+        '<span class="candle-flame" aria-hidden="true">🕯️</span>' +
+        '<div class="candle-name">' + esc(c.name) + '</div>' +
+        (c.message ? '<div class="candle-msg">“' + esc(c.message) + '”</div>' : '') +
+        (c.author ? '<div class="candle-author">— ' + esc(c.author) + '</div>' : '') +
+        (mine.indexOf(c.id) !== -1 ? '<button type="button" class="candle-remove" data-remove-candle="' + esc(c.id) + '">✕ Quitar</button>' : '') +
+      '</div>';
+    }).join('');
+  }
+
+  function fetchAltar(){
+    if(!supabaseClient){ renderAltar(false); return; }
+    supabaseClient.from('ofrenda').select('*').order('created_at', { ascending: true })
+      .then(function(res){
+        if(res.error){ renderAltar(false); return; }
+        ALTAR = res.data || [];
+        renderAltar(true);
+      });
+  }
+
+  function wireAltar(){
+    if(!altarSeason()) return;
+    $('#tab-btn-altar').hidden = false;
+    fetchAltar();
+    var form = $('#altar-form');
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      if(form.website.value){ form.reset(); return; }
+      var name = form.name.value.trim();
+      if(!name || !supabaseClient) return;
+      var err = form.querySelector('.altar-error');
+      var btn = form.querySelector('button');
+      err.hidden = true;
+      btn.disabled = true;
+      btn.textContent = 'Encendiendo…';
+      supabaseClient.from('ofrenda').insert({
+        name: name,
+        message: form.message.value.trim(),
+        author: form.author.value.trim()
+      }).select().then(function(res){
+        btn.disabled = false;
+        btn.textContent = '🕯️ Encender veladora';
+        if(res.error || !res.data || !res.data.length){
+          err.hidden = false;
+          err.textContent = 'No se pudo encender la veladora. Intenta de nuevo.';
+          return;
+        }
+        var row = res.data[0];
+        ALTAR.push(row);
+        var mine = readJSON('cclt11-altar-mine', []);
+        mine.push(row.id);
+        writeJSON('cclt11-altar-mine', mine);
+        form.reset();
+        renderAltar(true);
+      });
+    });
+    $('#altar-candles').addEventListener('click', function(ev){
+      var btn = ev.target.closest('[data-remove-candle]');
+      if(!btn || !supabaseClient) return;
+      if(!window.confirm('¿Quitar esta veladora del altar?')) return;
+      var id = btn.getAttribute('data-remove-candle');
+      btn.disabled = true;
+      supabaseClient.from('ofrenda').delete().eq('id', id).select().then(function(res){
+        if(res.error || !res.data || !res.data.length){
+          btn.disabled = false;
+          window.alert('No se pudo quitar. Avísale a Delta Kilo para corregirlo.');
+          return;
+        }
+        ALTAR = ALTAR.filter(function(c){ return c.id !== id; });
+        writeJSON('cclt11-altar-mine', readJSON('cclt11-altar-mine', []).filter(function(x){ return x !== id; }));
+        renderAltar(true);
+      });
+    });
+  }
+
   function eventCardHTML(e){
     var cat = CATEGORIES[e.category] || CATEGORIES.admin;
     var tags = '<span class="tag">' + esc(cat.label) + '</span>';
@@ -915,6 +1364,7 @@
         '<div class="event-title">' + esc(e.title) + '</div>' +
         (e.dateStart ? '<div class="event-note">' + esc(fmtDateRangeLabel(e)) + (e.time ? ' · ' + esc(e.time) + ' h' : '') + '</div>' : '') +
         (e.note && !past ? '<div class="event-note">' + esc(e.note) + '</div>' : '') +
+        (!past ? checklistHTML(e) : '') +
         '<div class="tag-row">' + tags + '</div>' +
         '<div class="link-row">' +
           (past ? '' : gcalLink(e)) +
@@ -1006,6 +1456,7 @@
 
   function wireTabs(){
     var panels = { agenda: $('#tab-agenda'), horario: $('#tab-horario'), contactos: $('#tab-contactos') };
+    if(altarSeason()) panels.altar = $('#tab-altar');
     $all('.tab-btn', $('#bottom-tabs')).forEach(function(btn){
       btn.addEventListener('click', function(){
         var tab = btn.getAttribute('data-tab');
@@ -1023,6 +1474,7 @@
   }
 
   function renderAll(){
+    renderAlerts();
     renderHero();
     renderBirthdays();
     renderChips();
@@ -1036,8 +1488,13 @@
 
   wireThemeToggle();
   wireComments();
+  wireChecklists();
+  wireAlerts();
+  wireSubscribe();
+  wireShare();
   renderDayPills();
   renderHorario();
+  wireAltar();
   wireTabs();
 
   fetch('events.json', { cache: 'no-store' })
