@@ -267,14 +267,6 @@
     background:var(--brass-soft);
     border-color:var(--brass);
   }
-  .event-card.past{
-    opacity:.5;
-    padding-top:9px;
-    padding-bottom:9px;
-  }
-  .event-card.past.g11{ background:var(--surface); border-color:var(--line); }
-  .event-card.past .event-title{ text-decoration:line-through; text-decoration-color:var(--muted); }
-  .event-card.past .date-badge .day{ font-size:15px; }
   .date-badge{
     flex:0 0 52px;
     display:flex; flex-direction:column; align-items:center; justify-content:center;
@@ -1356,28 +1348,31 @@
     var cat = CATEGORIES[e.category] || CATEGORIES.admin;
     var tags = '<span class="tag">' + esc(cat.label) + '</span>';
     if(e.highlight) tags += '<span class="tag g11">🎓 Grupo 1.1</span>';
-    var past = isPastEvent(e);
-    var cls = 'event-card' + (!e.dateStart ? ' tbd' : '') + (e.highlight ? ' g11' : '') + (past ? ' past' : '');
+    var cls = 'event-card' + (!e.dateStart ? ' tbd' : '') + (e.highlight ? ' g11' : '');
     return '<div class="' + cls + '" data-cat="' + e.category + '">' +
       dateBadgeHTML(e) +
       '<div class="event-body">' +
         '<div class="event-title">' + esc(e.title) + '</div>' +
         (e.dateStart ? '<div class="event-note">' + esc(fmtDateRangeLabel(e)) + (e.time ? ' · ' + esc(e.time) + ' h' : '') + '</div>' : '') +
-        (e.note && !past ? '<div class="event-note">' + esc(e.note) + '</div>' : '') +
-        (!past ? checklistHTML(e) : '') +
+        (e.note ? '<div class="event-note">' + esc(e.note) + '</div>' : '') +
+        checklistHTML(e) +
         '<div class="tag-row">' + tags + '</div>' +
         '<div class="link-row">' +
-          (past ? '' : gcalLink(e)) +
-          (!past && e.extraLinkUrl ? '<a class="gcal-link extra-link" href="' + esc(e.extraLinkUrl) + '">' + esc(e.extraLinkLabel || 'Ver más') + '</a>' : '') +
+          gcalLink(e) +
+          (e.extraLinkUrl ? '<a class="gcal-link extra-link" href="' + esc(e.extraLinkUrl) + '">' + esc(e.extraLinkLabel || 'Ver más') + '</a>' : '') +
         '</div>' +
         commentsSectionHTML(e) +
       '</div>' +
     '</div>';
   }
 
+  function upcomingEvents(){
+    return sortedEvents().filter(function(e){ return !isPastEvent(e); });
+  }
+
   function filteredEvents(){
-    if(activeFilter === 'todos') return sortedEvents();
-    return sortedEvents().filter(function(e){ return e.category === activeFilter; });
+    if(activeFilter === 'todos') return upcomingEvents();
+    return upcomingEvents().filter(function(e){ return e.category === activeFilter; });
   }
 
   function renderTimeline(){
@@ -1400,15 +1395,16 @@
       noDate.forEach(function(e){ html += eventCardHTML(e); });
     }
     if(!html){
-      html = '<p style="color:var(--muted);font-size:13.5px;text-align:center;padding:24px 0;">No hay actividades en esta categoría.</p>';
+      html = '<p style="color:var(--muted);font-size:13.5px;text-align:center;padding:24px 0;">No hay actividades próximas en esta categoría.</p>';
     }
     $('#timeline').innerHTML = html;
-    if(window.SeasonTheme) window.SeasonTheme.refresh(EVENTS.map(function(e){ return e.id; }));
+    if(window.SeasonTheme) window.SeasonTheme.refresh(upcomingEvents().map(function(e){ return e.id; }));
   }
 
   function renderChips(){
     var present = {};
-    EVENTS.forEach(function(e){ present[e.category] = true; });
+    upcomingEvents().forEach(function(e){ present[e.category] = true; });
+    if(activeFilter !== 'todos' && !present[activeFilter]) activeFilter = 'todos';
     var html = '<button class="chip" data-filter="todos" aria-pressed="' + (activeFilter==='todos') + '"><span class="dot" style="--dot-color:var(--ink)"></span>Todos</button>';
     CAT_ORDER.forEach(function(key){
       if(!present[key]) return;
