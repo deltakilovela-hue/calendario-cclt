@@ -10,7 +10,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:e1@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20260824
 DTEND;VALUE=DATE:20260829
 SUMMARY:Consejo Técnico Escolar
@@ -22,7 +22,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e2@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART:20260827T010000Z
 DTEND:20260827T020000Z
 SUMMARY:Reunión de padres · Primer grado
@@ -34,7 +34,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e3@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART:20260831T144500Z
 DTEND:20260831T154500Z
 SUMMARY:Inicio de clases
@@ -46,7 +46,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e4@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20260831
 DTEND;VALUE=DATE:20260905
 SUMMARY:Semana de apoyo en vialidad
@@ -58,7 +58,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e5@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20260902
 SUMMARY:Toma de foto para credencial
@@ -70,7 +70,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e6@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART:20260903T170000Z
 DTEND:20260903T180000Z
 SUMMARY:Convivencia de Bienvenida
@@ -82,7 +82,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e7@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20260907
 DTEND;VALUE=DATE:20260912
 SUMMARY:Semana de apoyo en vialidad
@@ -94,7 +94,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e8@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART:20260911T150000Z
 DTEND:20260911T160000Z
 SUMMARY:Consejo Escolar de Participación en la Educación
@@ -106,7 +106,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e9@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20260914
 DTEND;VALUE=DATE:20260915
 SUMMARY:Honores a la Bandera
@@ -118,7 +118,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e10@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20260916
 DTEND;VALUE=DATE:20260917
 SUMMARY:Suspensión de labores
@@ -129,7 +129,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e11@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20260917
 DTEND;VALUE=DATE:20260918
 SUMMARY:Convivencia Mexicana
@@ -141,7 +141,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e12@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20260925
 DTEND;VALUE=DATE:20260926
 SUMMARY:Consejo Técnico Escolar
@@ -153,7 +153,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e13@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20260928
 DTEND;VALUE=DATE:20260929
 SUMMARY:Honores a la Bandera
@@ -165,7 +165,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e14@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20260930
 DTEND;VALUE=DATE:20261001
 SUMMARY:Fecha límite: elección de Taller de Artes
@@ -176,7 +176,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e15@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261002
 SUMMARY:Jornada Electoral Estudiantil
@@ -189,7 +189,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e16@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261002
 SUMMARY:Entrega de credencial de estudiante
@@ -200,7 +200,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e17@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261005
 DTEND;VALUE=DATE:20261006
 SUMMARY:Toma de protesta del Comité Estudiantil electo
@@ -211,7 +211,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e18@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261006
 DTEND;VALUE=DATE:20261007
 SUMMARY:Último día para entregar el formato de autorización de vacunaci
@@ -231,7 +231,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:e19@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261008
 DTEND;VALUE=DATE:20261009
 SUMMARY:Jornada de vacunación: SR\, Hepatitis B y VPH
@@ -250,7 +250,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:e20@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART:20261009T020000Z
 DTEND:20261009T030000Z
 SUMMARY:Reunión informativa: Campamentos de verano en el extranjero
@@ -261,7 +261,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e21@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261012
 DTEND;VALUE=DATE:20261013
 SUMMARY:Honores a la Bandera
@@ -273,7 +273,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e22@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261014
 DTEND;VALUE=DATE:20261015
 SUMMARY:Concurso de Spelling Bee de Zona 2026
@@ -284,7 +284,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e23@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261026
 DTEND;VALUE=DATE:20261027
 SUMMARY:Honores a la Bandera
@@ -296,7 +296,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e24@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART:20261029T201000Z
 DTEND:20261029T211000Z
 SUMMARY:Salida anticipada de Secundaria
@@ -313,7 +313,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:e25@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART:20261030T020000Z
 DTEND:20261030T030000Z
 SUMMARY:Festival de Día de Muertos
@@ -325,7 +325,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e26@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261030
 DTEND;VALUE=DATE:20261031
 SUMMARY:Consejo Técnico Escolar
@@ -337,7 +337,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e27@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:Suspensión de labores
@@ -348,7 +348,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e28@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261201
 SUMMARY:Apoyo al Asilo de Ancianos Juan de Zelayeta
@@ -361,7 +361,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e29@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART:20261103T223000Z
 DTEND:20261103T233000Z
 SUMMARY:Inicia preparación para el Concurso de Matemáticas GAU55
@@ -373,7 +373,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e30@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART:20261104T163000Z
 DTEND:20261104T173000Z
 SUMMARY:Concurso de Catrín y Catrina
@@ -385,7 +385,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e31@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART:20261105T223000Z
 DTEND:20261105T233000Z
 SUMMARY:Inicio del Club de Lectura y Escritura
@@ -397,7 +397,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e32@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261109
 DTEND;VALUE=DATE:20261114
 SUMMARY:Periodo de Evaluación del Primer Trimestre
@@ -414,7 +414,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:e33@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261109
 DTEND;VALUE=DATE:20261110
 SUMMARY:Honores a la Bandera
@@ -426,7 +426,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e34@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261111
 DTEND;VALUE=DATE:20261115
 SUMMARY:ExpoCiencias Nacional 2026
@@ -437,7 +437,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e35@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261116
 DTEND;VALUE=DATE:20261117
 SUMMARY:Suspensión de labores
@@ -448,7 +448,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e36@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261123
 DTEND;VALUE=DATE:20261124
 SUMMARY:Honores a la Bandera
@@ -460,7 +460,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e37@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART:20261126T010000Z
 DTEND:20261126T020000Z
 SUMMARY:Taller «Padres con propósito» · Primer grado
@@ -476,7 +476,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:e38@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART:20261126T020000Z
 DTEND:20261126T030000Z
 SUMMARY:Entrega de calificaciones del Trimestre I · Primer grado
@@ -487,7 +487,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e39@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261128
 SUMMARY:Consejo Técnico Escolar
@@ -499,7 +499,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e40@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261128
 SUMMARY:Ensayo para el Festival Navideño de Idiomas
@@ -510,7 +510,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e41@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
 SUMMARY:Concurso de Matemáticas GAU55
@@ -521,7 +521,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e42@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261210
 DTEND;VALUE=DATE:20261211
 SUMMARY:Festival Navideño de Idiomas 🎄
@@ -534,7 +534,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e43@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261216
 DTEND;VALUE=DATE:20261217
 SUMMARY:Posada de los chicos 🥳
@@ -546,7 +546,7 @@ URL:https://calendario-cclt.deltakilo.com.mx
 END:VEVENT
 BEGIN:VEVENT
 UID:e44@calendario-cclt.deltakilo.com.mx
-DTSTAMP:20261106T011140Z
+DTSTAMP:20261106T012833Z
 DTSTART;VALUE=DATE:20261217
 DTEND;VALUE=DATE:20261218
 SUMMARY:Último día de clases de diciembre

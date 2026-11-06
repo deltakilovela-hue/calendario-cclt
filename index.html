@@ -347,12 +347,84 @@
     padding:9px 4px 8px;
     font-family:var(--font-body); font-size:11px; font-weight:600; color:var(--muted);
   }
+  .tab-btn[hidden]{ display:none; }
   .tab-btn .tab-icon{ font-size:19px; line-height:1; }
   .tab-btn[aria-selected="true"]{ color:var(--brass-ink); }
 
   main[hidden], section.tab-content[hidden]{ display:none; }
-  #tab-horario, #tab-contactos, #tab-altar{ padding:16px 20px 0; }
+  #tab-horario, #tab-contactos, #tab-altar, #tab-examenes{ padding:16px 20px 0; }
   #tab-altar{ padding-bottom:72px; }
+
+  /* ---- exámenes ---- */
+  .exam-header{
+    background:linear-gradient(165deg, color-mix(in srgb, var(--cat-reunion) 16%, var(--surface)), var(--surface) 70%);
+    border:1px solid var(--line); border-radius:var(--radius);
+    padding:16px 18px; margin-bottom:14px; box-shadow:var(--shadow);
+  }
+  .exam-eyebrow{
+    font-family:var(--font-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--cat-reunion); font-weight:700; margin-bottom:6px;
+  }
+  .exam-title{ font-family:var(--font-display); font-size:20px; font-weight:700; color:var(--ink); text-wrap:balance; }
+  .exam-sub{ font-size:13px; color:var(--muted); margin-top:3px; }
+  .exam-progress{ margin-top:12px; }
+  .exam-progress-bar{ height:7px; border-radius:99px; background:var(--line); overflow:hidden; }
+  .exam-progress-bar span{ display:block; height:100%; background:var(--cat-convivencia); border-radius:99px; transition:width .3s; }
+  .exam-progress-txt{ font-family:var(--font-mono); font-size:11.5px; color:var(--muted); margin-top:5px; }
+  .day-pill .pill-count{ font-family:var(--font-mono); font-size:10.5px; opacity:.75; margin-left:4px; }
+  .exam-item{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-sm);
+    padding:12px 14px; margin-bottom:10px; position:relative; overflow:hidden;
+  }
+  .exam-item::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--ex-color, var(--muted)); }
+  .exam-item[data-type="examen"]{ --ex-color:var(--cat-suspension); }
+  .exam-item[data-type="proyecto"]{ --ex-color:var(--cat-consejo); }
+  .exam-item[data-type="actividades"]{ --ex-color:var(--cat-convivencia); }
+  .exam-item.studied{ border-color:color-mix(in srgb, var(--cat-convivencia) 55%, var(--line)); }
+  .exam-row{ display:flex; align-items:flex-start; gap:10px; padding-left:4px; }
+  .exam-main{ flex:1; min-width:0; }
+  .exam-time{ font-family:var(--font-mono); font-size:11.5px; color:var(--muted); }
+  .exam-subject{ font-size:15px; font-weight:700; color:var(--ink); margin-top:1px; }
+  .exam-note{ font-size:12.5px; color:var(--muted); margin-top:2px; }
+  .exam-type{
+    flex:0 0 auto; font-size:10.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+    padding:3px 8px; border-radius:99px; color:var(--ex-color);
+    background:color-mix(in srgb, var(--ex-color) 14%, transparent);
+  }
+  .exam-actions{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; padding-left:4px; }
+  .exam-btn{
+    font-family:var(--font-body); font-size:12.5px; font-weight:600; color:var(--ink);
+    background:var(--surface-2); border:1px solid var(--line); border-radius:8px; padding:6px 10px; cursor:pointer;
+  }
+  .exam-btn[aria-expanded="true"]{ border-color:var(--cat-reunion); color:var(--cat-reunion); }
+  .exam-btn.studied-btn[aria-pressed="true"]{ background:color-mix(in srgb, var(--cat-convivencia) 16%, var(--surface)); border-color:var(--cat-convivencia); color:var(--cat-convivencia); }
+  .exam-pending{ font-size:12.5px; color:var(--muted); font-style:italic; margin-top:8px; padding-left:4px; }
+  .temario{ margin-top:12px; padding:12px 12px 4px; border-top:1px dashed var(--line); }
+  .temario[hidden]{ display:none; }
+  .temario-intro{ font-size:12.5px; color:var(--muted); margin:0 0 10px; }
+  .t-heading{ font-family:var(--font-display); font-size:14.5px; font-weight:700; color:var(--ink); margin:14px 0 8px; }
+  .t-heading:first-child{ margin-top:0; }
+  .t-text{ font-size:13.5px; color:var(--ink); margin:0 0 8px; }
+  .t-def{ font-size:13.5px; color:var(--ink); margin:0 0 9px; line-height:1.45; }
+  .t-def b{ color:var(--cat-reunion); }
+  .t-example{
+    font-size:13px; color:var(--ink); background:var(--surface-2); border-left:3px solid var(--cat-reunion);
+    border-radius:6px; padding:7px 10px; margin:0 0 10px; display:flex; flex-direction:column; gap:3px;
+  }
+  .t-qa{
+    border:1px solid var(--line); border-radius:9px; margin:0 0 8px; background:var(--surface-2);
+  }
+  .t-qa summary{
+    cursor:pointer; list-style:none; padding:9px 11px; font-size:13.5px; font-weight:600; color:var(--ink);
+    display:flex; gap:8px;
+  }
+  .t-qa summary::-webkit-details-marker{ display:none; }
+  .t-qa summary::before{ content:"❓"; flex:0 0 auto; }
+  .t-qa[open] summary::before{ content:"💡"; }
+  .t-qa .t-answer{ padding:0 11px 10px 33px; font-size:13.5px; color:var(--cat-convivencia); font-weight:600; }
+  .t-qa .t-answer ul{ margin:0; padding-left:18px; }
+  .qa-tools{ display:flex; gap:8px; margin:0 0 10px; }
+  .exam-foot{ font-size:11.5px; color:var(--muted); text-align:center; margin:14px 0 0; }
 
   /* ---- alertas ---- */
   #alerts{ display:flex; flex-direction:column; gap:8px; margin-bottom:14px; }
@@ -700,6 +772,14 @@
     <p class="credit" style="text-align:center;margin-top:16px;">Hecho por Delta Kilo</p>
   </section>
 
+  <section id="tab-examenes" class="tab-content" hidden>
+    <div id="exam-header" class="exam-header"></div>
+    <nav class="day-pills" id="exam-day-pills" aria-label="Elegir día de examen"></nav>
+    <div id="exam-list"></div>
+    <p class="exam-foot">Calendario y temarios tomados de la plataforma UNOi y de los avisos del colegio. Si un temario cambia, avísanos para actualizarlo.</p>
+    <p class="credit" style="text-align:center;margin-top:10px;">Hecho por Delta Kilo</p>
+  </section>
+
   <section id="tab-altar" class="tab-content" hidden>
     <div class="papel-picado" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
     <h2 class="altar-title">Altar del grupo 1.1</h2>
@@ -720,6 +800,7 @@
     <button type="button" class="tab-btn" data-tab="agenda" aria-selected="true"><span class="tab-icon">📅</span>Agenda</button>
     <button type="button" class="tab-btn" data-tab="horario" aria-selected="false"><span class="tab-icon">🕐</span>Horario</button>
     <button type="button" class="tab-btn" data-tab="contactos" aria-selected="false"><span class="tab-icon">📞</span>Contactos</button>
+    <button type="button" class="tab-btn" data-tab="examenes" aria-selected="false" id="tab-btn-examenes" hidden><span class="tab-icon">📝</span>Exámenes</button>
     <button type="button" class="tab-btn" data-tab="altar" aria-selected="false" id="tab-btn-altar" hidden><span class="tab-icon">🕯️</span>Altar</button>
   </nav>
 </div>
@@ -1392,8 +1473,172 @@
     $('#horario-list').innerHTML = html;
   }
 
+  // ---- exámenes trimestrales ----
+  var EXAMS = null;
+  var examDay = null;
+  var OPEN_TEMARIO = {};
+  var EXAM_TYPE_LABEL = { examen: 'Examen', proyecto: 'Proyecto', actividades: 'Actividades' };
+
+  function examKey(day, i){ return EXAMS.start + ':' + day.date + ':' + i; }
+  function getStudied(){ return readJSON('cclt11-studied', {}); }
+
+  function examCounts(){
+    var total = 0, done = 0, studied = getStudied();
+    EXAMS.days.forEach(function(day){
+      day.items.forEach(function(it, i){
+        if(it.type !== 'examen') return;
+        total++;
+        if(studied[examKey(day, i)]) done++;
+      });
+    });
+    return { total: total, done: done };
+  }
+
+  function renderExamHeader(){
+    var today = startOfDay(new Date());
+    var start = parseDate(EXAMS.start), end = parseDate(EXAMS.end);
+    var when;
+    if(today < start){
+      var d = daysBetween(today, start);
+      when = d === 1 ? 'Empiezan mañana' : 'Faltan ' + d + ' días';
+    } else if(today <= end){
+      when = 'Semana de exámenes en curso';
+    } else {
+      when = 'Periodo de exámenes terminado';
+    }
+    var c = examCounts();
+    var pct = c.total ? Math.round(c.done / c.total * 100) : 0;
+    $('#exam-header').innerHTML =
+      '<div class="exam-eyebrow">📝 ' + esc(when) + '</div>' +
+      '<div class="exam-title">' + esc(EXAMS.title) + '</div>' +
+      '<div class="exam-sub">' + esc(fmtDateRangeLabel({ dateStart: EXAMS.start, dateEnd: EXAMS.end })) + ' · Grupo 1.1</div>' +
+      '<div class="exam-progress"><div class="exam-progress-bar"><span style="width:' + pct + '%"></span></div>' +
+      '<div class="exam-progress-txt">' + (c.done === c.total && c.total ? '🎉 ¡Todo repasado!' : 'Repasado: ' + c.done + ' de ' + c.total + ' exámenes') + '</div></div>';
+  }
+
+  function renderExamPills(){
+    $('#exam-day-pills').innerHTML = EXAMS.days.map(function(day){
+      var d = parseDate(day.date);
+      var n = day.items.filter(function(it){ return it.type === 'examen'; }).length;
+      var label = WEEKDAYS[d.getDay()].charAt(0).toUpperCase() + WEEKDAYS[d.getDay()].slice(1) + ' ' + d.getDate();
+      return '<button type="button" class="day-pill" data-exam-day="' + day.date + '" aria-pressed="' + (examDay === day.date) + '">' +
+        esc(label) + (n ? '<span class="pill-count">· ' + n + '</span>' : '') + '</button>';
+    }).join('');
+  }
+
+  function temarioBlocksHTML(t){
+    var html = t.intro ? '<p class="temario-intro">' + esc(t.intro) + '</p>' : '';
+    var hasQA = t.blocks.some(function(b){ return b.type === 'qa'; });
+    if(hasQA) html += '<div class="qa-tools"><button type="button" class="exam-btn" data-qa-all="open">Mostrar todas</button><button type="button" class="exam-btn" data-qa-all="close">Ocultar todas</button></div>';
+    t.blocks.forEach(function(b){
+      if(b.type === 'heading') html += '<div class="t-heading">' + esc(b.text) + '</div>';
+      else if(b.type === 'text') html += '<p class="t-text">' + esc(b.text) + '</p>';
+      else if(b.type === 'def') html += '<p class="t-def"><b>' + esc(b.term) + ':</b> ' + esc(b.text) + '</p>';
+      else if(b.type === 'example') html += '<div class="t-example">' + b.lines.map(function(l){ return '<span>' + esc(l) + '</span>'; }).join('') + '</div>';
+      else if(b.type === 'qa'){
+        var a = Array.isArray(b.a) ? '<ul>' + b.a.map(function(x){ return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' : esc(b.a);
+        html += '<details class="t-qa"><summary>' + esc(b.q) + '</summary><div class="t-answer">' + a + '</div></details>';
+      }
+    });
+    return html;
+  }
+
+  function renderExamList(){
+    var day = EXAMS.days.filter(function(d){ return d.date === examDay; })[0];
+    if(!day){ $('#exam-list').innerHTML = ''; return; }
+    var studied = getStudied();
+    $('#exam-list').innerHTML = day.items.map(function(it, i){
+      var key = examKey(day, i);
+      var t = it.temario && EXAMS.temarios[it.temario];
+      var isExam = it.type === 'examen';
+      var done = !!studied[key];
+      var open = !!OPEN_TEMARIO[key];
+      var actions = '';
+      if(t) actions += '<button type="button" class="exam-btn" data-temario="' + esc(key) + '" aria-expanded="' + open + '">📖 ' + (open ? 'Ocultar temario' : 'Ver temario') + '</button>';
+      if(isExam) actions += '<button type="button" class="exam-btn studied-btn" data-studied="' + esc(key) + '" aria-pressed="' + done + '">' + (done ? '✅ Ya repasé' : '☐ Marcar como repasado') + '</button>';
+      var pending = '';
+      if(isExam && !t) pending = '<div class="exam-pending">Temario aún no disponible en la plataforma.</div>';
+      if(!isExam) pending = '<div class="exam-pending">Se evalúa con ' + (it.type === 'proyecto' ? 'proyecto' : 'actividades de clase') + ', no hay examen escrito.</div>';
+      return '<div class="exam-item' + (done ? ' studied' : '') + '" data-type="' + esc(it.type) + '">' +
+        '<div class="exam-row"><div class="exam-main">' +
+          '<div class="exam-time">' + esc(it.time) + '</div>' +
+          '<div class="exam-subject">' + esc(it.subject) + '</div>' +
+          (it.note ? '<div class="exam-note">' + esc(it.note) + '</div>' : '') +
+        '</div><span class="exam-type">' + esc(EXAM_TYPE_LABEL[it.type] || it.type) + '</span></div>' +
+        pending +
+        (actions ? '<div class="exam-actions">' + actions + '</div>' : '') +
+        (t ? '<div class="temario"' + (open ? '' : ' hidden') + '>' + (open ? temarioBlocksHTML(t) : '') + '</div>' : '') +
+      '</div>';
+    }).join('');
+  }
+
+  function renderExams(){
+    renderExamHeader();
+    renderExamPills();
+    renderExamList();
+  }
+
+  function pickExamDay(){
+    var today = startOfDay(new Date());
+    var next = EXAMS.days.filter(function(d){ return parseDate(d.date) >= today; })[0];
+    return (next || EXAMS.days[0]).date;
+  }
+
+  function wireExams(){
+    $('#exam-day-pills').addEventListener('click', function(ev){
+      var btn = ev.target.closest('[data-exam-day]');
+      if(!btn) return;
+      examDay = btn.getAttribute('data-exam-day');
+      renderExamPills();
+      renderExamList();
+    });
+    $('#exam-list').addEventListener('click', function(ev){
+      var tBtn = ev.target.closest('[data-temario]');
+      if(tBtn){
+        var key = tBtn.getAttribute('data-temario');
+        OPEN_TEMARIO[key] = !OPEN_TEMARIO[key];
+        renderExamList();
+        return;
+      }
+      var sBtn = ev.target.closest('[data-studied]');
+      if(sBtn){
+        var k = sBtn.getAttribute('data-studied');
+        var studied = getStudied();
+        if(studied[k]) delete studied[k]; else studied[k] = true;
+        writeJSON('cclt11-studied', studied);
+        var done = !!studied[k];
+        sBtn.setAttribute('aria-pressed', done);
+        sBtn.textContent = done ? '✅ Ya repasé' : '☐ Marcar como repasado';
+        sBtn.closest('.exam-item').classList.toggle('studied', done);
+        renderExamHeader();
+        return;
+      }
+      var all = ev.target.closest('[data-qa-all]');
+      if(all){
+        var open = all.getAttribute('data-qa-all') === 'open';
+        $all('.t-qa', all.closest('.temario')).forEach(function(d){ d.open = open; });
+      }
+    });
+  }
+
+  function loadExams(){
+    return fetch('examenes.json', { cache: 'no-store' })
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(data){
+        if(!data || !data.days) return false;
+        var forced = /[?&]tab=examenes/.test(location.search);
+        if(!forced && startOfDay(new Date()) > parseDate(data.showUntil || data.end)) return false;
+        EXAMS = data;
+        examDay = pickExamDay();
+        $('#tab-btn-examenes').hidden = false;
+        renderExams();
+        return true;
+      })
+      .catch(function(){ return false; });
+  }
+
   function wireTabs(){
-    var panels = { agenda: $('#tab-agenda'), horario: $('#tab-horario'), contactos: $('#tab-contactos') };
+    var panels = { agenda: $('#tab-agenda'), horario: $('#tab-horario'), contactos: $('#tab-contactos'), examenes: $('#tab-examenes') };
     if(altarSeason()) panels.altar = $('#tab-altar');
     $all('.tab-btn', $('#bottom-tabs')).forEach(function(btn){
       btn.addEventListener('click', function(){
@@ -1403,12 +1648,16 @@
         try{ sessionStorage.setItem('cclt11-tab', tab); }catch(e){}
       });
     });
+    var urlTab = (location.search.match(/[?&]tab=(\w+)/) || [])[1];
     var saved = null;
     try{ saved = sessionStorage.getItem('cclt11-tab'); }catch(e){}
-    if(saved && panels[saved]){
-      var btn = $('.tab-btn[data-tab="' + saved + '"]', $('#bottom-tabs'));
-      if(btn) btn.click();
-    }
+    restoreTab(urlTab || saved);
+  }
+
+  function restoreTab(name){
+    if(!name) return;
+    var btn = $('.tab-btn[data-tab="' + name + '"]', $('#bottom-tabs'));
+    if(btn && !btn.hidden) btn.click();
   }
 
   function renderAll(){
@@ -1432,7 +1681,15 @@
   renderDayPills();
   renderHorario();
   wireAltar();
+  wireExams();
   wireTabs();
+  loadExams().then(function(ok){
+    if(!ok) return;
+    var urlTab = (location.search.match(/[?&]tab=(\w+)/) || [])[1];
+    var saved = null;
+    try{ saved = sessionStorage.getItem('cclt11-tab'); }catch(e){}
+    if((urlTab || saved) === 'examenes') restoreTab('examenes');
+  });
 
   fetch('events.json', { cache: 'no-store' })
     .then(function(r){ return r.json(); })

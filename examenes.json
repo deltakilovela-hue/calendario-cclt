@@ -1,0 +1,138 @@
+{
+  "title": "Evaluación del Primer Trimestre",
+  "start": "2026-11-09",
+  "end": "2026-11-13",
+  "showUntil": "2026-11-13",
+  "days": [
+    {
+      "date": "2026-11-09",
+      "items": [
+        { "time": "8:35 – 9:25", "subject": "Inglés", "type": "examen", "temario": "ingles" },
+        { "time": "10:40 – 11:30", "subject": "Francés", "type": "examen", "temario": "frances" },
+        { "time": "12:20 – 1:10", "subject": "Tecnología", "type": "actividades" }
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "items": [
+        { "time": "8:35 – 9:25", "subject": "Educación Física", "type": "proyecto" },
+        { "time": "10:40 – 11:30", "subject": "Matemáticas", "type": "examen", "temario": "matematicas" }
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "items": [
+        { "time": "7:45 – 8:35", "subject": "Historia", "type": "examen", "temario": "historia" },
+        { "time": "9:25 – 10:15", "subject": "Educación Socioemocional", "type": "proyecto" },
+        { "time": "12:20 – 1:10", "subject": "Actitud Sustentable", "type": "proyecto" }
+      ]
+    },
+    {
+      "date": "2026-11-12",
+      "items": [
+        { "time": "8:35 – 9:25", "subject": "Lengua Materna", "type": "examen", "temario": "lengua" },
+        { "time": "11:30 – 12:20", "subject": "Formación Cívica y Ética", "type": "examen", "temario": "fcye" }
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "items": [
+        { "time": "8:35 – 9:25", "subject": "Geografía", "type": "examen", "temario": "geografia" },
+        { "time": "10:40 – 11:30", "subject": "Ciencias Biología", "type": "examen", "temario": "biologia" },
+        { "time": "1:25 – 2:10", "subject": "Artes", "type": "examen", "note": "Teatro y Danza: examen · Música: actividades", "temario": "artes" }
+      ]
+    }
+  ],
+  "temarios": {
+    "frances": {
+      "title": "Francés · Le pluriel des noms",
+      "blocks": [
+        { "type": "text", "text": "En français, la formation du pluriel des noms suit des règles générales et quelques exceptions." },
+        { "type": "heading", "text": "1. La règle générale" },
+        { "type": "text", "text": "La plupart des noms prennent un -s à la fin. (La mayoría de los sustantivos agregan una -s al final.)" },
+        { "type": "example", "lines": ["un chat → des chats", "une maison → des maisons"] },
+        { "type": "heading", "text": "2. Les noms se terminant par -s, -x ou -z" },
+        { "type": "text", "text": "Ils restent invariables (ils ne changent pas). (Los que terminan en -s, -x o -z no cambian en plural.)" },
+        { "type": "example", "lines": ["un nez → des nez", "une souris → des souris", "un prix → des prix"] }
+      ]
+    },
+    "fcye": {
+      "title": "Formación Cívica y Ética",
+      "blocks": [
+        { "type": "text", "text": "Tienes 4 keys para repasar y tus glosarios. Contesta los ejercicios de las keys si te falta alguno; si te falta algún glosario de las palabras clave, estás a tiempo de repasarlo. (Se revisan la próxima semana.)" },
+        { "type": "def", "term": "Big Challenge · Dignidad y derechos humanos", "text": "Dignidad, derechos humanos, integridad personal, trato digno." },
+        { "type": "def", "term": "KEY Esfera 1 · El significado de ser adolescente en la actualidad", "text": "Adolescencia, sexualidad, autocuidado." },
+        { "type": "def", "term": "KEY Esfera 2 · Convivencia juvenil y diversidad de expresiones", "text": "Identidad, culturas juveniles, discriminación." },
+        { "type": "def", "term": "KEY Esfera 3 · Libertad y autonomía", "text": "Libertad, autonomía, valores, asertividad." }
+      ]
+    },
+    "lengua": {
+      "title": "Lengua Materna",
+      "blocks": [
+        { "type": "heading", "text": "Esfera 02 · Artículo de divulgación científica" },
+        { "type": "def", "term": "Investigar", "text": "Es indagar para conocer algo." },
+        { "type": "def", "term": "Investigación documental", "text": "Consiste en buscar información sobre un tema en libros, revistas, periódicos, películas, mapas y otros documentos." },
+        { "type": "def", "term": "Etapas de la investigación documental", "text": "Planeación, búsqueda, selección y registro." },
+        { "type": "def", "term": "Fuentes de información", "text": "Son todos aquellos recursos (documentos, personas, instituciones u objetos) de los que se obtienen datos para responder a una necesidad de conocimiento o investigación." },
+        { "type": "def", "term": "Idea principal", "text": "Es el mensaje central, la base o el núcleo del texto. Sin ella, el escrito pierde su sentido y no se comprende. Es indispensable y autónoma; no depende de otras ideas." },
+        { "type": "def", "term": "Ideas secundarias", "text": "Son detalles, argumentos, causas, consecuencias, anécdotas o ejemplos que acompañan a la idea principal. Amplían, explican, detallan o demuestran la idea principal." },
+        { "type": "def", "term": "Oración temática", "text": "Es el enunciado principal que resume el concepto central o la idea de un párrafo." },
+        { "type": "def", "term": "Recursos gráficos", "text": "Son elementos visuales (como imágenes, iconos, tablas, diagramas o tipografías) que sirven para organizar, ilustrar y transmitir información de manera clara, rápida y atractiva." },
+        { "type": "def", "term": "Texto de divulgación científica", "text": "Es un escrito de carácter informativo que busca explicar investigaciones, descubrimientos o conceptos científicos a un público general, sin necesidad de que el lector sea un especialista en el tema." },
+        { "type": "def", "term": "Cohesión", "text": "Es una propiedad fundamental del texto que le proporciona sentido tanto a los enunciados (frases u oraciones) como al conjunto de estos." },
+        { "type": "def", "term": "Coherencia", "text": "Es un recurso lingüístico formal que tiene la finalidad de organizar el texto de manera tal que las ideas presenten conexión entre sí para entregar un mensaje comprensible." },
+        { "type": "def", "term": "Pronombres", "text": "Vocablos que sustituyen a un sustantivo (nombres de personas, animales, lugares u objetos), pues aluden a este sin nombrarlo; deben concordar en persona y número con el sustantivo." },
+        { "type": "example", "lines": ["Julián vendrá a cenar con nosotros. Julián traerá el postre.", "Julián vendrá a cenar con nosotros. Él traerá el postre."] },
+        { "type": "def", "term": "Sinónimos", "text": "Son palabras que tienen un significado igual o muy parecido, pero se escriben y se pronuncian de forma diferente. Sirven para evitar la repetición de palabras, enriquecer el lenguaje y ampliar el vocabulario, y matizar las ideas según el contexto o la intención." },
+        { "type": "def", "term": "Elipsis", "text": "Consiste en omitir una o más palabras de una oración que, gramaticalmente, deberían estar presentes, pero sin las cuales se comprende perfectamente el sentido. La elisión se señala con la coma elíptica." },
+        { "type": "example", "lines": ["Juan viajó a Zacatecas y Paola viajó a Guanajuato.", "Juan viajó a Zacatecas y Paola, a Guanajuato."] },
+        { "type": "heading", "text": "Esfera 03 · La antología y textos literarios tradicionales" },
+        { "type": "def", "term": "Textos literarios tradicionales", "text": "Son obras originadas en la tradición oral que se transmiten de generación en generación y son portadores de los valores del pueblo donde surgen." },
+        { "type": "def", "term": "Género", "text": "Es una categoría que incluye un conjunto de obras literarias que cumplen con un modelo de escritura, objetivo y características formales." },
+        { "type": "def", "term": "Subgénero", "text": "Grupo de obras que pertenecen al mismo género, pero que son diferentes en ciertos rasgos, como la forma o el tratar un tema particular." },
+        { "type": "def", "term": "Tema", "text": "Es el asunto central que se trata en una obra." },
+        { "type": "def", "term": "Género narrativo", "text": "Se compone de textos narrativos tradicionales: relatos que cuentan una historia en la que algo (acción) le sucede a alguien (personaje), en un tiempo y lugar determinados." },
+        { "type": "def", "term": "Género lírico", "text": "Se integra por composiciones tradicionales escritas en verso o prosa; expresa los sentimientos, emociones y pensamientos del autor o de una voz poética, con un lenguaje metafórico o poético." },
+        { "type": "def", "term": "Subgéneros literarios", "text": "Son divisiones específicas dentro de un género, agrupados según su estructura, contenido y tono." },
+        { "type": "def", "term": "Subgéneros narrativos", "text": "Formas en las que se clasifican las obras que cuentan una historia a través de la voz de un narrador: novela, cuento, mito, leyenda, fábula, epopeya, crónica." },
+        { "type": "def", "term": "Subgéneros líricos", "text": "Formas que adopta la poesía para expresar la subjetividad, las emociones y los sentimientos del autor o del hablante lírico: corrido, copla, trabalenguas, refranes, pregones, cantar de gesta, oda, sátira, canción, etc." },
+        { "type": "def", "term": "Antología", "text": "Colección de obras seleccionadas con base en un criterio determinado." },
+        { "type": "def", "term": "Antología literaria", "text": "Recopilación de obras literarias (poemas, cuentos, novelas cortas, etc.) seleccionadas por un tema, un género o un autor." },
+        { "type": "def", "term": "Antologador", "text": "Persona encargada de investigar y recopilar el material para una antología." },
+        { "type": "def", "term": "Estructura de una antología", "text": "A) Índice: lista de los textos y su ubicación. B) Contenido: los textos seleccionados. C) Prólogo: texto del antologador que presenta la antología, explica el criterio de selección y se coloca antes de los textos." },
+        { "type": "def", "term": "Partes del prólogo", "text": "1) Introducción: presenta la antología. 2) Desarrollo: explica y justifica el criterio de selección. 3) Conclusión: reafirma los motivos e invita a comenzar la lectura." },
+        { "type": "def", "term": "Bibliografía", "text": "Conjunto ordenado de fuentes documentales (libros, artículos, sitios web, videos o manuscritos) que se consultan o citan para respaldar un trabajo de investigación o académico." }
+      ]
+    },
+    "historia": {
+      "title": "Historia de México",
+      "intro": "Toca cada pregunta para ver la respuesta. Ideal para repasar en modo pregunta-respuesta.",
+      "blocks": [
+        { "type": "heading", "text": "Big Challenge" },
+        { "type": "qa", "q": "¿Cuáles son algunos de los desafíos actuales que ponen en peligro el futuro de la humanidad?", "a": "Problemas ambientales." },
+        { "type": "qa", "q": "¿Cuáles son los objetivos principales de la Organización de las Naciones Unidas para la Agricultura y la Alimentación (FAO)?", "a": "Mejorar las actividades agrícolas, forestales y pesqueras en países en desarrollo." },
+        { "type": "qa", "q": "¿Cuándo y dónde fueron establecidas las oficinas centrales de la ONU?", "a": "En Nueva York, Estados Unidos de América, en 1945." },
+        { "type": "qa", "q": "¿Qué organismos creó la ONU para impulsar el cumplimiento de los derechos humanos en el mundo?", "a": "Agencias internacionales." },
+        { "type": "qa", "q": "Se crea en 1945. Promueve acciones para asegurar el abasto alimenticio de toda la población.", "a": "FAO" },
+        { "type": "qa", "q": "Organismo del Alto Comisionado de las Naciones Unidas; protege a los refugiados y desplazados por persecuciones o conflictos y promueve soluciones duraderas mediante el reasentamiento voluntario.", "a": "ACNUR" },
+        { "type": "qa", "q": "Organismo fundado en 1946 por la ONU para la atención de la infancia.", "a": "UNICEF" },
+        { "type": "heading", "text": "Esfera 1" },
+        { "type": "qa", "q": "¿Cuál es el orden de las categorías de fuentes históricas según su clasificación principal?", "a": "Primarias escritas, primarias no escritas, secundarias." },
+        { "type": "qa", "q": "Son las fuentes elaboradas en la época y lugar que se desea conocer.", "a": "Fuentes primarias" },
+        { "type": "qa", "q": "Selecciona las características de la historicidad.", "a": ["Condición de los individuos que forman parte de un contexto o tiempo específico.", "Depende en gran medida de la colectividad, por ejemplo, una generación o época."] },
+        { "type": "qa", "q": "Son las fuentes elaboradas con posterioridad, generalmente por personas que no estuvieron involucradas directamente en los hechos históricos.", "a": "Fuentes secundarias" },
+        { "type": "qa", "q": "¿Cuáles son los pasos que realiza el historiador para elaborar una historiografía?", "a": ["1) Recopila testimonios históricos a partir de fuentes históricas.", "2) Organiza la información adquirida para analizarla.", "3) Agrupa los hechos que están interrelacionados.", "4) Elabora un relato sobre el acontecimiento estudiado."] },
+        { "type": "qa", "q": "Son testimonios que pasan de generación en generación.", "a": "Fuentes orales" },
+        { "type": "qa", "q": "Ofrecen información visual a través de la imagen: pinturas, fotografías, películas, grabados, dibujos, caricaturas, carteles, mapas, planos e incluso esculturas.", "a": "Fuentes iconográficas" },
+        { "type": "qa", "q": "Tienen como base el registro de lenguaje escrito: libros, revistas, correspondencia, diarios, leyes, actas, decretos, tratados, planes, entre otros.", "a": "Fuentes escritas" },
+        { "type": "heading", "text": "Esfera 2" },
+        { "type": "qa", "q": "¿Cuáles son las ciencias mayores que ayudan a la historia?", "a": ["Antropología", "Arqueología", "Economía", "Filosofía", "Geografía", "Lingüística", "Sociología"] },
+        { "type": "qa", "q": "¿Qué características tienen las ciencias mayores o autónomas que las hacen útiles para el estudio histórico?", "a": "Son disciplinas independientes con métodos y objetivos propios." },
+        { "type": "qa", "q": "¿Qué ciencias auxiliares de la Historia son útiles para analizar y comprender la vida cotidiana de una ciudad novohispana en el siglo XVIII?", "a": "Arqueología, numismática, etnografía." },
+        { "type": "qa", "q": "¿Qué etapa es crucial para el historiador una vez que ha recopilado las fuentes históricas?", "a": "Análisis y síntesis de la información." },
+        { "type": "qa", "q": "La etapa del análisis de fuentes se divide en dos aspectos:", "a": "Externo e interno." },
+        { "type": "qa", "q": "Enlista las ciencias menores (ciencias específicas o disciplinas) subordinadas a la Historia.", "a": ["Cartografía", "Cronología", "Epigrafía", "Genealogía", "Iconografía", "Numismática"] }
+      ]
+    }
+  }
+}

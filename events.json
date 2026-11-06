@@ -315,7 +315,9 @@
       "note": "Semana de exámenes.",
       "highlight": false,
       "alert": true,
-      "alertText": "Semana de exámenes del primer trimestre"
+      "alertText": "Semana de exámenes del primer trimestre",
+      "extraLinkUrl": "?tab=examenes",
+      "extraLinkLabel": "📝 Ver calendario y temarios"
     },
     {
       "id": "e33",
