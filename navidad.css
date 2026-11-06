@@ -155,7 +155,7 @@
   font-family:var(--font-mono); font-size:12px; color:var(--brass-ink);
 }
 
-/* mono de nieve y botón de la villa */
+/* mono de nieve y botón del juego */
 #xmas-snowman{
   position:fixed; bottom:82px; left:calc(50% + min(50vw, 280px) - 62px); z-index:9;
   font-size:38px; line-height:1; background:none; border:none; padding:6px; cursor:pointer;
@@ -206,61 +206,70 @@
   .xmas-sleigh{ display:none; }
 }
 
-/* ===== Villa de Santa (juego) ===== */
-#villa{
+/* ===== Trineo de Santa (juego tipo snake) ===== */
+#trineo{
   position:fixed; inset:0; z-index:40; display:flex; flex-direction:column;
-  background:#081125; color:#fff; font-family:var(--font-body);
+  background:#5c0d15; color:#fff; font-family:var(--font-body);
 }
-#villa[hidden]{ display:none; }
-.villa-bar{
-  display:flex; align-items:center; gap:8px; padding:10px 12px;
+#trineo[hidden]{ display:none; }
+.tr-bar{
+  display:flex; align-items:center; gap:6px; padding:10px 12px;
   padding-top:calc(10px + env(safe-area-inset-top));
-  background:linear-gradient(180deg, #102347, #0b1833);
-  border-bottom:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(180deg, #145a32, #0e4426);
+  border-bottom:2px solid #ffcf4a;
 }
-.villa-title{ font-family:'Mountains of Christmas', Georgia, serif; font-size:21px; font-weight:700; flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.villa-chips{ display:flex; gap:6px; }
-.vt-short{ display:none; }
-@media (max-width:420px){
-  .vt-long{ display:none; }
-  .vt-short{ display:inline; }
+.tr-title{ font-family:'Mountains of Christmas', Georgia, serif; font-size:21px; font-weight:700; color:#fff3c4; flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.tr-short{ display:none; }
+@media (max-width:380px){ .tr-long{ display:none; } .tr-short{ display:inline; } }
+.tr-chip{
+  font-size:12.5px; font-weight:700; padding:4px 9px; border-radius:999px; white-space:nowrap;
+  background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18);
 }
-.villa-chip{
-  font-size:12px; font-weight:700; padding:4px 8px; border-radius:999px;
-  background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); white-space:nowrap;
-}
-.villa-chip.done{ background:rgba(79,207,134,.22); border-color:#4fcf86; }
-.villa-close{
+.tr-close{
   flex:0 0 auto; width:34px; height:34px; border-radius:50%; border:1px solid rgba(255,255,255,.25);
-  background:rgba(255,255,255,.08); color:#fff; font-size:16px; cursor:pointer;
+  background:rgba(255,255,255,.08); color:#fff; font-size:16px; cursor:pointer; margin-left:2px;
 }
-.villa-stage{ flex:1; position:relative; overflow:hidden; touch-action:manipulation; }
-.villa-stage canvas{ position:absolute; inset:0; width:100%; height:100%; display:block; }
-.villa-hint{
-  text-align:center; font-size:12.5px; color:#c9d6f2; padding:8px 14px;
-  padding-bottom:calc(8px + env(safe-area-inset-bottom));
-  background:#0b1833; border-top:1px solid rgba(255,255,255,.1);
-}
-.villa-toast{
-  position:absolute; top:12px; left:50%; transform:translate(-50%,-6px);
-  background:rgba(8,17,37,.88); border:1px solid rgba(255,255,255,.2); color:#fff;
+.tr-stage{ flex:1; position:relative; overflow:hidden; touch-action:none; min-height:0; }
+.tr-stage canvas{ position:absolute; inset:0; width:100%; height:100%; display:block; }
+.tr-toast{
+  position:absolute; top:14px; left:50%; transform:translate(-50%,-6px); z-index:2;
+  background:rgba(8,17,37,.9); border:1px solid rgba(255,255,255,.2); color:#fff;
   font-size:13px; font-weight:600; padding:8px 14px; border-radius:999px; max-width:90%; text-align:center;
   opacity:0; pointer-events:none; transition:opacity .2s, transform .2s;
 }
-.villa-toast.show{ opacity:1; transform:translate(-50%,0); }
-.villa-win{
-  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-  background:rgba(4,9,22,.55); padding:20px;
+.tr-toast.show{ opacity:1; transform:translate(-50%,0); }
+.tr-overlay{
+  position:absolute; inset:0; z-index:3; display:flex; align-items:center; justify-content:center;
+  background:rgba(40,4,8,.5); padding:20px;
 }
-.villa-win[hidden]{ display:none; }
-.villa-win-card{
-  background:linear-gradient(180deg, #13284f, #0c1a36); border:2px solid #ffd166; border-radius:18px;
-  padding:20px 18px; text-align:center; max-width:320px; box-shadow:0 18px 40px rgba(0,0,0,.5);
+.tr-overlay[hidden]{ display:none; }
+.tr-card{
+  background:linear-gradient(180deg, #17663a, #0e4426); border:2px solid #ffd166; border-radius:18px;
+  padding:18px 18px 16px; text-align:center; max-width:320px; box-shadow:0 18px 40px rgba(0,0,0,.5);
 }
-.villa-win-card h3{ font-family:'Mountains of Christmas', Georgia, serif; font-size:30px; margin:4px 0 6px; color:#ffd166; }
-.villa-win-card p{ font-size:14px; color:#dbe5ff; margin:0 0 14px; }
-.villa-win-card button{
-  font-family:var(--font-body); font-size:14px; font-weight:700; border-radius:10px; padding:10px 14px; cursor:pointer; margin:3px;
+.tr-big{ font-size:42px; line-height:1.1; }
+.tr-card h3{ font-family:'Mountains of Christmas', Georgia, serif; font-size:30px; margin:4px 0 6px; color:#ffd166; }
+.tr-card p{ font-size:14px; line-height:1.45; color:#eef7ee; margin:0 0 10px; }
+.tr-card .tr-small{ font-size:12.5px; color:#bfe0c8; }
+.tr-card .tr-record{ font-weight:700; color:#ffd166; }
+.tr-card button{
+  font-family:var(--font-body); font-size:14px; font-weight:700; border-radius:10px; padding:10px 14px; cursor:pointer; margin:4px 3px 0;
 }
-.villa-win-card .primary{ background:#c62828; color:#fff; border:none; }
-.villa-win-card .ghost{ background:none; color:#fff; border:1px solid rgba(255,255,255,.35); }
+.tr-card .primary{ background:#c62828; color:#fff; border:none; }
+.tr-card .ghost{ background:none; color:#fff; border:1px solid rgba(255,255,255,.35); }
+.tr-pad{
+  display:grid; grid-template-columns:repeat(3, 62px); grid-template-rows:repeat(2, 50px); gap:6px;
+  justify-content:center; padding:8px 0; padding-bottom:calc(10px + env(safe-area-inset-bottom));
+  background:linear-gradient(180deg, #0e4426, #0a3520); border-top:2px solid #ffcf4a;
+}
+.tr-key{
+  font-size:20px; color:#fff; border-radius:12px; cursor:pointer; touch-action:none;
+  background:linear-gradient(180deg, #d63a3a, #a51f24); border:1px solid rgba(255,255,255,.35);
+  -webkit-tap-highlight-color:transparent; user-select:none; -webkit-user-select:none;
+}
+.tr-key:active{ background:#ffcf4a; color:#7a1018; }
+.tr-key[data-d="up"]{ grid-column:2; grid-row:1; }
+.tr-key[data-d="left"]{ grid-column:1; grid-row:2; }
+.tr-key[data-d="down"]{ grid-column:2; grid-row:2; }
+.tr-key[data-d="right"]{ grid-column:3; grid-row:2; }
+@media (max-height:600px){ .tr-pad{ grid-template-rows:repeat(2, 40px); } }

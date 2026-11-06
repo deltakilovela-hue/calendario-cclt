@@ -95,7 +95,7 @@
 
   function snowGlobe(n){
     if(!isOn()) return;
-    if(reduceMotion){ toast('❄️ ¡Está nevando en la villa!'); return; }
+    if(reduceMotion){ toast('❄️ ¡Está nevando!'); return; }
     for(var i = 0; i < (n || 320); i++) snow.flakes.push(newFlake(true));
     startSnow();
   }
@@ -113,7 +113,7 @@
       var now = Date.now();
       if(now - lastShake > 1500){
         lastShake = now;
-        if(window.VillaGame && window.VillaGame.isOpen()) window.VillaGame.storm();
+        if(window.SleighGame && window.SleighGame.isOpen()) window.SleighGame.storm();
         else snowGlobe(340);
         buzz([30, 20, 30]);
       }
@@ -156,24 +156,24 @@
     hero.appendChild(el('div', { 'class': 'xmas-countdown xmas-only' }, html));
   }
 
-  // ---------- villa (se carga solo al abrirla) ----------
-  var villaLoading = false;
-  function openVilla(){
+  // ---------- juego del trineo (se carga solo al abrirlo) ----------
+  var gameLoading = false;
+  function openGame(){
     requestMotion();
-    if(window.VillaGame){ window.VillaGame.open(); return; }
-    if(villaLoading) return;
-    villaLoading = true;
+    if(window.SleighGame){ window.SleighGame.open(); return; }
+    if(gameLoading) return;
+    gameLoading = true;
     var s = document.createElement('script');
-    s.src = 'villa.js';
-    s.onload = function(){ villaLoading = false; if(window.VillaGame) window.VillaGame.open(); };
-    s.onerror = function(){ villaLoading = false; toast('No se pudo abrir la villa. Revisa tu conexión.'); };
+    s.src = 'trineo.js';
+    s.onload = function(){ gameLoading = false; if(window.SleighGame) window.SleighGame.open(); };
+    s.onerror = function(){ gameLoading = false; toast('No se pudo abrir el juego. Revisa tu conexión.'); };
     document.body.appendChild(s);
   }
 
   var SNOWMAN_LINES = [
     '⛄ ¡Hola! Agita tu celular para hacer nevar',
-    '❄️ ¿Ya visitaste la Villa de Santa?',
-    '🎁 En la villa hay regalos escondidos…',
+    '🛷 ¿Ya manejaste el trineo de Santa?',
+    '🎁 ¿Cuántos regalos puedes repartir?',
     '🥕 ¡Cuidado con mi nariz!',
     '🎄 ¡Feliz Navidad, familia 1.1!'
   ];
@@ -186,7 +186,7 @@
     ui.toast = el('div', { id: 'xmas-toast', role: 'status', 'aria-live': 'polite', 'class': 'xmas-only' });
     ui.snow = el('canvas', { id: 'xmas-snow', 'class': 'xmas-only', 'aria-hidden': 'true' });
     ui.snowman = el('button', { type: 'button', id: 'xmas-snowman', 'class': 'xmas-only', 'aria-label': 'Mono de nieve' }, '⛄');
-    ui.villa = el('button', { type: 'button', id: 'villa-btn', 'class': 'xmas-only' }, '🏘️ Villa de Santa');
+    ui.villa = el('button', { type: 'button', id: 'villa-btn', 'class': 'xmas-only' }, '🛷 Trineo de Santa');
     [ui.toast, ui.snow, ui.snowman, ui.villa].forEach(function(n){ document.body.appendChild(n); });
 
     var header = $('#header');
@@ -211,7 +211,7 @@
       snowGlobe(90);
       requestMotion();
     });
-    ui.villa.addEventListener('click', openVilla);
+    ui.villa.addEventListener('click', openGame);
 
     var badge = $('.badge');
     if(badge){
@@ -223,7 +223,7 @@
     }
 
     // Escuchar siempre: los eventos solo llegan si el navegador ya lo permite.
-    // En iPhone (y Chrome reciente) el permiso se pide al tocar el mono de nieve o la villa.
+    // En iPhone (y Chrome reciente) el permiso se pide al tocar el mono de nieve o el juego.
     if(typeof DeviceMotionEvent !== 'undefined') bindMotion();
 
     // trineo de bienvenida, una vez por visita
