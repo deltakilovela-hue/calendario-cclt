@@ -7,7 +7,8 @@
   var root = document.documentElement;
 
   var seasonCode = new Date().getMonth() * 100 + new Date().getDate();
-  var eligible = /[?&]tema=halloween/.test(location.search) || (seasonCode >= 815 && seasonCode <= 1002);
+  var eligible = !/[?&]tema=navidad/.test(location.search) &&
+    (/[?&]tema=halloween/.test(location.search) || (seasonCode >= 815 && seasonCode <= 1002));
   if(!eligible) return;
 
   var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);

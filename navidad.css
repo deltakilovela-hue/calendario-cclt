@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap');
+
+/* Tema de temporada: se activa con <html data-season="navidad"> */
+
+:root[data-season="navidad"]{
+  --ink:#13261d;
+  --bg:#eef4f1;
+  --surface:#ffffff;
+  --surface-2:#f6faf8;
+  --muted:#5d6f66;
+  --line:#d9e5df;
+  --brass:#c62828;
+  --brass-soft:#fde6e6;
+  --brass-ink:#7f1414;
+  --cat-hito:#13261d;
+  --cat-consejo:#6a4fb5;
+  --cat-reunion:#1f6fae;
+  --cat-convivencia:#1e8a52;
+  --cat-vialidad:#c62828;
+  --cat-suspension:#b23a48;
+  --cat-honores:#2f7a86;
+  --cat-admin:#5d6f66;
+  --danger:#b23a48;
+  --xmas-green:#1e8a52;
+  --xmas-gold:#d9a521;
+  --font-season:'Mountains of Christmas', 'Fraunces', Georgia, serif;
+}
+/* Navidad arranca en "noche de invierno"; solo es claro si la persona lo eligió */
+:root[data-season="navidad"]:not([data-theme="light"]){
+  color-scheme:dark;
+  --ink:#f3f6ff;
+  --bg:#0a1324;
+  --surface:#13203a;
+  --surface-2:#0f1a30;
+  --muted:#a9b6d3;
+  --line:#25385c;
+  --brass:#ff5a5a;
+  --brass-soft:#3a161c;
+  --brass-ink:#ffc2c2;
+  --cat-hito:#f3f6ff;
+  --cat-consejo:#b9a4ff;
+  --cat-reunion:#8fc1ff;
+  --cat-convivencia:#6fd79d;
+  --cat-vialidad:#ff7a7a;
+  --cat-suspension:#ff8a96;
+  --cat-honores:#8fd6e0;
+  --cat-admin:#a9b6d3;
+  --danger:#ff8a96;
+  --xmas-green:#4fcf86;
+  --xmas-gold:#ffd166;
+  --shadow:0 1px 2px rgba(0,0,0,.6), 0 10px 24px -14px rgba(0,0,0,.8);
+}
+
+:root[data-season="navidad"] body{
+  background-image:
+    radial-gradient(ellipse at 15% -10%, color-mix(in srgb, var(--xmas-green) 18%, transparent), transparent 45%),
+    radial-gradient(ellipse at 90% 0%, color-mix(in srgb, var(--brass) 14%, transparent), transparent 40%);
+  background-attachment:fixed;
+}
+:root[data-season="navidad"] #header h1,
+:root[data-season="navidad"] #hero .hero-count{
+  font-family:var(--font-season);
+  font-weight:700;
+  letter-spacing:.01em;
+}
+:root[data-season="navidad"] #header h1{ font-size:34px; }
+:root[data-season="navidad"] .eyebrow{ padding-right:84px; }
+:root[data-season="navidad"] .badge{ cursor:pointer; }
+:root[data-season="navidad"] .chip[aria-pressed="true"],
+:root[data-season="navidad"] .day-pill[aria-pressed="true"]{
+  background:var(--brass); border-color:var(--brass); color:#fff;
+}
+:root[data-season="navidad"] .chip[aria-pressed="true"] .dot{ background:#fff; }
+
+/* nieve sobre el encabezado */
+:root[data-season="navidad"] #header{ overflow:visible; }
+:root[data-season="navidad"] #header::before{
+  content:""; position:absolute; left:0; right:0; top:0; height:9px; pointer-events:none;
+  background:
+    radial-gradient(circle at 9px 0, rgba(255,255,255,.95) 0 6px, transparent 6.5px) 0 0/18px 9px repeat-x;
+  opacity:.9;
+}
+
+/* luces de navidad colgando del encabezado */
+.xmas-lights{
+  position:absolute; left:0; right:0; bottom:-13px; height:22px; z-index:6; pointer-events:none;
+  display:flex; justify-content:space-around; align-items:flex-start; padding:0 6px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='10' viewBox='0 0 40 10'%3E%3Cpath d='M0 1 Q10 9 20 3 T40 1' fill='none' stroke='%23324b3d' stroke-width='1.6'/%3E%3C/svg%3E") 0 0/40px 10px repeat-x;
+}
+.xmas-lights i{
+  display:block; width:8px; height:12px; border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
+  background:var(--c); margin-top:var(--y,4px); position:relative;
+  box-shadow:0 0 8px 2px var(--c);
+  animation:twinkle 1.6s ease-in-out infinite;
+  animation-delay:var(--d,0s);
+}
+.xmas-lights i::before{
+  content:""; position:absolute; top:-3px; left:2px; width:4px; height:4px; border-radius:1px; background:#2b3a31;
+}
+@keyframes twinkle{
+  0%,100%{ opacity:1; box-shadow:0 0 9px 2px var(--c); }
+  50%{ opacity:.35; box-shadow:0 0 2px 0 var(--c); }
+}
+
+/* esquina del "próximo evento": pinito con regalos */
+#hero{ position:relative; }
+:root[data-season="navidad"] #hero::after{
+  content:"🎄🎁"; position:absolute; top:10px; right:12px; font-size:22px; line-height:1;
+  pointer-events:none; filter:drop-shadow(0 2px 4px rgba(0,0,0,.35));
+}
+
+/* nieve sobre las tarjetas */
+:root[data-season="navidad"] .event-card,
+:root[data-season="navidad"] #birthdays,
+:root[data-season="navidad"] .exam-header{
+  background-image:radial-gradient(circle at 8px 0, rgba(255,255,255,.92) 0 5px, transparent 5.5px);
+  background-size:16px 7px;
+  background-repeat:repeat-x;
+  background-position:0 0;
+}
+:root[data-season="navidad"]:not([data-theme="light"]) .event-card.g11{
+  background-color:var(--brass-soft);
+}
+
+/* emoji por tipo de actividad */
+:root[data-season="navidad"] .event-card::after{
+  position:absolute; top:9px; right:9px; font-size:15px; line-height:1; opacity:.95; pointer-events:none;
+}
+:root[data-season="navidad"] .event-card .event-title{ padding-right:22px; }
+:root[data-season="navidad"] .event-card[data-cat="consejo"]::after{ content:"🦌"; }
+:root[data-season="navidad"] .event-card[data-cat="reunion"]::after{ content:"🔔"; }
+:root[data-season="navidad"] .event-card[data-cat="convivencia"]::after{ content:"🎁"; }
+:root[data-season="navidad"] .event-card[data-cat="vialidad"]::after{ content:"🛷"; }
+:root[data-season="navidad"] .event-card[data-cat="suspension"]::after{ content:"⛄"; }
+:root[data-season="navidad"] .event-card[data-cat="honores"]::after{ content:"⭐"; }
+:root[data-season="navidad"] .event-card[data-cat="hito"]::after{ content:"🎄"; }
+:root[data-season="navidad"] .event-card[data-cat="admin"]::after{ content:"🧦"; }
+
+/* elementos que solo existen con el tema activo */
+:root:not([data-season="navidad"]) .xmas-only{ display:none !important; }
+
+#xmas-toggle{
+  position:absolute; top:16px; right:58px;
+  width:32px; height:32px; border-radius:50%;
+  border:1px solid var(--line); background:var(--surface); color:var(--ink);
+  font-size:14px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+}
+#xmas-toggle[aria-pressed="false"]{ opacity:.45; filter:grayscale(1); }
+#xmas-toggle:hover{ border-color:var(--brass); }
+
+.xmas-countdown{
+  margin-top:12px; padding-top:10px; border-top:1px dashed var(--brass);
+  display:flex; flex-direction:column; gap:4px;
+  font-family:var(--font-mono); font-size:12px; color:var(--brass-ink);
+}
+
+/* mono de nieve y botón de la villa */
+#xmas-snowman{
+  position:fixed; bottom:82px; left:calc(50% + min(50vw, 280px) - 62px); z-index:9;
+  font-size:38px; line-height:1; background:none; border:none; padding:6px; cursor:pointer;
+  animation:snowmanwobble 3.2s ease-in-out infinite;
+  filter:drop-shadow(0 4px 8px rgba(0,0,0,.35));
+}
+#xmas-snowman.hop{ animation:snowmanhop .5s ease-out; }
+@keyframes snowmanwobble{ 0%,100%{ transform:rotate(-4deg); } 50%{ transform:rotate(4deg) translateY(-3px); } }
+@keyframes snowmanhop{ 0%{ transform:translateY(0); } 40%{ transform:translateY(-22px) rotate(-8deg); } 100%{ transform:translateY(0); } }
+
+#villa-btn{
+  position:fixed; bottom:86px; left:calc(50% - min(50vw, 280px) + 12px); z-index:9;
+  font-family:var(--font-body); font-size:12.5px; font-weight:700; color:#fff;
+  background:linear-gradient(135deg, #c62828, #8e1b1b); border:2px solid #fff; border-radius:999px;
+  padding:7px 13px; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,.35);
+  animation:villapulse 2.6s ease-in-out infinite;
+}
+@keyframes villapulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+
+#xmas-toast{
+  position:fixed; top:74px; left:50%; transform:translate(-50%,-8px); z-index:45;
+  background:var(--ink); color:var(--surface); font-size:13px; font-weight:600;
+  border-radius:999px; padding:9px 16px; max-width:88vw; text-align:center;
+  opacity:0; pointer-events:none; transition:opacity .2s, transform .2s;
+}
+#xmas-toast.show{ opacity:1; transform:translate(-50%,0); }
+
+/* nieve: una sola capa encima de todo, sin bloquear toques */
+#xmas-snow{ position:fixed; inset:0; z-index:26; pointer-events:none; }
+
+/* trineo de bienvenida */
+.xmas-sleigh{
+  position:fixed; top:84px; left:0; z-index:27; pointer-events:none; font-size:30px; white-space:nowrap;
+  filter:drop-shadow(0 3px 6px rgba(0,0,0,.4));
+  animation:sleighfly 6.5s linear forwards;
+}
+@keyframes sleighfly{
+  0%{ transform:translate(105vw, 30px); opacity:0; }
+  6%{ opacity:1; }
+  25%{ transform:translate(75vw, 0); }
+  50%{ transform:translate(45vw, 26px); }
+  75%{ transform:translate(15vw, 0); }
+  100%{ transform:translate(-60vw, 20px); opacity:1; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  #xmas-snowman, #villa-btn, .xmas-lights i, .xmas-sleigh{ animation:none; }
+  .xmas-sleigh{ display:none; }
+}
+
+/* ===== Villa de Santa (juego) ===== */
+#villa{
+  position:fixed; inset:0; z-index:40; display:flex; flex-direction:column;
+  background:#081125; color:#fff; font-family:var(--font-body);
+}
+#villa[hidden]{ display:none; }
+.villa-bar{
+  display:flex; align-items:center; gap:8px; padding:10px 12px;
+  padding-top:calc(10px + env(safe-area-inset-top));
+  background:linear-gradient(180deg, #102347, #0b1833);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.villa-title{ font-family:'Mountains of Christmas', Georgia, serif; font-size:21px; font-weight:700; flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.villa-chips{ display:flex; gap:6px; }
+.vt-short{ display:none; }
+@media (max-width:420px){
+  .vt-long{ display:none; }
+  .vt-short{ display:inline; }
+}
+.villa-chip{
+  font-size:12px; font-weight:700; padding:4px 8px; border-radius:999px;
+  background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); white-space:nowrap;
+}
+.villa-chip.done{ background:rgba(79,207,134,.22); border-color:#4fcf86; }
+.villa-close{
+  flex:0 0 auto; width:34px; height:34px; border-radius:50%; border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.08); color:#fff; font-size:16px; cursor:pointer;
+}
+.villa-stage{ flex:1; position:relative; overflow:hidden; touch-action:manipulation; }
+.villa-stage canvas{ position:absolute; inset:0; width:100%; height:100%; display:block; }
+.villa-hint{
+  text-align:center; font-size:12.5px; color:#c9d6f2; padding:8px 14px;
+  padding-bottom:calc(8px + env(safe-area-inset-bottom));
+  background:#0b1833; border-top:1px solid rgba(255,255,255,.1);
+}
+.villa-toast{
+  position:absolute; top:12px; left:50%; transform:translate(-50%,-6px);
+  background:rgba(8,17,37,.88); border:1px solid rgba(255,255,255,.2); color:#fff;
+  font-size:13px; font-weight:600; padding:8px 14px; border-radius:999px; max-width:90%; text-align:center;
+  opacity:0; pointer-events:none; transition:opacity .2s, transform .2s;
+}
+.villa-toast.show{ opacity:1; transform:translate(-50%,0); }
+.villa-win{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  background:rgba(4,9,22,.55); padding:20px;
+}
+.villa-win[hidden]{ display:none; }
+.villa-win-card{
+  background:linear-gradient(180deg, #13284f, #0c1a36); border:2px solid #ffd166; border-radius:18px;
+  padding:20px 18px; text-align:center; max-width:320px; box-shadow:0 18px 40px rgba(0,0,0,.5);
+}
+.villa-win-card h3{ font-family:'Mountains of Christmas', Georgia, serif; font-size:30px; margin:4px 0 6px; color:#ffd166; }
+.villa-win-card p{ font-size:14px; color:#dbe5ff; margin:0 0 14px; }
+.villa-win-card button{
+  font-family:var(--font-body); font-size:14px; font-weight:700; border-radius:10px; padding:10px 14px; cursor:pointer; margin:3px;
+}
+.villa-win-card .primary{ background:#c62828; color:#fff; border:none; }
+.villa-win-card .ghost{ background:none; color:#fff; border:1px solid rgba(255,255,255,.35); }

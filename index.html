@@ -11,9 +11,14 @@
     var t = localStorage.getItem('cclt11-theme');
     if(t === 'dark' || t === 'light'){ document.documentElement.setAttribute('data-theme', t); }
     var q = /[?&]tema=halloween/.test(location.search);
+    var qn = /[?&]tema=navidad/.test(location.search);
     var dc = new Date(); dc = dc.getMonth() * 100 + dc.getDate();
     var inSeason = dc >= 815 && dc <= 1002;
-    if((q || inSeason) && localStorage.getItem('cclt11-season') !== 'off'){ document.documentElement.setAttribute('data-season', 'halloween'); }
+    var xmas = dc >= 1101 || dc <= 6;
+    var root = document.documentElement;
+    if(qn || (xmas && !q)){
+      if(localStorage.getItem('cclt11-season-navidad') !== 'off'){ root.setAttribute('data-season', 'navidad'); }
+    } else if((q || inSeason) && localStorage.getItem('cclt11-season') !== 'off'){ root.setAttribute('data-season', 'halloween'); }
   }catch(e){}
 })();
 </script>
@@ -628,6 +633,7 @@
   [data-cat="admin"]{ --cat-color:var(--cat-admin); }
 </style>
 <link rel="stylesheet" href="halloween.css">
+<link rel="stylesheet" href="navidad.css">
 </head>
 <body>
 <div id="shell">
@@ -806,6 +812,7 @@
 </div>
 
 <script src="halloween.js"></script>
+<script src="navidad.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 (function(){
@@ -872,7 +879,7 @@
   function isDarkNow(theme){
     if(theme === 'dark') return true;
     if(theme === 'light') return false;
-    if(document.documentElement.getAttribute('data-season') === 'halloween') return true;
+    if(document.documentElement.hasAttribute('data-season')) return true;
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   }
   function applyTheme(theme){
@@ -887,6 +894,7 @@
     btn.setAttribute('aria-label', dark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
   }
   function wireThemeToggle(){
+    window.cclt11ThemeRefresh = function(){ applyTheme(getStoredTheme()); };
     applyTheme(getStoredTheme());
     $('#theme-toggle').addEventListener('click', function(){
       var next = isDarkNow(getStoredTheme()) ? 'light' : 'dark';
