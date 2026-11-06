@@ -492,6 +492,281 @@
           ]
         }
       ]
+    },
+    "matematicas": {
+      "title": "Matemáticas · Evaluación del Trimestre 1",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "¿Qué entra?"
+        },
+        {
+          "type": "text",
+          "text": "Los temas de la Esfera 5."
+        },
+        {
+          "type": "text",
+          "text": "La calificación del trimestre será el promedio de esta evaluación y las dos anteriores."
+        },
+        {
+          "type": "heading",
+          "text": "Cómo repasar"
+        },
+        {
+          "type": "example",
+          "lines": [
+            "🔑 Las keys de la Esfera 5",
+            "📘 Los ejercicios del diario de aprendizaje (libro)",
+            "📓 Las notas del cuaderno"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Tip: pídanle que les explique en voz alta cómo resolvió 2 o 3 ejercicios del libro. Si puede explicarlo, ya lo domina."
+        }
+      ]
+    },
+    "geografia": {
+      "title": "Geografía · Primer trimestre",
+      "intro": "Temario de la maestra con una explicación corta de cada punto. Compárenla con el cuaderno y el libro.",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Big Challenge"
+        },
+        {
+          "type": "def",
+          "term": "Inseguridad alimentaria",
+          "text": "Cuando las personas no tienen acceso seguro y constante a suficientes alimentos sanos y nutritivos para crecer y llevar una vida activa."
+        },
+        {
+          "type": "def",
+          "term": "Causas",
+          "text": "Pobreza, precios altos de los alimentos, sequías y cambio climático, guerras y conflictos, desigualdad y desperdicio de comida."
+        },
+        {
+          "type": "def",
+          "term": "Consecuencias",
+          "text": "Desnutrición, también obesidad por comer mal, enfermedades, bajo rendimiento escolar y en el trabajo, y migración."
+        },
+        {
+          "type": "def",
+          "term": "Transgénicos",
+          "text": "Ventajas: resisten plagas y sequías y producen más. Desventajas: dudas sobre sus efectos a largo plazo, afectan la biodiversidad y crean dependencia de semillas de grandes empresas."
+        },
+        {
+          "type": "def",
+          "term": "De origen natural",
+          "text": "Ventajas: más nutritivos y sin aditivos. Desventajas: se echan a perder rápido y a veces son más caros o difíciles de conseguir."
+        },
+        {
+          "type": "def",
+          "term": "Ultraprocesados",
+          "text": "Ventajas: duran mucho, son prácticos y baratos. Desventajas: mucho azúcar, sal, grasa y aditivos; se relacionan con obesidad y diabetes."
+        },
+        {
+          "type": "def",
+          "term": "Huertos urbanos",
+          "text": "Ventajas: alimentos frescos, ahorro, aprovechan espacios de la ciudad y enseñan a cuidar el ambiente. Desventajas: poco espacio, requieren tiempo y cuidado, y producen poco."
+        },
+        {
+          "type": "heading",
+          "text": "Esfera 1 · La era de la geografía"
+        },
+        {
+          "type": "def",
+          "term": "¿Qué es la geografía?",
+          "text": "La ciencia que estudia el espacio geográfico: cómo se relacionan la sociedad y la naturaleza en la superficie de la Tierra y dónde y por qué ocurren los fenómenos."
+        },
+        {
+          "type": "text",
+          "text": "Componentes del espacio geográfico:"
+        },
+        {
+          "type": "example",
+          "lines": [
+            "🌿 Natural: relieve, clima, agua, flora y fauna",
+            "👥 Social: población, crecimiento, migración",
+            "💰 Económico: actividades productivas, comercio, servicios",
+            "🏛️ Político: países, fronteras, gobiernos",
+            "🎭 Cultural: lengua, religión, tradiciones, costumbres"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Características del espacio geográfico:"
+        },
+        {
+          "type": "example",
+          "lines": [
+            "Único: no hay dos lugares iguales",
+            "Cambiante: se transforma con el tiempo",
+            "Representable: se puede dibujar en mapas, planos o croquis",
+            "Medible: se pueden medir distancias y superficies",
+            "Localizable: se puede ubicar con coordenadas"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Esfera 2 · ¿La Tierra es plana?"
+        },
+        {
+          "type": "def",
+          "term": "Cartografía",
+          "text": "La ciencia y técnica de elaborar mapas."
+        },
+        {
+          "type": "def",
+          "term": "Croquis",
+          "text": "Dibujo sencillo hecho a mano alzada, sin escala exacta, para ubicar un lugar."
+        },
+        {
+          "type": "def",
+          "term": "Plano",
+          "text": "Representa un área pequeña (una casa, una colonia, una ciudad) con mucho detalle."
+        },
+        {
+          "type": "def",
+          "term": "Mapa",
+          "text": "Representación plana, reducida y a escala de la superficie terrestre o de una parte de ella."
+        },
+        {
+          "type": "def",
+          "term": "Mapa base",
+          "text": "Muestra solo lo básico (límites, ríos, ciudades) y sirve de base para agregarle información."
+        },
+        {
+          "type": "def",
+          "term": "Mapa temático",
+          "text": "Muestra un tema específico: clima, población, vegetación, actividades económicas, etc."
+        },
+        {
+          "type": "def",
+          "term": "Atlas",
+          "text": "Colección ordenada de mapas."
+        },
+        {
+          "type": "def",
+          "term": "Globo terráqueo",
+          "text": "Modelo esférico de la Tierra. Es la representación más fiel porque no deforma formas ni tamaños."
+        },
+        {
+          "type": "def",
+          "term": "Escalas de análisis",
+          "text": "Local, estatal, nacional y mundial: del lugar más cercano a todo el planeta."
+        },
+        {
+          "type": "def",
+          "term": "Elementos de un mapa",
+          "text": "Título, escala, simbología (leyenda), rosa de los vientos (orientación), coordenadas geográficas y fuente."
+        },
+        {
+          "type": "heading",
+          "text": "Proyecciones cartográficas"
+        },
+        {
+          "type": "text",
+          "text": "Son la forma de pasar la superficie curva de la Tierra a un plano. Todas deforman algo."
+        },
+        {
+          "type": "def",
+          "term": "Mercator",
+          "text": "Cilíndrica. Conserva las formas y sirve para navegar, pero agranda los territorios cerca de los polos (Groenlandia se ve casi como África)."
+        },
+        {
+          "type": "def",
+          "term": "Peters",
+          "text": "Cilíndrica. Conserva el tamaño real de los territorios, pero deforma sus formas (se ven alargados)."
+        },
+        {
+          "type": "def",
+          "term": "Robinson",
+          "text": "Equilibra forma y tamaño sin ser exacta en ninguno; es la que más se usa en mapamundis y atlas escolares."
+        },
+        {
+          "type": "def",
+          "term": "Cónica",
+          "text": "Se proyecta sobre un cono. Funciona mejor para zonas de latitudes medias, como México, Estados Unidos o Europa."
+        }
+      ]
+    },
+    "artes": {
+      "title": "Artes · Teatro: Narraciones orales",
+      "intro": "Para los alumnos de Teatro. No es examen escrito: cada alumno presenta en clase, de memoria, las dos historias.",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "La consigna"
+        },
+        {
+          "type": "example",
+          "lines": [
+            "🖨️ Imprimir el documento y agregarlo a la carpeta",
+            "📖 Estudiar, comprender y memorizar las dos historias",
+            "🎭 Presentarlas en clase frente al grupo"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Ya están evaluando esta semana y pueden mejorar su calificación en otros intentos. La fecha de cierre es el viernes 13 de noviembre."
+        },
+        {
+          "type": "text",
+          "text": "No hace falta disfraz, utilería ni escenografía: solo se revisa que dominen el texto."
+        },
+        {
+          "type": "heading",
+          "text": "Cómo se califica"
+        },
+        {
+          "type": "example",
+          "lines": [
+            "🔴 Rojo: no presenta la historia o tiene demasiados errores",
+            "🟡 Amarillo: hay avance, pero los errores no le permiten terminar bien",
+            "🟢 Verde: buena memorización, con pocos errores",
+            "🔵 Azul: memorizó todo el texto y lo presentó con buen ritmo, volumen y dicción"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Las historias"
+        },
+        {
+          "type": "text",
+          "text": "Toquen cada título para abrir el texto. Tip: que lo lea en voz alta por párrafos y luego intente decirlo sin ver."
+        },
+        {
+          "type": "story",
+          "title": "La princesa Mololoa y el volcán Sangangüey",
+          "paragraphs": [
+            "Hace mucho, mucho tiempo, en el hermoso valle de Matatipac, vivía el rey Trigomil con su hija, la princesa Mololoa.",
+            "Mololoa era tan hermosa como las flores del campo y tan dulce como el canto de los pájaros. Todos la querían, porque donde ella pasaba parecía que brotaba la alegría.",
+            "Un día, dos valientes guerreros se enamoraron de ella: Tépetl, un joven noble, fuerte y bondadoso, que amaba a Mololoa con todo su corazón. Sangangüey, un guerrero orgulloso y poderoso, que quería a la princesa solo para presumir su fuerza.",
+            "Mololoa ya había elegido a Tépetl, pues con él soñaba un futuro lleno de amor y paz. Pero Sangangüey no aceptó un “no” como respuesta. Muy enojado, decidió raptarla.",
+            "—¡Si no eres mía, no serás de nadie! —rugió, mientras sus ojos echaban chispas como brasas.",
+            "Tépetl corrió a rescatarla y ambos guerreros se enfrentaron. Sangangüey lanzó fuego y humo, como un volcán furioso. Pero Tépetl, le arrojó grandes piedras ardientes que lo cubrieron poco a poco, hasta que el soberbio guerrero quedó convertido en roca: así nació el Volcán Sangangüey.",
+            "Sin embargo, antes de caer derrotado, Sangangüey alcanzó a lanzar una llamarada tan fuerte que también abrasó a Tépetl. El noble guerrero quedó inmóvil, transformándose en una gran montaña que hasta hoy llamamos Cerro de San Juan.",
+            "La princesa Mololoa, al ver a su amado convertido en piedra, lloró sin consuelo. Lloró tanto, tanto, que sus lágrimas formaron un río de aguas claras que recorrió todo el valle. Ese río, hasta nuestros días, se llama Río Mololoa.",
+            "Así que la próxima vez que mires el paisaje de Tepic, recuerda que aquel volcán, la montaña y el río son huellas de esta historia de amor, valentía y dolor."
+          ]
+        },
+        {
+          "type": "story",
+          "title": "El Rey Nayar y la montaña que habla",
+          "paragraphs": [
+            "Hace mucho, mucho tiempo, en las montañas verdes de Nayarit vivía un rey muy especial. No llevaba corona de oro ni vivía en un castillo, porque su palacio era la naturaleza misma: el río, la selva, las cuevas y los cerros. Ese rey se llamaba Nayar, y su pueblo lo quería porque siempre cuidaba de todos.",
+            "Nayar sabía hablar con los animales y escuchar la voz del viento. Cuando había sequía, organizaba a su pueblo para pedir lluvia con cantos y danzas… ¿y qué creen?... las nubes obedecían. Cuando alguien estaba triste, él tocaba el tambor y el corazón se alegraba.",
+            "Un día, llegaron hombres desconocidos. Traían cascos brillantes, espadas y caballos enormes. Querían que Nayar y su pueblo olvidaran sus cantos y obedecieran a un rey lejano. Pero el Rey Nayar no aceptó.",
+            "—La tierra no se vende. Nuestra palabra no se dobla. Mientras uno solo de nosotros respire, la montaña no caerá —dijo con firmeza.",
+            "Así comenzó una gran aventura. Nayar y su pueblo se escondían entre los árboles, corrían por los cerros y aparecían como sombras en la neblina. Se movían tan rápido que los extranjeros creían que Nayar podía convertirse en jaguar o en águila.",
+            "Hasta que un día… los hombres de armaduras brillantes atraparon al Rey. Pero antes de partir, Nayar dijo a su gente:",
+            "—No lloren. Pues yo viviré por siempre en la montaña, en el viento y en el canto de los pájaros… y cada vez que escuchen el tambor del trueno, sabrán que sigo con ustedes.",
+            "Desde entonces, los niños coras aprenden que el Rey Nayar nunca murió. Vive en cada árbol, en cada río y en cada corazón que ama la tierra.",
+            "Y si alguna noche miras al cielo estrellado desde las montañas de Nayarit, quizá escuches un murmullo en el viento que dice:",
+            "—Somos hijos del sol, y la montaña siempre habla."
+          ]
+        }
+      ]
     }
   },
   "practica": {
@@ -1260,6 +1535,515 @@
         ],
         "a": 0,
         "why": "«nez» termina en -z, así que en plural queda igual: des nez."
+      }
+    ],
+    "geografia": [
+      {
+        "q": "¿Qué es la inseguridad alimentaria?",
+        "o": [
+          "No tener acceso seguro y constante a suficientes alimentos sanos y nutritivos",
+          "Comer solo alimentos transgénicos",
+          "Tener un huerto en casa",
+          "Que los alimentos se vendan en supermercados"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cuál de estas es una CAUSA de la inseguridad alimentaria?",
+        "o": [
+          "La pobreza y los precios altos de los alimentos",
+          "Los huertos urbanos",
+          "Comer frutas y verduras",
+          "Las escalas de un mapa"
+        ],
+        "a": 0,
+        "why": "Otras causas: sequías, cambio climático, guerras, desigualdad y desperdicio."
+      },
+      {
+        "q": "¿Cuál de estas es una CONSECUENCIA de la inseguridad alimentaria?",
+        "o": [
+          "Desnutrición y enfermedades",
+          "Más cosechas",
+          "Mejor rendimiento escolar",
+          "Mapas más precisos"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Una ventaja de los alimentos transgénicos es que…",
+        "o": [
+          "Resisten plagas y producen más",
+          "No tienen ningún riesgo comprobado ni duda",
+          "Se echan a perder más rápido",
+          "Aumentan la biodiversidad"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Una desventaja de los alimentos ultraprocesados es que…",
+        "o": [
+          "Tienen mucho azúcar, sal, grasa y aditivos",
+          "Se echan a perder en un día",
+          "Son muy caros",
+          "Solo se consiguen en el campo"
+        ],
+        "a": 0,
+        "why": "Se relacionan con obesidad y diabetes."
+      },
+      {
+        "q": "Una ventaja de los huertos urbanos es que…",
+        "o": [
+          "Dan alimentos frescos y aprovechan espacios de la ciudad",
+          "Producen comida para toda una ciudad",
+          "No necesitan cuidado ni tiempo",
+          "Necesitan mucho espacio de cultivo"
+        ],
+        "a": 0
+      },
+      {
+        "q": "La geografía es la ciencia que estudia…",
+        "o": [
+          "El espacio geográfico: la relación entre la sociedad y la naturaleza",
+          "Solo los ríos y montañas",
+          "Los hechos del pasado",
+          "Los números y las figuras"
+        ],
+        "a": 0
+      },
+      {
+        "q": "La población, la migración y el crecimiento de las ciudades pertenecen al componente…",
+        "o": [
+          "Social",
+          "Natural",
+          "Político",
+          "Económico"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Las fronteras, los países y los gobiernos pertenecen al componente…",
+        "o": [
+          "Político",
+          "Cultural",
+          "Natural",
+          "Social"
+        ],
+        "a": 0
+      },
+      {
+        "q": "La lengua, la religión y las tradiciones pertenecen al componente…",
+        "o": [
+          "Cultural",
+          "Económico",
+          "Natural",
+          "Político"
+        ],
+        "a": 0
+      },
+      {
+        "q": "El relieve, el clima, la flora y la fauna pertenecen al componente…",
+        "o": [
+          "Natural",
+          "Social",
+          "Cultural",
+          "Político"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Que no existan dos lugares iguales en el mundo significa que el espacio geográfico es…",
+        "o": [
+          "Único",
+          "Medible",
+          "Representable",
+          "Localizable"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Que el espacio geográfico se transforme con el tiempo significa que es…",
+        "o": [
+          "Cambiante",
+          "Único",
+          "Localizable",
+          "Medible"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Que un lugar se pueda ubicar con coordenadas significa que el espacio geográfico es…",
+        "o": [
+          "Localizable",
+          "Cambiante",
+          "Único",
+          "Representable"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué es la cartografía?",
+        "o": [
+          "La ciencia y técnica de elaborar mapas",
+          "El estudio de las cartas antiguas",
+          "Un tipo de mapa del clima",
+          "La medición del tiempo"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Dibujo sencillo, a mano alzada y sin escala exacta, para ubicar un lugar:",
+        "o": [
+          "Croquis",
+          "Plano",
+          "Atlas",
+          "Mapa temático"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Representa un área pequeña, como una casa o una colonia, con mucho detalle:",
+        "o": [
+          "Plano",
+          "Globo terráqueo",
+          "Atlas",
+          "Mapa mundial"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Un mapa que muestra solo un tema, como el clima o la población, es un…",
+        "o": [
+          "Mapa temático",
+          "Mapa base",
+          "Croquis",
+          "Plano"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Mapa que muestra lo básico (límites, ríos, ciudades) y sirve para agregarle información:",
+        "o": [
+          "Mapa base",
+          "Mapa temático",
+          "Atlas",
+          "Proyección"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Una colección ordenada de mapas se llama…",
+        "o": [
+          "Atlas",
+          "Plano",
+          "Croquis",
+          "Cartografía"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cuál es la representación más fiel de la Tierra porque no deforma formas ni tamaños?",
+        "o": [
+          "El globo terráqueo",
+          "La proyección de Mercator",
+          "El croquis",
+          "El mapa base"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Ordena las escalas de análisis de la más pequeña a la más grande:",
+        "o": [
+          "Local → estatal → nacional → mundial",
+          "Mundial → nacional → estatal → local",
+          "Estatal → local → mundial → nacional",
+          "Nacional → local → estatal → mundial"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cuál de estos es un elemento de un mapa?",
+        "o": [
+          "La simbología (leyenda)",
+          "El índice del libro",
+          "La fecha de nacimiento del autor",
+          "El precio"
+        ],
+        "a": 0,
+        "why": "Elementos: título, escala, simbología, rosa de los vientos, coordenadas y fuente."
+      },
+      {
+        "q": "¿Para qué sirve la rosa de los vientos en un mapa?",
+        "o": [
+          "Para orientarse: indica los puntos cardinales",
+          "Para medir distancias",
+          "Para explicar los símbolos",
+          "Para decir quién hizo el mapa"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué indica la escala de un mapa?",
+        "o": [
+          "Cuántas veces se redujo la realidad para dibujarla",
+          "La dirección del norte",
+          "El tema del mapa",
+          "El significado de los colores"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué es una proyección cartográfica?",
+        "o": [
+          "La forma de pasar la superficie curva de la Tierra a un plano",
+          "Una película sobre mapas",
+          "Un mapa sin deformaciones",
+          "La medición de la altura de las montañas"
+        ],
+        "a": 0,
+        "why": "Todas las proyecciones deforman algo: forma, tamaño o distancia."
+      },
+      {
+        "q": "Proyección que conserva las formas y sirve para navegar, pero agranda los territorios cerca de los polos:",
+        "o": [
+          "Mercator",
+          "Peters",
+          "Robinson",
+          "Cónica"
+        ],
+        "a": 0,
+        "why": "Por eso en Mercator Groenlandia se ve casi del tamaño de África."
+      },
+      {
+        "q": "Proyección que conserva el tamaño real de los territorios, aunque los deforma:",
+        "o": [
+          "Peters",
+          "Mercator",
+          "Robinson",
+          "Cónica"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Proyección que equilibra forma y tamaño y se usa mucho en mapamundis escolares:",
+        "o": [
+          "Robinson",
+          "Mercator",
+          "Peters",
+          "Cónica"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Proyección que se hace sobre un cono y funciona mejor en latitudes medias, como México:",
+        "o": [
+          "Cónica",
+          "Mercator",
+          "Peters",
+          "Robinson"
+        ],
+        "a": 0
+      }
+    ],
+    "artes": [
+      {
+        "q": "¿En qué valle vivía el rey Trigomil?",
+        "o": [
+          "Matatipac",
+          "Matanchén",
+          "Jala",
+          "Compostela"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cómo se llamaba el padre de la princesa Mololoa?",
+        "o": [
+          "El rey Trigomil",
+          "El rey Nayar",
+          "Tépetl",
+          "Sangangüey"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Mololoa era tan hermosa como _____ y tan dulce como _____.",
+        "o": [
+          "las flores del campo · el canto de los pájaros",
+          "la luna llena · la miel",
+          "el sol de la mañana · el agua del río",
+          "las estrellas · la lluvia"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Quién era el joven noble, fuerte y bondadoso que amaba a Mololoa con todo su corazón?",
+        "o": [
+          "Tépetl",
+          "Sangangüey",
+          "Trigomil",
+          "Nayar"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Por qué quería Sangangüey a la princesa?",
+        "o": [
+          "Solo para presumir su fuerza",
+          "Porque la amaba con todo su corazón",
+          "Para cuidar el valle",
+          "Porque el rey se lo pidió"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Completa lo que rugió Sangangüey: “¡Si no eres mía…”",
+        "o": [
+          "…no serás de nadie!”",
+          "…me iré del valle!”",
+          "…lloraré por siempre!”",
+          "…la montaña caerá!”"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Con qué atacó Tépetl a Sangangüey?",
+        "o": [
+          "Con grandes piedras ardientes",
+          "Con fuego y humo",
+          "Con flechas",
+          "Con agua del río"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿En qué se convirtió Tépetl?",
+        "o": [
+          "En el Cerro de San Juan",
+          "En el Volcán Sangangüey",
+          "En el Río Mololoa",
+          "En un jaguar"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué formaron las lágrimas de Mololoa?",
+        "o": [
+          "Un río de aguas claras: el Río Mololoa",
+          "Una laguna",
+          "Una cascada",
+          "La neblina del valle"
+        ],
+        "a": 0
+      },
+      {
+        "q": "La historia de Mololoa termina diciendo que el volcán, la montaña y el río son huellas de una historia de…",
+        "o": [
+          "amor, valentía y dolor",
+          "guerra, fuego y piedra",
+          "alegría, paz y canto",
+          "reyes, princesas y guerreros"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cuál era el palacio del Rey Nayar?",
+        "o": [
+          "La naturaleza misma: el río, la selva, las cuevas y los cerros",
+          "Un castillo de oro",
+          "Una casa junto al mar",
+          "Un templo en la ciudad"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué hacía Nayar cuando había sequía?",
+        "o": [
+          "Organizaba a su pueblo para pedir lluvia con cantos y danzas",
+          "Tocaba el tambor del trueno",
+          "Viajaba a otro reino",
+          "Hablaba con el rey lejano"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué hacía Nayar cuando alguien estaba triste?",
+        "o": [
+          "Tocaba el tambor y el corazón se alegraba",
+          "Le contaba una historia",
+          "Cantaba con los pájaros",
+          "Le regalaba una flor"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué traían los hombres desconocidos?",
+        "o": [
+          "Cascos brillantes, espadas y caballos enormes",
+          "Coronas de oro y regalos",
+          "Tambores y flautas",
+          "Barcos y redes"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Completa: “La tierra no se vende. Nuestra palabra no se _____.”",
+        "o": [
+          "dobla",
+          "olvida",
+          "rompe",
+          "calla"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Completa: “Mientras uno solo de nosotros respire, la montaña no _____.”",
+        "o": [
+          "caerá",
+          "callará",
+          "dormirá",
+          "llorará"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Los extranjeros creían que Nayar podía convertirse en…",
+        "o": [
+          "jaguar o en águila",
+          "viento o en lluvia",
+          "piedra o en río",
+          "lobo o en halcón"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Nayar dijo: “cada vez que escuchen _____, sabrán que sigo con ustedes.”",
+        "o": [
+          "el tambor del trueno",
+          "el canto de los pájaros",
+          "la voz del viento",
+          "el agua del río"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué niños aprenden que el Rey Nayar nunca murió?",
+        "o": [
+          "Los niños coras",
+          "Los niños huicholes",
+          "Los niños del valle de Matatipac",
+          "Los niños de Tepic"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Con qué frase termina la historia del Rey Nayar?",
+        "o": [
+          "“Somos hijos del sol, y la montaña siempre habla.”",
+          "“La tierra no se vende.”",
+          "“No lloren, yo viviré por siempre.”",
+          "“Las nubes obedecían.”"
+        ],
+        "a": 0
       }
     ]
   }

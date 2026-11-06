@@ -429,6 +429,10 @@
   .t-qa .t-answer{ padding:0 11px 10px 33px; font-size:13.5px; color:var(--cat-convivencia); font-weight:600; }
   .t-qa .t-answer ul{ margin:0; padding-left:18px; }
   .qa-tools{ display:flex; gap:8px; margin:0 0 10px; }
+  .t-story{ border:1px solid var(--line); border-left:4px solid var(--cat-reunion); border-radius:9px; margin:0 0 10px; background:var(--surface-2); }
+  .t-story summary{ cursor:pointer; padding:10px 12px; font-size:14px; font-weight:700; color:var(--ink); }
+  .t-story-body{ padding:0 14px 6px; }
+  .t-story-body p{ font-size:15px; line-height:1.6; color:var(--ink); margin:0 0 11px; text-wrap:pretty; }
   .exam-foot{ font-size:11.5px; color:var(--muted); text-align:center; margin:14px 0 0; }
 
   /* ---- exámenes de práctica ---- */
@@ -1623,6 +1627,7 @@
       else if(b.type === 'text') html += '<p class="t-text">' + esc(b.text) + '</p>';
       else if(b.type === 'def') html += '<p class="t-def"><b>' + esc(b.term) + ':</b> ' + esc(b.text) + '</p>';
       else if(b.type === 'example') html += '<div class="t-example">' + b.lines.map(function(l){ return '<span>' + esc(l) + '</span>'; }).join('') + '</div>';
+      else if(b.type === 'story') html += '<details class="t-story"><summary>📜 ' + esc(b.title) + '</summary><div class="t-story-body">' + b.paragraphs.map(function(p){ return '<p>' + esc(p) + '</p>'; }).join('') + '</div></details>';
       else if(b.type === 'qa'){
         var a = Array.isArray(b.a) ? '<ul>' + b.a.map(function(x){ return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' : esc(b.a);
         html += '<details class="t-qa"><summary>' + esc(b.q) + '</summary><div class="t-answer">' + a + '</div></details>';
