@@ -431,6 +431,85 @@
   .qa-tools{ display:flex; gap:8px; margin:0 0 10px; }
   .exam-foot{ font-size:11.5px; color:var(--muted); text-align:center; margin:14px 0 0; }
 
+  /* ---- exámenes de práctica ---- */
+  .practice-hub{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:14px 16px; margin-bottom:14px; box-shadow:var(--shadow);
+  }
+  .practice-hub h3{ font-family:var(--font-display); font-size:16.5px; font-weight:700; color:var(--ink); margin:0 0 3px; }
+  .practice-hub p{ font-size:12.5px; color:var(--muted); margin:0 0 10px; line-height:1.4; }
+  .practice-grid{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .practice-card{
+    text-align:left; font-family:var(--font-body); cursor:pointer; color:var(--ink);
+    background:var(--surface-2); border:1px solid var(--line); border-radius:12px; padding:10px 11px;
+    display:flex; flex-direction:column; gap:2px; min-width:0;
+  }
+  .practice-card:active{ transform:scale(.98); }
+  .practice-card .pc-name{ font-size:13.5px; font-weight:700; }
+  .practice-card .pc-meta{ font-family:var(--font-mono); font-size:10.5px; color:var(--muted); }
+  .practice-card .pc-best{ font-size:11.5px; font-weight:700; color:var(--cat-convivencia); }
+  .practice-btn{ border-color:var(--cat-reunion); color:var(--cat-reunion); }
+
+  #quiz{
+    position:fixed; inset:0; z-index:60; display:flex; flex-direction:column;
+    background:var(--bg); color:var(--ink);
+  }
+  #quiz[hidden]{ display:none; }
+  .qz-bar{
+    display:flex; align-items:center; gap:10px; padding:12px 16px;
+    padding-top:calc(12px + env(safe-area-inset-top));
+    background:var(--surface); border-bottom:1px solid var(--line);
+  }
+  .qz-title{ flex:1; min-width:0; }
+  .qz-subject{ font-family:var(--font-display); font-size:17px; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .qz-count{ font-family:var(--font-mono); font-size:11.5px; color:var(--muted); }
+  .qz-close{
+    flex:0 0 auto; width:36px; height:36px; border-radius:50%; border:1px solid var(--line);
+    background:var(--surface-2); color:var(--ink); font-size:16px; cursor:pointer;
+  }
+  .qz-progress{ height:5px; background:var(--line); }
+  .qz-progress span{ display:block; height:100%; background:var(--cat-reunion); transition:width .3s; }
+  .qz-body{ flex:1; overflow-y:auto; padding:20px 18px 28px; max-width:560px; width:100%; margin:0 auto; }
+  .qz-q{ font-size:19px; font-weight:700; line-height:1.35; margin:0 0 18px; text-wrap:pretty; }
+  .qz-opts{ display:flex; flex-direction:column; gap:10px; }
+  .qz-opt{
+    display:flex; align-items:flex-start; gap:10px; text-align:left; width:100%;
+    font-family:var(--font-body); font-size:15px; line-height:1.35; color:var(--ink); cursor:pointer;
+    background:var(--surface); border:2px solid var(--line); border-radius:12px; padding:12px 14px;
+  }
+  .qz-opt .qz-letter{
+    flex:0 0 auto; width:24px; height:24px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center;
+    font-family:var(--font-mono); font-size:12px; font-weight:700; background:var(--surface-2); border:1px solid var(--line);
+  }
+  .qz-opt:disabled{ cursor:default; }
+  .qz-opt.right{ border-color:#2e9d5a; background:color-mix(in srgb, #2e9d5a 14%, var(--surface)); }
+  .qz-opt.right .qz-letter{ background:#2e9d5a; color:#fff; border-color:#2e9d5a; }
+  .qz-opt.wrong{ border-color:#d64545; background:color-mix(in srgb, #d64545 12%, var(--surface)); }
+  .qz-opt.wrong .qz-letter{ background:#d64545; color:#fff; border-color:#d64545; }
+  .qz-opt.dim{ opacity:.55; }
+  .qz-feedback{ margin-top:16px; padding:12px 14px; border-radius:12px; font-size:14px; line-height:1.4; }
+  .qz-feedback.ok{ background:color-mix(in srgb, #2e9d5a 13%, var(--surface)); border:1px solid #2e9d5a; }
+  .qz-feedback.bad{ background:color-mix(in srgb, #d64545 11%, var(--surface)); border:1px solid #d64545; }
+  .qz-feedback b{ display:block; margin-bottom:3px; font-size:15px; }
+  .qz-next, .qz-main-btn{
+    display:block; width:100%; margin-top:16px; font-family:var(--font-body); font-size:15.5px; font-weight:700;
+    color:#fff; background:#2e6e9e; border:none; border-radius:12px; padding:13px; cursor:pointer;
+  }
+  .qz-ghost{
+    display:block; width:100%; margin-top:10px; font-family:var(--font-body); font-size:14.5px; font-weight:600;
+    color:var(--ink); background:none; border:1px solid var(--line); border-radius:12px; padding:12px; cursor:pointer;
+  }
+  .qz-tip{ font-size:13px; color:var(--muted); background:var(--surface-2); border-radius:10px; padding:10px 12px; margin:0 0 16px; line-height:1.45; }
+  .qz-result{ text-align:center; }
+  .qz-result .qz-emoji{ font-size:54px; line-height:1.1; }
+  .qz-result h3{ font-family:var(--font-display); font-size:24px; margin:8px 0 4px; }
+  .qz-score{ font-family:var(--font-mono); font-size:15px; color:var(--muted); margin-bottom:6px; }
+  .qz-review{ text-align:left; margin-top:18px; }
+  .qz-review h4{ font-size:14px; margin:0 0 8px; }
+  .qz-miss{ background:var(--surface); border:1px solid var(--line); border-left:4px solid #d64545; border-radius:10px; padding:10px 12px; margin-bottom:8px; font-size:13.5px; line-height:1.4; }
+  .qz-miss .qz-ans{ color:#2e9d5a; font-weight:700; margin-top:4px; }
+  :root[data-theme="dark"] .qz-miss .qz-ans{ color:#6fd49a; }
+
   /* ---- alertas ---- */
   #alerts{ display:flex; flex-direction:column; gap:8px; margin-bottom:14px; }
   #alerts:empty{ display:none; }
@@ -780,6 +859,7 @@
 
   <section id="tab-examenes" class="tab-content" hidden>
     <div id="exam-header" class="exam-header"></div>
+    <div id="practice-hub"></div>
     <nav class="day-pills" id="exam-day-pills" aria-label="Elegir día de examen"></nav>
     <div id="exam-list"></div>
     <p class="exam-foot">Calendario y temarios tomados de la plataforma UNOi y de los avisos del colegio. Si un temario cambia, avísanos para actualizarlo.</p>
@@ -1563,6 +1643,8 @@
       var open = !!OPEN_TEMARIO[key];
       var actions = '';
       if(t) actions += '<button type="button" class="exam-btn" data-temario="' + esc(key) + '" aria-expanded="' + open + '">📖 ' + (open ? 'Ocultar temario' : 'Ver temario') + '</button>';
+      var pr = practiceFor(it.temario);
+      if(pr) actions += '<button type="button" class="exam-btn practice-btn" data-practice="' + esc(it.temario) + '">🎯 Practicar (' + pr.length + ')</button>';
       if(isExam) actions += '<button type="button" class="exam-btn studied-btn" data-studied="' + esc(key) + '" aria-pressed="' + done + '">' + (done ? '✅ Ya repasé' : '☐ Marcar como repasado') + '</button>';
       var pending = '';
       if(isExam && !t) pending = '<div class="exam-pending">Temario aún no disponible en la plataforma.</div>';
@@ -1580,8 +1662,195 @@
     }).join('');
   }
 
+  // ---- exámenes de práctica (opción múltiple) ----
+  var QUIZ = null;
+  var QUIZ_LETTERS = ['A', 'B', 'C', 'D', 'E'];
+
+  function practiceFor(key){
+    var p = EXAMS && EXAMS.practica && key && EXAMS.practica[key];
+    return p && p.length ? p : null;
+  }
+  function practiceSubject(key){
+    var name = null;
+    EXAMS.days.forEach(function(day){
+      day.items.forEach(function(it){ if(it.temario === key && !name) name = it.subject; });
+    });
+    return name || (EXAMS.temarios[key] && EXAMS.temarios[key].title) || key;
+  }
+  function practiceDate(key){
+    var label = '';
+    EXAMS.days.forEach(function(day){
+      day.items.forEach(function(it){
+        if(it.temario === key && !label){
+          var d = parseDate(day.date);
+          label = WEEKDAYS[d.getDay()].charAt(0).toUpperCase() + WEEKDAYS[d.getDay()].slice(1) + ' ' + d.getDate();
+        }
+      });
+    });
+    return label;
+  }
+  function practiceBest(){ return readJSON('cclt11-practica', {}); }
+
+  function shuffle(a){
+    a = a.slice();
+    for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+
+  function renderPracticeHub(){
+    var box = $('#practice-hub');
+    var keys = EXAMS.practica ? Object.keys(EXAMS.practica) : [];
+    // en el orden del calendario
+    var order = [];
+    EXAMS.days.forEach(function(day){ day.items.forEach(function(it){ if(it.temario && keys.indexOf(it.temario) >= 0 && order.indexOf(it.temario) < 0) order.push(it.temario); }); });
+    keys.forEach(function(k){ if(order.indexOf(k) < 0) order.push(k); });
+    if(!order.length){ box.innerHTML = ''; box.className = ''; return; }
+    var best = practiceBest();
+    box.className = 'practice-hub';
+    box.innerHTML =
+      '<h3>🎯 Exámenes de práctica</h3>' +
+      '<p>Para repasar en familia: lean la pregunta en voz alta y dejen que su hijo(a) conteste antes de tocar la respuesta.</p>' +
+      '<div class="practice-grid">' + order.map(function(k){
+        var b = best[k];
+        return '<button type="button" class="practice-card" data-practice="' + esc(k) + '">' +
+          '<span class="pc-name">' + esc(practiceSubject(k)) + '</span>' +
+          '<span class="pc-meta">' + esc(practiceDate(k)) + ' · ' + EXAMS.practica[k].length + ' preguntas</span>' +
+          (b ? '<span class="pc-best">⭐ Mejor: ' + b.best + '/' + b.total + '</span>' : '') +
+        '</button>';
+      }).join('') + '</div>';
+  }
+
+  function openQuiz(key){
+    var bank = practiceFor(key);
+    if(!bank) return;
+    QUIZ = {
+      key: key,
+      subject: practiceSubject(key),
+      items: shuffle(bank).map(function(q){
+        var opts = q.o.map(function(text, i){ return { text: text, right: i === q.a }; });
+        return { q: q.q, why: q.why || '', opts: shuffle(opts) };
+      }),
+      i: 0, score: 0, answered: false, misses: []
+    };
+    $('#quiz').hidden = false;
+    document.documentElement.style.overflow = 'hidden';
+    renderQuiz();
+  }
+
+  function closeQuiz(){
+    $('#quiz').hidden = true;
+    document.documentElement.style.overflow = '';
+    QUIZ = null;
+    if(EXAMS) renderPracticeHub();
+  }
+
+  function renderQuiz(){
+    var Q = QUIZ, total = Q.items.length;
+    $('#qz-subject').textContent = '🎯 ' + Q.subject;
+    var body = $('#qz-body');
+    if(Q.i >= total){
+      $('#qz-count').textContent = 'Resultado';
+      $('#qz-progress').style.width = '100%';
+      var pct = Q.score / total;
+      var face = pct === 1 ? '🏆' : pct >= .8 ? '🌟' : pct >= .6 ? '👍' : '💪';
+      var msg = pct === 1 ? '¡Perfecto! Está listo(a) para el examen' : pct >= .8 ? '¡Muy bien! Ya casi lo domina' : pct >= .6 ? 'Va bien, vale la pena repasar los errores' : 'Hay que repasar un poco más el temario';
+      var best = practiceBest();
+      var prev = best[Q.key];
+      var record = !prev || Q.score > prev.best;
+      if(record){ best[Q.key] = { best: Q.score, total: total }; writeJSON('cclt11-practica', best); }
+      var html = '<div class="qz-result"><div class="qz-emoji">' + face + '</div>' +
+        '<h3>' + Q.score + ' de ' + total + '</h3>' +
+        '<div class="qz-score">' + Math.round(pct * 100) + '% de aciertos' + (record && prev ? ' · ¡nuevo récord!' : '') + '</div>' +
+        '<p>' + esc(msg) + '</p></div>';
+      if(Q.misses.length){
+        html += '<div class="qz-review"><h4>Para repasar (' + Q.misses.length + '):</h4>' + Q.misses.map(function(m){
+          return '<div class="qz-miss">' + esc(m.q) + '<div class="qz-ans">✔ ' + esc(m.ans) + '</div></div>';
+        }).join('') + '</div>';
+      }
+      html += '<button type="button" class="qz-main-btn" data-qz="again">🔁 Volver a practicar (otro orden)</button>' +
+        '<button type="button" class="qz-ghost" data-qz="close">Terminar</button>';
+      body.innerHTML = html;
+      body.scrollTop = 0;
+      return;
+    }
+    var item = Q.items[Q.i];
+    $('#qz-count').textContent = 'Pregunta ' + (Q.i + 1) + ' de ' + total + ' · ✔ ' + Q.score;
+    $('#qz-progress').style.width = (Q.i / total * 100) + '%';
+    body.innerHTML =
+      (Q.i === 0 ? '<div class="qz-tip">👨‍👩‍👧 Lean la pregunta juntos. Cuando su hijo(a) tenga su respuesta, toquen la opción.</div>' : '') +
+      '<div class="qz-q">' + esc(item.q) + '</div>' +
+      '<div class="qz-opts">' + item.opts.map(function(o, i){
+        return '<button type="button" class="qz-opt" data-opt="' + i + '"><span class="qz-letter">' + QUIZ_LETTERS[i] + '</span><span>' + esc(o.text) + '</span></button>';
+      }).join('') + '</div>' +
+      '<div id="qz-after"></div>';
+    Q.answered = false;
+    body.scrollTop = 0;
+  }
+
+  function answerQuiz(idx){
+    var Q = QUIZ;
+    if(!Q || Q.answered) return;
+    Q.answered = true;
+    var item = Q.items[Q.i];
+    var ok = item.opts[idx].right;
+    var rightText = '';
+    $all('.qz-opt', $('#qz-body')).forEach(function(b, i){
+      b.disabled = true;
+      if(item.opts[i].right){ b.classList.add('right'); rightText = item.opts[i].text; }
+      else if(i === idx) b.classList.add('wrong');
+      else b.classList.add('dim');
+    });
+    if(ok) Q.score++;
+    else Q.misses.push({ q: item.q, ans: rightText });
+    try{ if(navigator.vibrate) navigator.vibrate(ok ? 15 : [40, 30, 40]); }catch(e){}
+    var last = Q.i === Q.items.length - 1;
+    $('#qz-after').innerHTML =
+      '<div class="qz-feedback ' + (ok ? 'ok' : 'bad') + '"><b>' + (ok ? '✅ ¡Correcto!' : '❌ No es correcta') + '</b>' +
+        (ok ? '' : 'La respuesta es: <b style="display:inline">' + esc(rightText) + '</b>') +
+        (item.why ? '<div style="margin-top:4px">' + esc(item.why) + '</div>' : '') +
+      '</div>' +
+      '<button type="button" class="qz-next" data-qz="next">' + (last ? 'Ver resultado →' : 'Siguiente →') + '</button>';
+    $('#qz-count').textContent = 'Pregunta ' + (Q.i + 1) + ' de ' + Q.items.length + ' · ✔ ' + Q.score;
+    var nb = $('#qz-after .qz-next');
+    if(nb && nb.scrollIntoView) nb.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+
+  function wireQuiz(){
+    var root = document.createElement('div');
+    root.id = 'quiz';
+    root.hidden = true;
+    root.setAttribute('role', 'dialog');
+    root.setAttribute('aria-modal', 'true');
+    root.setAttribute('aria-label', 'Examen de práctica');
+    root.innerHTML =
+      '<div class="qz-bar"><div class="qz-title"><div class="qz-subject" id="qz-subject"></div><div class="qz-count" id="qz-count"></div></div>' +
+      '<button type="button" class="qz-close" data-qz="close" aria-label="Cerrar práctica">✕</button></div>' +
+      '<div class="qz-progress"><span id="qz-progress"></span></div>' +
+      '<div class="qz-body" id="qz-body" aria-live="polite"></div>';
+    document.body.appendChild(root);
+    root.addEventListener('click', function(ev){
+      var opt = ev.target.closest('[data-opt]');
+      if(opt){ answerQuiz(+opt.getAttribute('data-opt')); return; }
+      var act = ev.target.closest('[data-qz]');
+      if(!act) return;
+      var a = act.getAttribute('data-qz');
+      if(a === 'close') closeQuiz();
+      else if(a === 'next'){ QUIZ.i++; renderQuiz(); }
+      else if(a === 'again'){ openQuiz(QUIZ.key); }
+    });
+    document.addEventListener('keydown', function(e){
+      if(!QUIZ) return;
+      if(e.key === 'Escape') closeQuiz();
+    });
+    $('#practice-hub').addEventListener('click', function(ev){
+      var b = ev.target.closest('[data-practice]');
+      if(b) openQuiz(b.getAttribute('data-practice'));
+    });
+  }
+
   function renderExams(){
     renderExamHeader();
+    renderPracticeHub();
     renderExamPills();
     renderExamList();
   }
@@ -1601,6 +1870,8 @@
       renderExamList();
     });
     $('#exam-list').addEventListener('click', function(ev){
+      var pBtn = ev.target.closest('[data-practice]');
+      if(pBtn){ openQuiz(pBtn.getAttribute('data-practice')); return; }
       var tBtn = ev.target.closest('[data-temario]');
       if(tBtn){
         var key = tBtn.getAttribute('data-temario');
@@ -1690,6 +1961,7 @@
   renderHorario();
   wireAltar();
   wireExams();
+  wireQuiz();
   wireTabs();
   loadExams().then(function(ok){
     if(!ok) return;
