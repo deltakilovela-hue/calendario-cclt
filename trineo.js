@@ -9,6 +9,7 @@
   var COLS = 13, MIN_ROWS = 13, MAX_ROWS = 21;
   var START_STEP = 165, MIN_STEP = 85;
   var BEST_KEY = 'cclt11-trineo-best';
+  var MODE_KEY = 'cclt11-trineo-modo';   // 'dedo' | 'flechas'
   var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
   var GIFT_COLORS = [
@@ -26,7 +27,9 @@
   var root, stage, canvas, ctx, toastEl, overlay, chipScore, chipBest;
   var view = { dpr: 1, cw: 0, ch: 0, cell: 20, ox: 0, oy: 0, rows: 19 };
   var running = false, raf = 0, lastT = 0, acc = 0, toastTimer = null;
-  var S = null, best = 0, flakes = [], sparks = [];
+  var S = null, best = 0, flakes = [], sparks = [], trail = [];
+  var mode = 'dedo';
+  try{ mode = localStorage.getItem(MODE_KEY) || 'dedo'; }catch(e){}
 
   function buzz(p){ try{ if(navigator.vibrate) navigator.vibrate(p); }catch(e){} }
   function rand(a, b){ return a + Math.random() * (b - a); }
@@ -72,12 +75,14 @@
         '<div class="tr-title">🛷 <span class="tr-long">Trineo de Santa</span><span class="tr-short">Trineo</span></div>' +
         '<span class="tr-chip" data-chip="score">🎁 0</span>' +
         '<span class="tr-chip" data-chip="best">🏆 0</span>' +
+        '<button type="button" class="tr-mode" aria-label="Cambiar controles"></button>' +
         '<button type="button" class="tr-close" aria-label="Salir del juego">✕</button>' +
       '</div>' +
       '<div class="tr-stage"><canvas></canvas>' +
         '<div class="tr-toast" role="status" aria-live="polite"></div>' +
         '<div class="tr-overlay"></div>' +
       '</div>' +
+      '<div class="tr-swipe-hint">👆 Desliza el dedo hacia donde quieras ir, en cualquier parte de la pantalla</div>' +
       '<div class="tr-pad" aria-label="Controles">' +
         '<button type="button" class="tr-key" data-d="up" aria-label="Arriba">▲</button>' +
         '<button type="button" class="tr-key" data-d="left" aria-label="Izquierda">◀</button>' +
@@ -95,11 +100,13 @@
     chipBest = root.querySelector('[data-chip="best"]');
 
     root.querySelector('.tr-close').addEventListener('click', close);
+    root.querySelector('.tr-mode').addEventListener('click', function(){ setMode(mode === 'dedo' ? 'flechas' : 'dedo'); });
     overlay.addEventListener('click', function(e){
       var b = e.target.closest('[data-act]');
       if(!b) return;
       var act = b.getAttribute('data-act');
       if(act === 'start') start();
+      else if(act === 'mode-dedo' || act === 'mode-flechas'){ setMode(act.slice(5)); readyCard(); }
       else if(act === 'again'){ S = newState(); start(); }
       else if(act === 'resume') resume();
       else if(act === 'close') close();
@@ -114,21 +121,31 @@
       });
     });
 
-    // deslizar el dedo sobre el tablero
-    var sx = 0, sy = 0, tracking = false;
-    stage.addEventListener('touchstart', function(e){
-      if(e.target.closest('.tr-overlay button')) return;
-      var t = e.touches[0]; sx = t.clientX; sy = t.clientY; tracking = true;
-    }, { passive: true });
-    stage.addEventListener('touchmove', function(e){
+    // deslizar el dedo (o arrastrar el mouse) en cualquier parte del juego,
+    // como si fuera scroll pero hacia los 4 lados. Sin levantar el dedo se
+    // pueden encadenar varios giros.
+    var drag = null, SWIPE = 16;
+    root.addEventListener('pointerdown', function(e){
+      if(e.target.closest('button')) return;
+      if(e.pointerType === 'mouse' && e.button !== 0) return;
+      drag = { id: e.pointerId, x: e.clientX, y: e.clientY };
+      try{ root.setPointerCapture(e.pointerId); }catch(err){}
+      addTrail(e.clientX, e.clientY);
+    });
+    root.addEventListener('pointermove', function(e){
+      if(!drag || e.pointerId !== drag.id) return;
       e.preventDefault();
-      if(!tracking) return;
-      var t = e.touches[0], dx = t.clientX - sx, dy = t.clientY - sy;
-      if(Math.max(Math.abs(dx), Math.abs(dy)) < 22) return;
+      addTrail(e.clientX, e.clientY);
+      var dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+      if(Math.max(Math.abs(dx), Math.abs(dy)) < SWIPE) return;
       if(Math.abs(dx) > Math.abs(dy)) turn(dx > 0 ? 1 : -1, 0); else turn(0, dy > 0 ? 1 : -1);
-      sx = t.clientX; sy = t.clientY;   // permite encadenar giros sin levantar el dedo
-    }, { passive: false });
-    stage.addEventListener('touchend', function(){ tracking = false; });
+      drag.x = e.clientX; drag.y = e.clientY;
+    });
+    function endDrag(e){ if(drag && e.pointerId === drag.id) drag = null; }
+    root.addEventListener('pointerup', endDrag);
+    root.addEventListener('pointercancel', endDrag);
+    // evita que el navegador haga scroll o "jale para recargar" mientras juegan
+    root.addEventListener('touchmove', function(e){ e.preventDefault(); }, { passive: false });
 
     window.addEventListener('resize', function(){ if(running) resize(); });
     document.addEventListener('visibilitychange', function(){ if(document.hidden && S && S.phase === 'play') pause(); });
@@ -153,12 +170,34 @@
   function showOverlay(html){ overlay.innerHTML = '<div class="tr-card">' + html + '</div>'; overlay.hidden = false; }
   function hideOverlay(){ overlay.hidden = true; overlay.innerHTML = ''; }
 
+  function setMode(m){
+    mode = m === 'flechas' ? 'flechas' : 'dedo';
+    try{ localStorage.setItem(MODE_KEY, mode); }catch(e){}
+    if(!root) return;
+    root.classList.toggle('tr-mode-dedo', mode === 'dedo');
+    var b = root.querySelector('.tr-mode');
+    b.textContent = mode === 'dedo' ? '👆' : '🎮';
+    b.title = mode === 'dedo' ? 'Jugando con el dedo · tocar para usar flechas' : 'Jugando con flechas · tocar para usar el dedo';
+    if(running) resize();
+  }
+
+  function addTrail(x, y){
+    if(reduceMotion || !stage) return;
+    var r = stage.getBoundingClientRect();
+    trail.push({ x: x - r.left, y: y - r.top, life: 1 });
+    if(trail.length > 24) trail.shift();
+  }
+
   function readyCard(){
     showOverlay(
       '<div class="tr-big">🛷🎅</div><h3>Trineo de Santa</h3>' +
       '<p>Recoge los <b>🎁 regalos</b> para engancharlos a tu trineo. Las <b>⭐ estrellas</b> valen 3 puntos.<br>' +
       'No choques con la cerca ni con tus propios regalos.</p>' +
-      '<p class="tr-small">Desliza el dedo o usa las flechas. Agita el celular para una tormenta de nieve.</p>' +
+      '<div class="tr-modes" role="group" aria-label="¿Cómo quieres jugar?">' +
+        '<button type="button" data-act="mode-dedo" aria-pressed="' + (mode === 'dedo') + '">👆 Con el dedo</button>' +
+        '<button type="button" data-act="mode-flechas" aria-pressed="' + (mode === 'flechas') + '">🎮 Con flechas</button>' +
+      '</div>' +
+      '<p class="tr-small">' + (mode === 'dedo' ? 'Desliza el dedo hacia arriba, abajo o a los lados, como si hicieras scroll.' : 'Usa las flechas de abajo (también puedes deslizar el dedo).') + ' Agita el celular para una tormenta de nieve.</p>' +
       '<button type="button" class="primary" data-act="start">¡A repartir regalos!</button>'
     );
   }
@@ -486,6 +525,14 @@
     drawSleigh(pts[0].x, pts[0].y + c * .05, c * 1.05, S.face, t);
     ctx.restore();
 
+    // estela del dedo
+    trail.forEach(function(p){
+      ctx.globalAlpha = Math.max(0, p.life) * .45;
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath(); ctx.arc(p.x, p.y, 4 + p.life * 10, 0, 6.29); ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+
     // chispas
     sparks.forEach(function(p){
       ctx.globalAlpha = Math.max(0, p.life);
@@ -503,6 +550,7 @@
 
   function update(dt){
     var s = dt / 1000;
+    for(var t = trail.length - 1; t >= 0; t--){ trail[t].life -= s * 3; if(trail[t].life <= 0) trail.splice(t, 1); }
     for(var i = flakes.length - 1; i >= 0; i--){
       var f = flakes[i];
       f.ph += s * 2;
@@ -545,6 +593,7 @@
   var prevOverflow = '';
   function open(){
     if(!root) buildDom();
+    setMode(mode);
     loadBest();
     root.hidden = false;
     prevOverflow = document.documentElement.style.overflow;
