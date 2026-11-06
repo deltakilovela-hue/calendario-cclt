@@ -5,7 +5,7 @@
   var root = document.documentElement;
 
   var code = new Date().getMonth() * 100 + new Date().getDate();
-  var inSeason = code >= 1101 || code <= 6;
+  var inSeason = code >= 1003 || code <= 6;  // 3 nov – 6 ene
   var forced = /[?&]tema=navidad/.test(location.search);
   var otherForced = /[?&]tema=halloween/.test(location.search);
   if(!(forced || (inSeason && !otherForced))) return;

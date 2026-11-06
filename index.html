@@ -14,7 +14,7 @@
     var qn = /[?&]tema=navidad/.test(location.search);
     var dc = new Date(); dc = dc.getMonth() * 100 + dc.getDate();
     var inSeason = dc >= 815 && dc <= 1002;
-    var xmas = dc >= 1101 || dc <= 6;
+    var xmas = dc >= 1003 || dc <= 6;
     var root = document.documentElement;
     if(qn || (xmas && !q)){
       if(localStorage.getItem('cclt11-season-navidad') !== 'off'){ root.setAttribute('data-season', 'navidad'); }
