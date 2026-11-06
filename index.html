@@ -848,8 +848,12 @@
     var today = startOfDay(new Date());
     var upcoming = EVENTS.filter(function(e){
       if(!e.dateStart) return false;
+      var start = parseDate(e.dateStart);
       var end = parseDate(e.dateEnd || e.dateStart);
-      return end >= today;
+      if(end < today) return false;
+      // campañas largas (más de una semana) ya en curso no ocupan el lugar de "próxima actividad"
+      if(start < today && daysBetween(start, end) > 7) return false;
+      return true;
     }).sort(function(a,b){ return a.dateStart < b.dateStart ? -1 : 1; });
     return upcoming[0] || null;
   }

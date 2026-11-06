@@ -1,42 +1,424 @@
 {
-  "updated": "2026-10-02",
+  "updated": "2026-11-05",
   "birthdaysMonth": "Septiembre",
   "birthdays": [
-    { "name": "José Rubén", "role": "Maestro", "subject": "Biología", "icon": "🔬" },
-    { "name": "Melissa Aramara", "role": "Maestra", "subject": "Francés", "icon": "🥐" },
-    { "name": "Luz", "role": "Coordinadora", "subject": "", "icon": "📖" }
+    {
+      "name": "José Rubén",
+      "role": "Maestro",
+      "subject": "Biología",
+      "icon": "🔬"
+    },
+    {
+      "name": "Melissa Aramara",
+      "role": "Maestra",
+      "subject": "Francés",
+      "icon": "🥐"
+    },
+    {
+      "name": "Luz",
+      "role": "Coordinadora",
+      "subject": "",
+      "icon": "📖"
+    }
   ],
   "events": [
-    { "id": "e1",  "dateStart": "2026-08-24", "dateEnd": "2026-08-28", "category": "consejo",     "title": "Consejo Técnico Escolar", "note": "Fase intensiva. No hay clases para alumnos.", "highlight": false },
-    { "id": "e2",  "dateStart": "2026-08-26", "time": "18:00",         "category": "reunion",     "title": "Reunión de padres · Primer grado", "note": "Presentación de planta docente.", "highlight": true },
-    { "id": "e3",  "dateStart": "2026-08-31", "time": "07:45",         "category": "hito",        "title": "Inicio de clases", "note": "Ciclo escolar 2026-2027. Honores a la Bandera.", "highlight": true },
-    { "id": "e4",  "dateStart": "2026-08-31", "dateEnd": "2026-09-04", "category": "admin",       "title": "Semana de apoyo en vialidad", "note": "A cargo del personal del colegio.", "highlight": false },
-    { "id": "e5",  "dateStart": "2026-09-01", "category": "admin",       "title": "Toma de foto para credencial", "note": "Alumnos y personal de Secundaria.", "highlight": false },
-    { "id": "e6",  "dateStart": "2026-09-03", "time": "10:00",         "category": "convivencia", "title": "Convivencia de Bienvenida", "note": "Grupos 1.1, 1.3 y 1.5.", "highlight": true },
-    { "id": "e7",  "dateStart": "2026-09-07", "dateEnd": "2026-09-11", "category": "vialidad",    "title": "Semana de apoyo en vialidad", "note": "Le toca al Grupo 1.1. ¡Gracias por su apoyo!", "highlight": true, "extraLinkUrl": "vialidad.html", "extraLinkLabel": "📋 Ver / anotarse en los turnos" },
-    { "id": "e8",  "dateStart": "2026-09-11", "time": "08:00",         "category": "reunion",     "title": "Consejo Escolar de Participación en la Educación", "note": "Primera reunión (audiovisual).", "highlight": false },
-    { "id": "e9",  "dateStart": "2026-09-14", "category": "honores",     "title": "Honores a la Bandera", "note": "A cargo de Primaria.", "highlight": false },
-    { "id": "e10", "dateStart": "2026-09-16", "category": "suspension",  "title": "Suspensión de labores", "note": "", "highlight": false },
-    { "id": "e11", "dateStart": "2026-09-17", "category": "convivencia", "title": "Convivencia Mexicana", "note": "En horario de receso.", "highlight": false },
-    { "id": "e12", "dateStart": "2026-09-25", "category": "consejo",     "title": "Consejo Técnico Escolar", "note": "No hay clases para alumnos.", "highlight": false },
-    { "id": "e13", "dateStart": "2026-09-28", "category": "honores",     "title": "Honores a la Bandera", "note": "A cargo de Secundaria · Grupo 1.1.", "highlight": true },
-    { "id": "e14", "dateStart": "2026-09-30", "category": "admin",       "title": "Fecha límite: elección de Taller de Artes", "note": "", "highlight": false },
-    { "id": "e15", "dateStart": "2026-10-01", "category": "hito",        "title": "Jornada Electoral Estudiantil", "note": "Elección del Comité Ejecutivo Estudiantil, 3ra sesión del Consejo Electoral Estudiantil y entrega de constancias de mayoría a la planilla ganadora.", "highlight": false },
-    { "id": "e16", "dateStart": "2026-10-01", "category": "admin",       "title": "Entrega de credencial de estudiante", "note": "", "highlight": false },
-    { "id": "e17", "dateStart": "2026-10-05", "category": "hito",        "title": "Toma de protesta del Comité Estudiantil electo", "note": "", "highlight": false },
-    { "id": "e18", "dateStart": "2026-10-06", "category": "admin",       "title": "Último día para entregar el formato de autorización de vacunación", "note": "Sin el formato no se aplicará la vacuna del día 8.", "highlight": false,
-      "alert": true, "alertText": "Último día para entregar el formato de autorización de vacunación",
-      "checklistTitle": "📋 Pendientes", "checklist": ["Llenar y firmar el formato de autorización", "Entregarlo en la escuela"] },
-    { "id": "e19", "dateStart": "2026-10-08", "category": "admin",       "title": "Jornada de vacunación: SR, Hepatitis B y VPH", "note": "Todos los grados, hombres y mujeres. Si falta alguno de los documentos no se aplicará la vacuna.", "highlight": false,
-      "alert": true, "alertText": "Vacunación: lleva formato, cartilla y CURP",
-      "checklist": ["Formato de autorización firmado", "Cartilla de vacunación", "CURP"] },
-    { "id": "e20", "dateStart": "2026-10-08", "time": "19:00",         "category": "reunion",     "title": "Reunión informativa: Campamentos de verano en el extranjero", "note": "Salón Audiovisual.", "highlight": false },
-    { "id": "e21", "dateStart": "2026-10-12", "category": "honores",     "title": "Honores a la Bandera", "note": "A cargo de Primaria.", "highlight": false },
-    { "id": "e22", "dateStart": "2026-10-14", "category": "hito",        "title": "Concurso de Spelling Bee de Zona 2026", "note": "", "highlight": false },
-    { "id": "e23", "dateStart": "2026-10-26", "category": "honores",     "title": "Honores a la Bandera", "note": "A cargo de Secundaria · Grupo 1.2.", "highlight": false },
-    { "id": "e24", "dateStart": "2026-10-29", "time": "13:10",         "category": "admin",       "title": "Salida anticipada de Secundaria", "note": "Ese día hay ensayo general con alumnos a las 8:30 a.m. y la salida es a la 1:10 p.m.", "highlight": false,
-      "alert": true, "alertText": "Salida anticipada de Secundaria" },
-    { "id": "e25", "dateStart": "2026-10-29", "time": "19:00",         "category": "convivencia", "title": "Festival de Día de Muertos", "note": "Primaria y Secundaria.", "highlight": false },
-    { "id": "e26", "dateStart": "2026-10-30", "category": "consejo",     "title": "Consejo Técnico Escolar", "note": "No hay clases para alumnos.", "highlight": false }
+    {
+      "id": "e1",
+      "dateStart": "2026-08-24",
+      "dateEnd": "2026-08-28",
+      "category": "consejo",
+      "title": "Consejo Técnico Escolar",
+      "note": "Fase intensiva. No hay clases para alumnos.",
+      "highlight": false
+    },
+    {
+      "id": "e2",
+      "dateStart": "2026-08-26",
+      "time": "18:00",
+      "category": "reunion",
+      "title": "Reunión de padres · Primer grado",
+      "note": "Presentación de planta docente.",
+      "highlight": true
+    },
+    {
+      "id": "e3",
+      "dateStart": "2026-08-31",
+      "time": "07:45",
+      "category": "hito",
+      "title": "Inicio de clases",
+      "note": "Ciclo escolar 2026-2027. Honores a la Bandera.",
+      "highlight": true
+    },
+    {
+      "id": "e4",
+      "dateStart": "2026-08-31",
+      "dateEnd": "2026-09-04",
+      "category": "admin",
+      "title": "Semana de apoyo en vialidad",
+      "note": "A cargo del personal del colegio.",
+      "highlight": false
+    },
+    {
+      "id": "e5",
+      "dateStart": "2026-09-01",
+      "category": "admin",
+      "title": "Toma de foto para credencial",
+      "note": "Alumnos y personal de Secundaria.",
+      "highlight": false
+    },
+    {
+      "id": "e6",
+      "dateStart": "2026-09-03",
+      "time": "10:00",
+      "category": "convivencia",
+      "title": "Convivencia de Bienvenida",
+      "note": "Grupos 1.1, 1.3 y 1.5.",
+      "highlight": true
+    },
+    {
+      "id": "e7",
+      "dateStart": "2026-09-07",
+      "dateEnd": "2026-09-11",
+      "category": "vialidad",
+      "title": "Semana de apoyo en vialidad",
+      "note": "Le toca al Grupo 1.1. ¡Gracias por su apoyo!",
+      "highlight": true,
+      "extraLinkUrl": "vialidad.html",
+      "extraLinkLabel": "📋 Ver / anotarse en los turnos"
+    },
+    {
+      "id": "e8",
+      "dateStart": "2026-09-11",
+      "time": "08:00",
+      "category": "reunion",
+      "title": "Consejo Escolar de Participación en la Educación",
+      "note": "Primera reunión (audiovisual).",
+      "highlight": false
+    },
+    {
+      "id": "e9",
+      "dateStart": "2026-09-14",
+      "category": "honores",
+      "title": "Honores a la Bandera",
+      "note": "A cargo de Primaria.",
+      "highlight": false
+    },
+    {
+      "id": "e10",
+      "dateStart": "2026-09-16",
+      "category": "suspension",
+      "title": "Suspensión de labores",
+      "note": "",
+      "highlight": false
+    },
+    {
+      "id": "e11",
+      "dateStart": "2026-09-17",
+      "category": "convivencia",
+      "title": "Convivencia Mexicana",
+      "note": "En horario de receso.",
+      "highlight": false
+    },
+    {
+      "id": "e12",
+      "dateStart": "2026-09-25",
+      "category": "consejo",
+      "title": "Consejo Técnico Escolar",
+      "note": "No hay clases para alumnos.",
+      "highlight": false
+    },
+    {
+      "id": "e13",
+      "dateStart": "2026-09-28",
+      "category": "honores",
+      "title": "Honores a la Bandera",
+      "note": "A cargo de Secundaria · Grupo 1.1.",
+      "highlight": true
+    },
+    {
+      "id": "e14",
+      "dateStart": "2026-09-30",
+      "category": "admin",
+      "title": "Fecha límite: elección de Taller de Artes",
+      "note": "",
+      "highlight": false
+    },
+    {
+      "id": "e15",
+      "dateStart": "2026-10-01",
+      "category": "hito",
+      "title": "Jornada Electoral Estudiantil",
+      "note": "Elección del Comité Ejecutivo Estudiantil, 3ra sesión del Consejo Electoral Estudiantil y entrega de constancias de mayoría a la planilla ganadora.",
+      "highlight": false
+    },
+    {
+      "id": "e16",
+      "dateStart": "2026-10-01",
+      "category": "admin",
+      "title": "Entrega de credencial de estudiante",
+      "note": "",
+      "highlight": false
+    },
+    {
+      "id": "e17",
+      "dateStart": "2026-10-05",
+      "category": "hito",
+      "title": "Toma de protesta del Comité Estudiantil electo",
+      "note": "",
+      "highlight": false
+    },
+    {
+      "id": "e18",
+      "dateStart": "2026-10-06",
+      "category": "admin",
+      "title": "Último día para entregar el formato de autorización de vacunación",
+      "note": "Sin el formato no se aplicará la vacuna del día 8.",
+      "highlight": false,
+      "alert": true,
+      "alertText": "Último día para entregar el formato de autorización de vacunación",
+      "checklistTitle": "📋 Pendientes",
+      "checklist": [
+        "Llenar y firmar el formato de autorización",
+        "Entregarlo en la escuela"
+      ]
+    },
+    {
+      "id": "e19",
+      "dateStart": "2026-10-08",
+      "category": "admin",
+      "title": "Jornada de vacunación: SR, Hepatitis B y VPH",
+      "note": "Todos los grados, hombres y mujeres. Si falta alguno de los documentos no se aplicará la vacuna.",
+      "highlight": false,
+      "alert": true,
+      "alertText": "Vacunación: lleva formato, cartilla y CURP",
+      "checklist": [
+        "Formato de autorización firmado",
+        "Cartilla de vacunación",
+        "CURP"
+      ]
+    },
+    {
+      "id": "e20",
+      "dateStart": "2026-10-08",
+      "time": "19:00",
+      "category": "reunion",
+      "title": "Reunión informativa: Campamentos de verano en el extranjero",
+      "note": "Salón Audiovisual.",
+      "highlight": false
+    },
+    {
+      "id": "e21",
+      "dateStart": "2026-10-12",
+      "category": "honores",
+      "title": "Honores a la Bandera",
+      "note": "A cargo de Primaria.",
+      "highlight": false
+    },
+    {
+      "id": "e22",
+      "dateStart": "2026-10-14",
+      "category": "hito",
+      "title": "Concurso de Spelling Bee de Zona 2026",
+      "note": "",
+      "highlight": false
+    },
+    {
+      "id": "e23",
+      "dateStart": "2026-10-26",
+      "category": "honores",
+      "title": "Honores a la Bandera",
+      "note": "A cargo de Secundaria · Grupo 1.2.",
+      "highlight": false
+    },
+    {
+      "id": "e24",
+      "dateStart": "2026-10-29",
+      "time": "13:10",
+      "category": "admin",
+      "title": "Salida anticipada de Secundaria",
+      "note": "Ese día hay ensayo general con alumnos a las 8:30 a.m. y la salida es a la 1:10 p.m.",
+      "highlight": false,
+      "alert": true,
+      "alertText": "Salida anticipada de Secundaria"
+    },
+    {
+      "id": "e25",
+      "dateStart": "2026-10-29",
+      "time": "19:00",
+      "category": "convivencia",
+      "title": "Festival de Día de Muertos",
+      "note": "Primaria y Secundaria.",
+      "highlight": false
+    },
+    {
+      "id": "e26",
+      "dateStart": "2026-10-30",
+      "category": "consejo",
+      "title": "Consejo Técnico Escolar",
+      "note": "No hay clases para alumnos.",
+      "highlight": false
+    },
+    {
+      "id": "e27",
+      "dateStart": "2026-11-02",
+      "category": "suspension",
+      "title": "Suspensión de labores",
+      "note": "",
+      "highlight": false
+    },
+    {
+      "id": "e28",
+      "dateStart": "2026-11-03",
+      "dateEnd": "2026-11-30",
+      "category": "admin",
+      "title": "Apoyo al Asilo de Ancianos Juan de Zelayeta",
+      "note": "¡Gracias por su generosidad! Primer grado dona Detergente Ace.",
+      "highlight": true,
+      "checklistTitle": "🎁 Donativo de primer grado",
+      "checklist": [
+        "Detergente Ace"
+      ]
+    },
+    {
+      "id": "e29",
+      "dateStart": "2026-11-03",
+      "time": "15:30",
+      "category": "admin",
+      "title": "Inicia preparación para el Concurso de Matemáticas GAU55",
+      "note": "Solo alumnos participantes. Todos los martes de 3:30 a 5:30 p.m.",
+      "highlight": false
+    },
+    {
+      "id": "e30",
+      "dateStart": "2026-11-04",
+      "time": "09:30",
+      "category": "convivencia",
+      "title": "Concurso de Catrín y Catrina",
+      "note": "Convocado por el Comité Estudiantil.",
+      "highlight": false
+    },
+    {
+      "id": "e31",
+      "dateStart": "2026-11-05",
+      "time": "15:30",
+      "category": "admin",
+      "title": "Inicio del Club de Lectura y Escritura",
+      "note": "Todos los jueves de 3:30 a 4:30 p.m.",
+      "highlight": false
+    },
+    {
+      "id": "e32",
+      "dateStart": "2026-11-09",
+      "dateEnd": "2026-11-13",
+      "category": "hito",
+      "title": "Periodo de Evaluación del Primer Trimestre",
+      "note": "Semana de exámenes.",
+      "highlight": false,
+      "alert": true,
+      "alertText": "Semana de exámenes del primer trimestre"
+    },
+    {
+      "id": "e33",
+      "dateStart": "2026-11-09",
+      "category": "honores",
+      "title": "Honores a la Bandera",
+      "note": "A cargo de Primaria.",
+      "highlight": false
+    },
+    {
+      "id": "e34",
+      "dateStart": "2026-11-11",
+      "dateEnd": "2026-11-14",
+      "category": "hito",
+      "title": "ExpoCiencias Nacional 2026",
+      "note": "Sede: Nuevo León.",
+      "highlight": false
+    },
+    {
+      "id": "e35",
+      "dateStart": "2026-11-16",
+      "category": "suspension",
+      "title": "Suspensión de labores",
+      "note": "",
+      "highlight": false
+    },
+    {
+      "id": "e36",
+      "dateStart": "2026-11-23",
+      "category": "honores",
+      "title": "Honores a la Bandera",
+      "note": "A cargo de Secundaria · Grupo 1.3.",
+      "highlight": false
+    },
+    {
+      "id": "e37",
+      "dateStart": "2026-11-25",
+      "time": "18:00",
+      "category": "reunion",
+      "title": "Taller «Padres con propósito» · Primer grado",
+      "note": "Salón Audiovisual.",
+      "highlight": true,
+      "alert": true,
+      "alertText": "Taller para padres (6 pm) y entrega de calificaciones (7 pm)"
+    },
+    {
+      "id": "e38",
+      "dateStart": "2026-11-25",
+      "time": "19:00",
+      "category": "reunion",
+      "title": "Entrega de calificaciones del Trimestre I · Primer grado",
+      "note": "",
+      "highlight": true
+    },
+    {
+      "id": "e39",
+      "dateStart": "2026-11-27",
+      "category": "consejo",
+      "title": "Consejo Técnico Escolar",
+      "note": "No hay clases para alumnos.",
+      "highlight": false
+    },
+    {
+      "id": "e40",
+      "dateStart": "2026-11-27",
+      "category": "convivencia",
+      "title": "Ensayo para el Festival Navideño de Idiomas",
+      "note": "",
+      "highlight": false
+    },
+    {
+      "id": "e41",
+      "dateStart": "2026-11-28",
+      "category": "hito",
+      "title": "Concurso de Matemáticas GAU55",
+      "note": "",
+      "highlight": false
+    },
+    {
+      "id": "e42",
+      "dateStart": "2026-12-10",
+      "category": "convivencia",
+      "title": "Festival Navideño de Idiomas 🎄",
+      "note": "Organizado por la Academia de Idiomas. Por la tarde; el horario se confirma cerca de la fecha.",
+      "highlight": false
+    },
+    {
+      "id": "e43",
+      "dateStart": "2026-12-16",
+      "category": "convivencia",
+      "title": "Posada de los chicos 🥳",
+      "note": "Tardeada. El horario se confirma cerca de la fecha.",
+      "highlight": false
+    },
+    {
+      "id": "e44",
+      "dateStart": "2026-12-17",
+      "category": "hito",
+      "title": "Último día de clases de diciembre",
+      "note": "Horario normal.",
+      "highlight": false,
+      "alert": true,
+      "alertText": "Último día de clases antes de vacaciones (horario normal)"
+    }
   ]
 }
