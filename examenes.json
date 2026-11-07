@@ -498,6 +498,11 @@
       "intro": "La calificación del trimestre será el promedio de esta evaluación y las dos anteriores. Repasar las keys, los ejercicios del diario de aprendizaje (libro) y las notas del cuaderno.",
       "blocks": [
         {
+          "type": "link",
+          "href": "imprimir/examen-matematicas.pdf",
+          "text": "🖨️ Descargar guía + examen para imprimir (PDF)"
+        },
+        {
           "type": "heading",
           "text": "Key 1 · Expresiones algebraicas en problemas"
         },
@@ -542,6 +547,34 @@
           "type": "def",
           "term": "Binomio",
           "text": "Expresión algebraica con dos términos. Ej.: 2x + 3."
+        },
+        {
+          "type": "heading",
+          "text": "Conceptos que pidió la maestra (repaso del viernes)"
+        },
+        {
+          "type": "def",
+          "term": "Perímetro",
+          "text": "La suma de las medidas de todos los lados de una figura."
+        },
+        {
+          "type": "def",
+          "term": "Polígono regular",
+          "text": "Todos sus lados (y ángulos) son iguales. Su perímetro se puede escribir como multiplicación: lados × medida."
+        },
+        {
+          "type": "def",
+          "term": "Polígono irregular",
+          "text": "Al menos uno de sus lados es diferente. Se suman los lados y se simplifica."
+        },
+        {
+          "type": "example",
+          "lines": [
+            "Pentágono → 5 lados",
+            "Hexágono → 6 lados",
+            "Heptágono → 7 lados",
+            "Octágono → 8 lados"
+          ]
         },
         {
           "type": "heading",
@@ -2430,6 +2463,69 @@
         ],
         "a": 0,
         "why": "D = 3(2) + 2 = 8, y P = 3.14 × 8 = 25.12."
+      },
+      {
+        "q": "¿Cuántos lados tiene un octágono?",
+        "o": [
+          "8",
+          "6",
+          "7",
+          "10"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cuántos lados tiene un heptágono?",
+        "o": [
+          "7",
+          "6",
+          "8",
+          "5"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Un polígono regular es el que…",
+        "o": [
+          "Tiene todos sus lados iguales",
+          "Tiene al menos un lado diferente",
+          "Siempre tiene 4 lados",
+          "No tiene lados rectos"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Un octágono regular mide 2g − 1 de lado. ¿Cuál es su perímetro?",
+        "o": [
+          "P = 16g − 8",
+          "P = 16g − 1",
+          "P = 8g − 8",
+          "P = 10g − 8"
+        ],
+        "a": 0,
+        "why": "8(2g − 1) = 16g − 8."
+      },
+      {
+        "q": "Un rectángulo mide 6b de base y 3b de altura. ¿Cuál es su perímetro?",
+        "o": [
+          "P = 18b",
+          "P = 9b",
+          "P = 18b²",
+          "P = 12b"
+        ],
+        "a": 0,
+        "why": "6b + 3b + 6b + 3b = 18b."
+      },
+      {
+        "q": "Un rectángulo cuya base mide el doble de su altura a. ¿Cuál es su perímetro?",
+        "o": [
+          "P = 6a",
+          "P = 3a",
+          "P = 4a",
+          "P = 2a + 2"
+        ],
+        "a": 0,
+        "why": "a + 2a + a + 2a = 6a."
       }
     ]
   }
