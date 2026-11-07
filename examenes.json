@@ -494,35 +494,142 @@
       ]
     },
     "matematicas": {
-      "title": "Matemáticas · Evaluación del Trimestre 1",
+      "title": "Matemáticas · Esfera 5",
+      "intro": "La calificación del trimestre será el promedio de esta evaluación y las dos anteriores. Repasar las keys, los ejercicios del diario de aprendizaje (libro) y las notas del cuaderno.",
       "blocks": [
         {
           "type": "heading",
-          "text": "¿Qué entra?"
+          "text": "Key 1 · Expresiones algebraicas en problemas"
         },
         {
-          "type": "text",
-          "text": "Los temas de la Esfera 5."
-        },
-        {
-          "type": "text",
-          "text": "La calificación del trimestre será el promedio de esta evaluación y las dos anteriores."
-        },
-        {
-          "type": "heading",
-          "text": "Cómo repasar"
+          "type": "def",
+          "term": "Expresión algebraica",
+          "text": "Combinación de números y letras (literales) unidos por operaciones. La literal representa un valor que no conocemos."
         },
         {
           "type": "example",
           "lines": [
-            "🔑 Las keys de la Esfera 5",
-            "📘 Los ejercicios del diario de aprendizaje (libro)",
-            "📓 Las notas del cuaderno"
+            "El doble de un número → 2x",
+            "Un número más 5 → x + 5",
+            "La mitad de un número menos 3 → x/2 − 3",
+            "Tres números consecutivos → x, x + 1, x + 2"
+          ]
+        },
+        {
+          "type": "def",
+          "term": "Términos semejantes",
+          "text": "Tienen la misma literal con el mismo exponente, aunque el número de adelante sea distinto."
+        },
+        {
+          "type": "example",
+          "lines": [
+            "x, 2x, 3x, 4x → sí son semejantes",
+            "y², 3y², −5y², −4y² → sí son semejantes",
+            "m² y m³ → NO (mismo literal, distinto exponente)"
+          ]
+        },
+        {
+          "type": "def",
+          "term": "Término independiente",
+          "text": "El que solo es número, sin literal. Ej.: en 4x + 2, el 2."
+        },
+        {
+          "type": "def",
+          "term": "Coeficiente",
+          "text": "El número que multiplica a la literal. Ej.: en 4x, el 4."
+        },
+        {
+          "type": "def",
+          "term": "Binomio",
+          "text": "Expresión algebraica con dos términos. Ej.: 2x + 3."
+        },
+        {
+          "type": "heading",
+          "text": "Key 2 · Perímetro de polígonos y del círculo"
+        },
+        {
+          "type": "text",
+          "text": "El perímetro es la suma de todos los lados. Se resuelve en 4 pasos:"
+        },
+        {
+          "type": "example",
+          "lines": [
+            "1. Cuenta y escribe la suma de los lados",
+            "2. Agrupa: junta términos semejantes y los números",
+            "3. Simplifica: suma lo que se pueda",
+            "4. Construye la fórmula: primero las literales y al final el número"
           ]
         },
         {
           "type": "text",
-          "text": "Tip: pídanle que les explique en voz alta cómo resolvió 2 o 3 ejercicios del libro. Si puede explicarlo, ya lo domina."
+          "text": "Ejemplo: rectángulo con lados x, x, x + 1, x + 1"
+        },
+        {
+          "type": "example",
+          "lines": [
+            "x + x + 1 + x + x + 1",
+            "= x + x + x + x + 1 + 1",
+            "P = 4x + 2"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Ejemplo con dos literales: papalote con lados 2t + 1, 2t + 1, p − 4, p − 4"
+        },
+        {
+          "type": "example",
+          "lines": [
+            "= 2t + 2t + p + p + 1 + 1 − 4 − 4",
+            "P = 4t + 2p − 6"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Polígonos regulares: multiplicar"
+        },
+        {
+          "type": "text",
+          "text": "Si todos los lados miden lo mismo, el perímetro es número de lados × lado. Luego se distribuye: se multiplica el número por CADA término del paréntesis."
+        },
+        {
+          "type": "example",
+          "lines": [
+            "Hexágono de lado 2x + 3",
+            "P = 6(2x + 3)",
+            "= 6·2x + 6·3",
+            "P = 12x + 18   (las dos fórmulas son equivalentes)"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Perímetro de la circunferencia"
+        },
+        {
+          "type": "def",
+          "term": "Fórmula",
+          "text": "P = πD (pi por el diámetro). π ≈ 3.14"
+        },
+        {
+          "type": "example",
+          "lines": [
+            "Diámetro x + 1 → P = π(x + 1)",
+            "Diámetro 3y + 2 → P = π(3y + 2) = 3πy + 2π"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Calcular con un valor"
+        },
+        {
+          "type": "text",
+          "text": "Si te dan el valor de la literal, se sustituye en la fórmula y se hace la operación."
+        },
+        {
+          "type": "example",
+          "lines": [
+            "Heptágono de lado z + 3 → P = 7z + 21",
+            "Si z = 1: P = 7(1) + 21 = 7 + 21 = 28 unidades"
+          ]
         }
       ]
     },
@@ -2044,6 +2151,285 @@
           "“Las nubes obedecían.”"
         ],
         "a": 0
+      }
+    ],
+    "matematicas": [
+      {
+        "q": "¿Qué expresión representa “el doble de un número, más 5”?",
+        "o": [
+          "2x + 5",
+          "2(x + 5)",
+          "x² + 5",
+          "5x + 2"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué expresión representa “la mitad de un número, menos 3”?",
+        "o": [
+          "x/2 − 3",
+          "2x − 3",
+          "3 − x/2",
+          "x − 3/2"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Si un número es x, ¿cómo se escriben los dos números consecutivos que le siguen?",
+        "o": [
+          "x + 1 y x + 2",
+          "2x y 3x",
+          "x + 1 y x + 1",
+          "x² y x³"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cuál pareja SÍ son términos semejantes?",
+        "o": [
+          "3y² y −5y²",
+          "m² y m³",
+          "2x y 2y",
+          "4x y 4"
+        ],
+        "a": 0,
+        "why": "Son semejantes si tienen la misma literal con el mismo exponente."
+      },
+      {
+        "q": "¿Por qué m² y m³ NO son términos semejantes?",
+        "o": [
+          "Porque tienen la misma literal pero distinto exponente",
+          "Porque tienen distinta literal",
+          "Porque tienen distinto coeficiente",
+          "Porque uno es positivo y otro negativo"
+        ],
+        "a": 0
+      },
+      {
+        "q": "En la expresión 4x + 2, ¿cuál es el término independiente?",
+        "o": [
+          "2",
+          "4",
+          "x",
+          "4x"
+        ],
+        "a": 0,
+        "why": "El término independiente es el que no tiene literal."
+      },
+      {
+        "q": "En el término 7z, ¿cuál es el coeficiente?",
+        "o": [
+          "7",
+          "z",
+          "7z",
+          "1"
+        ],
+        "a": 0,
+        "why": "El coeficiente es el número que multiplica a la literal."
+      },
+      {
+        "q": "¿Cuál de estas expresiones es un binomio?",
+        "o": [
+          "2x + 3",
+          "5x",
+          "x + y + 1",
+          "7"
+        ],
+        "a": 0,
+        "why": "Binomio = dos términos."
+      },
+      {
+        "q": "Simplifica: 3x + 5 + 2x − 1",
+        "o": [
+          "5x + 4",
+          "5x + 6",
+          "6x + 4",
+          "9x"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Un rectángulo tiene lados x, x, x + 1 y x + 1. ¿Cuál es su perímetro?",
+        "o": [
+          "P = 4x + 2",
+          "P = 2x + 2",
+          "P = 4x + 1",
+          "P = x² + 2x"
+        ],
+        "a": 0,
+        "why": "x + x + x + x = 4x y 1 + 1 = 2."
+      },
+      {
+        "q": "Un papalote tiene lados 2t + 1, 2t + 1, p − 4 y p − 4. ¿Cuál es su perímetro?",
+        "o": [
+          "P = 4t + 2p − 6",
+          "P = 4t + 2p + 6",
+          "P = 4t + 2p − 8",
+          "P = 2t + 2p − 6"
+        ],
+        "a": 0,
+        "why": "1 + 1 − 4 − 4 = −6."
+      },
+      {
+        "q": "Un rectángulo mide 3a de base y a + 2 de altura. ¿Cuál es su perímetro?",
+        "o": [
+          "P = 8a + 4",
+          "P = 4a + 2",
+          "P = 8a + 2",
+          "P = 6a + 4"
+        ],
+        "a": 0,
+        "why": "3a + 3a + a + 2 + a + 2 = 8a + 4."
+      },
+      {
+        "q": "¿Cuál es el perímetro de un cuadrado de lado a + 5?",
+        "o": [
+          "P = 4a + 20",
+          "P = 4a + 5",
+          "P = a + 20",
+          "P = 4a + 9"
+        ],
+        "a": 0,
+        "why": "4(a + 5) = 4a + 20."
+      },
+      {
+        "q": "¿Cuál es el perímetro de un triángulo equilátero de lado 3m − 2?",
+        "o": [
+          "P = 9m − 6",
+          "P = 9m − 2",
+          "P = 3m − 6",
+          "P = 9m + 6"
+        ],
+        "a": 0,
+        "why": "3(3m − 2) = 9m − 6."
+      },
+      {
+        "q": "Un hexágono regular mide 2x + 3 de lado. ¿Cuál es su perímetro simplificado?",
+        "o": [
+          "P = 12x + 18",
+          "P = 12x + 3",
+          "P = 6x + 18",
+          "P = 8x + 9"
+        ],
+        "a": 0,
+        "why": "6(2x + 3) = 12x + 18."
+      },
+      {
+        "q": "¿Qué expresión es equivalente a 12x + 18?",
+        "o": [
+          "6(2x + 3)",
+          "6(2x) + 3",
+          "12(x + 18)",
+          "2(6x + 3)"
+        ],
+        "a": 0,
+        "why": "Al distribuir 6(2x + 3) = 12x + 18. En cambio 2(6x + 3) = 12x + 6."
+      },
+      {
+        "q": "Para resolver 6(2x + 3) hay que…",
+        "o": [
+          "Multiplicar el 6 por cada término del paréntesis",
+          "Multiplicar el 6 solo por el 2x",
+          "Sumar 6 + 2x + 3",
+          "Multiplicar solo el 6 por el 3"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cuál es el perímetro de un pentágono regular de lado 2n + 1?",
+        "o": [
+          "P = 10n + 5",
+          "P = 10n + 1",
+          "P = 7n + 1",
+          "P = 5n + 5"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Un heptágono regular mide z + 3 de lado. ¿Cuál es su perímetro?",
+        "o": [
+          "P = 7z + 21",
+          "P = 7z + 3",
+          "P = z + 21",
+          "P = 7z + 10"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Si P = 7z + 21 y z = 1, ¿cuánto mide el perímetro?",
+        "o": [
+          "28",
+          "22",
+          "29",
+          "49"
+        ],
+        "a": 0,
+        "why": "7(1) + 21 = 7 + 21 = 28."
+      },
+      {
+        "q": "Si P = 7z + 21 y z = 2, ¿cuánto mide el perímetro?",
+        "o": [
+          "35",
+          "30",
+          "23",
+          "42"
+        ],
+        "a": 0,
+        "why": "7(2) + 21 = 14 + 21 = 35."
+      },
+      {
+        "q": "Si P = 4x + 2 y x = 5, ¿cuánto mide el perímetro?",
+        "o": [
+          "22",
+          "20",
+          "11",
+          "42"
+        ],
+        "a": 0,
+        "why": "4(5) + 2 = 20 + 2 = 22."
+      },
+      {
+        "q": "¿Cuál es la fórmula del perímetro de la circunferencia?",
+        "o": [
+          "P = πD",
+          "P = πr²",
+          "P = 2D",
+          "P = D ÷ π"
+        ],
+        "a": 0,
+        "why": "Pi por el diámetro. (πr² es el área, no el perímetro.)"
+      },
+      {
+        "q": "Una circunferencia tiene diámetro x + 1. ¿Cuál es su perímetro?",
+        "o": [
+          "P = π(x + 1)",
+          "P = πx + 1",
+          "P = 2(x + 1)",
+          "P = π + x + 1"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Una circunferencia tiene diámetro 3y + 2. ¿Cuál expresión de su perímetro es correcta?",
+        "o": [
+          "P = 3πy + 2π",
+          "P = 3y + 2π",
+          "P = 3πy + 2",
+          "P = 5πy"
+        ],
+        "a": 0,
+        "why": "π(3y + 2): el π multiplica a los dos términos."
+      },
+      {
+        "q": "Si el diámetro de una circunferencia es 3y + 2 y y = 2, ¿cuánto mide su perímetro? (π ≈ 3.14)",
+        "o": [
+          "25.12",
+          "8",
+          "18.84",
+          "50.24"
+        ],
+        "a": 0,
+        "why": "D = 3(2) + 2 = 8, y P = 3.14 × 8 = 25.12."
       }
     ]
   }
