@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 350" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <rect width="360" height="350" rx="14" fill="#fffdf6"/>
+  <text x="180" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="#1d2a3a">Célula vegetal vs. célula animal</text>
+
+  <!-- VEGETAL -->
+  <rect x="18" y="45" width="152" height="170" rx="8" fill="#cfe9b8" stroke="#2f7d32" stroke-width="5"/>
+  <rect x="27" y="54" width="134" height="152" rx="6" fill="#eef8e2" stroke="#e0a030" stroke-width="2"/>
+  <rect x="72" y="104" width="76" height="86" rx="18" fill="#cfe6f7" stroke="#6aa6d6" stroke-width="1.5"/>
+  <circle cx="56" cy="84" r="19" fill="#d9b8ea" stroke="#7a4b99" stroke-width="2"/>
+  <circle cx="60" cy="88" r="6" fill="#7a4b99"/>
+  <g fill="#4caf50" stroke="#2f7d32" stroke-width="1.2">
+    <ellipse cx="46" cy="140" rx="11" ry="6"/>
+    <ellipse cx="50" cy="180" rx="11" ry="6" transform="rotate(-20 50 180)"/>
+    <ellipse cx="130" cy="72" rx="11" ry="6" transform="rotate(15 130 72)"/>
+  </g>
+  <g stroke="#2f7d32" stroke-width="1">
+    <line x1="39" y1="140" x2="53" y2="140"/><line x1="125" y1="71" x2="137" y2="74"/>
+  </g>
+  <ellipse cx="102" cy="74" rx="13" ry="7" fill="#f6a56b" stroke="#c0622a" stroke-width="1.5"/>
+  <path d="M92 74 l4 -3 l4 6 l4 -6 l4 6 l4 -3" fill="none" stroke="#c0622a" stroke-width="1"/>
+  <g fill="#555"><circle cx="90" cy="96" r="1.8"/><circle cx="40" cy="112" r="1.8"/><circle cx="62" cy="120" r="1.8"/><circle cx="58" cy="198" r="1.8"/><circle cx="150" cy="198" r="1.8"/><circle cx="140" cy="94" r="1.8"/></g>
+  <text x="94" y="236" text-anchor="middle" font-size="14" font-weight="800" fill="#2f7d32">VEGETAL</text>
+
+  <!-- ANIMAL -->
+  <path d="M270 52 C320 50 345 95 342 135 C340 180 310 212 268 212 C222 214 192 180 196 132 C199 90 226 54 270 52 Z" fill="#fde6d2" stroke="#e0a030" stroke-width="2.5"/>
+  <circle cx="268" cy="128" r="22" fill="#d9b8ea" stroke="#7a4b99" stroke-width="2"/>
+  <circle cx="272" cy="132" r="7" fill="#7a4b99"/>
+  <ellipse cx="228" cy="104" rx="13" ry="7" fill="#f6a56b" stroke="#c0622a" stroke-width="1.5" transform="rotate(-25 228 104)"/>
+  <ellipse cx="310" cy="170" rx="13" ry="7" fill="#f6a56b" stroke="#c0622a" stroke-width="1.5" transform="rotate(20 310 170)"/>
+  <ellipse cx="240" cy="178" rx="13" ry="7" fill="#f6a56b" stroke="#c0622a" stroke-width="1.5"/>
+  <g fill="#555"><circle cx="300" cy="90" r="1.8"/><circle cx="318" cy="120" r="1.8"/><circle cx="225" cy="140" r="1.8"/><circle cx="275" cy="190" r="1.8"/><circle cx="290" cy="76" r="1.8"/><circle cx="214" cy="160" r="1.8"/></g>
+  <text x="270" y="236" text-anchor="middle" font-size="14" font-weight="800" fill="#c0622a">ANIMAL</text>
+
+  <!-- LEYENDA -->
+  <g font-size="11.5" fill="#1d2a3a">
+    <rect x="18" y="254" width="14" height="10" rx="2" fill="#cfe9b8" stroke="#2f7d32" stroke-width="2.5"/><text x="37" y="263">Pared celular*</text>
+    <rect x="128" y="254" width="14" height="10" rx="2" fill="#fff" stroke="#e0a030" stroke-width="2"/><text x="147" y="263">Membrana</text>
+    <rect x="236" y="254" width="14" height="10" rx="2" fill="#eef8e2" stroke="#ccc"/><text x="255" y="263">Citoplasma</text>
+    <circle cx="25" cy="282" r="7" fill="#d9b8ea" stroke="#7a4b99" stroke-width="1.5"/><circle cx="26" cy="283" r="2.5" fill="#7a4b99"/><text x="37" y="286">Núcleo</text>
+    <ellipse cx="135" cy="282" rx="8" ry="4.5" fill="#4caf50" stroke="#2f7d32"/><text x="147" y="286">Cloroplasto*</text>
+    <ellipse cx="243" cy="282" rx="8" ry="4.5" fill="#f6a56b" stroke="#c0622a"/><text x="255" y="286">Mitocondria</text>
+    <rect x="18" y="298" width="14" height="10" rx="4" fill="#cfe6f7" stroke="#6aa6d6"/><text x="37" y="307">Vacuola</text>
+    <circle cx="135" cy="303" r="2" fill="#555"/><text x="147" y="307">Ribosomas (en las dos)</text>
+  </g>
+  <text x="180" y="334" text-anchor="middle" font-size="12" font-weight="700" fill="#2f7d32">* Solo la vegetal tiene pared celular y cloroplastos</text>
+</svg>

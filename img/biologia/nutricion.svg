@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1d2a3a"/></marker>
+  </defs>
+  <rect width="360" height="240" rx="14" fill="#fffdf6"/>
+
+  <!-- Autótrofo: planta -->
+  <text x="88" y="28" text-anchor="middle" font-size="15" font-weight="800" fill="#2f7d32">AUTÓTROFOS</text>
+  <circle cx="140" cy="56" r="11" fill="#ffcf4a"/>
+  <g stroke="#e8a800" stroke-width="2" stroke-linecap="round"><line x1="140" y1="38" x2="140" y2="41"/><line x1="122" y1="56" x2="125" y2="56"/><line x1="127" y1="43" x2="129" y2="45"/><line x1="127" y1="69" x2="129" y2="67"/></g>
+  <line x1="126" y1="70" x2="104" y2="92" stroke="#e8a800" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <path d="M80 160 C80 130 82 110 86 82" stroke="#2f7d32" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M84 120 C60 116 50 98 52 88 C66 88 82 100 84 120 Z" fill="#7cc576" stroke="#2f7d32" stroke-width="1.5"/>
+  <path d="M83 104 C104 102 116 86 114 76 C100 76 86 86 83 104 Z" fill="#7cc576" stroke="#2f7d32" stroke-width="1.5"/>
+  <path d="M81 140 C102 140 112 126 110 116 C96 116 84 126 81 140 Z" fill="#7cc576" stroke="#2f7d32" stroke-width="1.5"/>
+  <path d="M56 160 h50 l-6 22 h-38 z" fill="#c0622a"/>
+  <text x="88" y="203" text-anchor="middle" font-size="12" font-weight="700" fill="#1d2a3a">Hacen su propio alimento</text>
+  <text x="88" y="219" text-anchor="middle" font-size="11" fill="#1d2a3a">con la luz del Sol</text>
+  <text x="88" y="233" text-anchor="middle" font-size="11" fill="#1d2a3a">plantas y algas</text>
+
+  <line x1="150" y1="130" x2="200" y2="130" stroke="#1d2a3a" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="175" y="122" text-anchor="middle" font-size="10.5" fill="#1d2a3a">alimento</text>
+
+  <!-- Heterótrofos -->
+  <text x="276" y="28" text-anchor="middle" font-size="15" font-weight="800" fill="#c0622a">HETERÓTROFOS</text>
+  <!-- persona -->
+  <circle cx="240" cy="80" r="13" fill="#f2c9a0" stroke="#a0704a" stroke-width="1.5"/>
+  <path d="M220 150 v-36 a20 18 0 0 1 40 0 v36 z" fill="#2e6e9e"/>
+  <text x="240" y="168" text-anchor="middle" font-size="10.5" fill="#1d2a3a">humanos</text>
+  <!-- conejo / animal -->
+  <ellipse cx="300" cy="78" rx="5" ry="13" fill="#d8cfc4" stroke="#8c7f70" transform="rotate(-10 300 78)"/>
+  <ellipse cx="312" cy="78" rx="5" ry="13" fill="#d8cfc4" stroke="#8c7f70" transform="rotate(10 312 78)"/>
+  <circle cx="306" cy="98" r="12" fill="#e8e0d6" stroke="#8c7f70"/>
+  <ellipse cx="306" cy="130" rx="20" ry="18" fill="#e8e0d6" stroke="#8c7f70"/>
+  <circle cx="302" cy="96" r="1.6" fill="#1d2a3a"/><circle cx="310" cy="96" r="1.6" fill="#1d2a3a"/>
+  <text x="306" y="168" text-anchor="middle" font-size="10.5" fill="#1d2a3a">animales</text>
+  <!-- hongo -->
+  <path d="M248 178 v0" />
+  <rect x="268" y="186" width="14" height="22" rx="3" fill="#f3e6d0" stroke="#a08a66"/>
+  <path d="M252 190 a23 18 0 0 1 46 0 z" fill="#d0477a" stroke="#9c2d58"/>
+  <circle cx="266" cy="181" r="3" fill="#fff"/><circle cx="282" cy="178" r="2.5" fill="#fff"/>
+  <text x="305" y="200" font-size="10.5" fill="#1d2a3a">hongos</text>
+  <text x="276" y="222" text-anchor="middle" font-size="12" font-weight="700" fill="#1d2a3a">Se alimentan de otros</text>
+</svg>

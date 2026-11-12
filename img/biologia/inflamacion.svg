@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1d2a3a"/></marker>
+  </defs>
+  <rect width="360" height="300" rx="14" fill="#fffdf6"/>
+  <text x="180" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="#1d2a3a">¿Por qué se inflama la piel al cortarte?</text>
+
+  <!-- piel en corte -->
+  <path d="M14 56 H150 L172 104 L194 56 H346 V170 H14 Z" fill="#f6d5b4" stroke="#c0864a" stroke-width="1.5"/>
+  <path d="M14 66 H146 M198 66 H346" stroke="#e0b088" stroke-width="1"/>
+  <!-- células dañadas -->
+  <g fill="#f0b8a0" stroke="#c0622a" stroke-width="1"><circle cx="160" cy="98" r="6"/><circle cx="184" cy="98" r="6"/><circle cx="172" cy="114" r="6"/></g>
+  <!-- señales químicas -->
+  <g fill="#e89a2c"><circle cx="150" cy="122" r="2.5"/><circle cx="196" cy="124" r="2.5"/><circle cx="164" cy="132" r="2.5"/><circle cx="184" cy="136" r="2.5"/><circle cx="174" cy="128" r="2.5"/></g>
+  <!-- vaso sanguíneo -->
+  <rect x="14" y="146" width="332" height="22" fill="#e05a6b" opacity=".85"/>
+  <!-- células del sistema inmune -->
+  <g fill="#e8e0f4" stroke="#7a4b99" stroke-width="1.5">
+    <circle cx="120" cy="157" r="8"/><circle cx="232" cy="157" r="8"/>
+    <circle cx="146" cy="138" r="8"/><circle cx="204" cy="140" r="8"/>
+  </g>
+  <g fill="#7a4b99"><circle cx="118" cy="155" r="2"/><circle cx="122" cy="159" r="2"/><circle cx="230" cy="155" r="2"/><circle cx="234" cy="159" r="2"/><circle cx="144" cy="136" r="2"/><circle cx="148" cy="140" r="2"/><circle cx="202" cy="138" r="2"/><circle cx="206" cy="142" r="2"/></g>
+  <g stroke="#1d2a3a" stroke-width="1.3"><line x1="128" y1="152" x2="140" y2="144" marker-end="url(#ar)"/><line x1="224" y1="152" x2="212" y2="146" marker-end="url(#ar)"/></g>
+
+  <!-- etiquetas -->
+  <g font-size="11" fill="#1d2a3a">
+    <line x1="210" y1="96" x2="236" y2="84" stroke="#1d2a3a"/>
+    <text x="240" y="84" font-weight="700">1. Células dañadas</text>
+    <text x="240" y="98">sueltan sustancias</text>
+    <text x="240" y="111">químicas (señales)</text>
+    <text x="22" y="90" font-weight="700">2. Llegan células</text>
+    <text x="22" y="104">del sistema inmune</text>
+    <text x="22" y="117">desde la sangre</text>
+    <text x="22" y="132">3. Reparan la zona</text>
+    <text x="300" y="162" fill="#fff" font-weight="700" text-anchor="middle">sangre</text>
+  </g>
+
+  <!-- signos -->
+  <text x="180" y="196" text-anchor="middle" font-size="13" font-weight="800" fill="#1d2a3a">Los 5 signos de la inflamación</text>
+  <g font-size="12" font-weight="700" text-anchor="middle">
+    <rect x="14" y="208" width="104" height="30" rx="15" fill="#fbd8d8"/><text x="66" y="228" fill="#b8384a">Rubor (rojo)</text>
+    <rect x="128" y="208" width="104" height="30" rx="15" fill="#fde2c4"/><text x="180" y="228" fill="#b8730f">Calor</text>
+    <rect x="242" y="208" width="104" height="30" rx="15" fill="#e8e0f4"/><text x="294" y="228" fill="#7a4b99">Dolor</text>
+    <rect x="58" y="246" width="110" height="30" rx="15" fill="#e6f0f8"/><text x="113" y="266" fill="#2e6e9e">Hinchazón</text>
+    <rect x="176" y="246" width="128" height="30" rx="15" fill="#eef6e6"/><text x="240" y="266" fill="#2f7d32">Menos función</text>
+  </g>
+  <text x="180" y="292" text-anchor="middle" font-size="10.5" fill="#555">Células que participan: leucocitos, basófilos, neutrófilos</text>
+</svg>

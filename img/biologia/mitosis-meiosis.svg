@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 290" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1d2a3a"/></marker>
+    <!-- cromosomas: largo rojo/azul, corto naranja/verde -->
+    <g id="R"><rect x="-2" y="-9" width="4" height="18" rx="2" fill="#d0477a"/></g>
+    <g id="B"><rect x="-2" y="-9" width="4" height="18" rx="2" fill="#2e6e9e"/></g>
+    <g id="O"><rect x="-2" y="-5" width="4" height="10" rx="2" fill="#e89a2c"/></g>
+    <g id="G"><rect x="-2" y="-5" width="4" height="10" rx="2" fill="#3f9b45"/></g>
+  </defs>
+  <rect width="360" height="290" rx="14" fill="#fffdf6"/>
+  <line x1="180" y1="14" x2="180" y2="276" stroke="#dcd6c8" stroke-dasharray="4 4"/>
+
+  <text x="90" y="30" text-anchor="middle" font-size="16" font-weight="800" fill="#2e6e9e">MITOSIS</text>
+  <text x="270" y="30" text-anchor="middle" font-size="16" font-weight="800" fill="#d0477a">MEIOSIS</text>
+
+  <!-- Célula madre (progenitora) en ambas -->
+  <g>
+    <circle cx="90" cy="74" r="26" fill="#fde6d2" stroke="#e0a030" stroke-width="2"/>
+    <use href="#R" x="78" y="74"/><use href="#B" x="86" y="74"/><use href="#O" x="94" y="74"/><use href="#G" x="102" y="74"/>
+    <circle cx="270" cy="74" r="26" fill="#fde6d2" stroke="#e0a030" stroke-width="2"/>
+    <use href="#R" x="258" y="74"/><use href="#B" x="266" y="74"/><use href="#O" x="274" y="74"/><use href="#G" x="282" y="74"/>
+  </g>
+  <text x="90" y="113" text-anchor="middle" font-size="10" fill="#555">4 cromosomas</text>
+  <text x="270" y="113" text-anchor="middle" font-size="10" fill="#555">4 cromosomas</text>
+
+  <g stroke="#1d2a3a" stroke-width="1.6">
+    <line x1="80" y1="118" x2="64" y2="136" marker-end="url(#ar)"/><line x1="100" y1="118" x2="116" y2="136" marker-end="url(#ar)"/>
+    <line x1="258" y1="118" x2="214" y2="140" marker-end="url(#ar)"/><line x1="266" y1="118" x2="252" y2="140" marker-end="url(#ar)"/>
+    <line x1="274" y1="118" x2="288" y2="140" marker-end="url(#ar)"/><line x1="282" y1="118" x2="326" y2="140" marker-end="url(#ar)"/>
+  </g>
+
+  <!-- Mitosis: 2 idénticas -->
+  <circle cx="58" cy="164" r="23" fill="#fde6d2" stroke="#e0a030" stroke-width="2"/>
+  <use href="#R" x="46" y="164"/><use href="#B" x="54" y="164"/><use href="#O" x="62" y="164"/><use href="#G" x="70" y="164"/>
+  <circle cx="122" cy="164" r="23" fill="#fde6d2" stroke="#e0a030" stroke-width="2"/>
+  <use href="#R" x="110" y="164"/><use href="#B" x="118" y="164"/><use href="#O" x="126" y="164"/><use href="#G" x="134" y="164"/>
+
+  <!-- Meiosis: 4 diferentes -->
+  <circle cx="208" cy="164" r="17" fill="#fde6d2" stroke="#e0a030" stroke-width="2"/>
+  <use href="#R" x="203" y="164"/><use href="#O" x="213" y="164"/>
+  <circle cx="248" cy="164" r="17" fill="#fde6d2" stroke="#e0a030" stroke-width="2"/>
+  <use href="#B" x="243" y="164"/><use href="#G" x="253" y="164"/>
+  <circle cx="290" cy="164" r="17" fill="#fde6d2" stroke="#e0a030" stroke-width="2"/>
+  <use href="#R" x="285" y="164"/><use href="#G" x="295" y="164"/>
+  <circle cx="331" cy="164" r="17" fill="#fde6d2" stroke="#e0a030" stroke-width="2"/>
+  <use href="#B" x="326" y="164"/><use href="#O" x="336" y="164"/>
+
+  <g text-anchor="middle" fill="#1d2a3a">
+    <text x="90" y="208" font-size="12.5" font-weight="800">2 células idénticas</text>
+    <text x="90" y="223" font-size="11">mismos cromosomas</text>
+    <text x="270" y="208" font-size="12.5" font-weight="800">4 células diferentes</text>
+    <text x="270" y="223" font-size="11">mitad de cromosomas</text>
+  </g>
+  <rect x="14" y="236" width="152" height="42" rx="10" fill="#e6f0f8"/>
+  <text x="90" y="253" text-anchor="middle" font-size="11" font-weight="700" fill="#2e6e9e">Células del cuerpo</text>
+  <text x="90" y="268" text-anchor="middle" font-size="10.5" fill="#1d2a3a">piel, hueso: reponer y crecer</text>
+  <rect x="194" y="236" width="152" height="42" rx="10" fill="#fbe6ee"/>
+  <text x="270" y="253" text-anchor="middle" font-size="11" font-weight="700" fill="#b03462">Células sexuales</text>
+  <text x="270" y="268" text-anchor="middle" font-size="10.5" fill="#1d2a3a">óvulos y espermatozoides</text>
+</svg>

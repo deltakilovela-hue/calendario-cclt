@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 290" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1d2a3a"/></marker>
+  </defs>
+  <rect width="360" height="290" rx="14" fill="#fffdf6"/>
+  <text x="180" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="#1d2a3a">Células madre y diferenciación</text>
+
+  <!-- célula madre al centro -->
+  <circle cx="180" cy="122" r="30" fill="#fff1b8" stroke="#e0a030" stroke-width="2.5"/>
+  <circle cx="180" cy="122" r="11" fill="#d9b8ea" stroke="#7a4b99" stroke-width="1.5"/>
+  <text x="180" y="166" text-anchor="middle" font-size="12" font-weight="800" fill="#b8730f">Célula madre</text>
+
+  <g stroke="#1d2a3a" stroke-width="1.6">
+    <line x1="154" y1="104" x2="92" y2="72" marker-end="url(#ar)"/>
+    <line x1="206" y1="104" x2="264" y2="64" marker-end="url(#ar)"/>
+    <line x1="150" y1="126" x2="96" y2="132" marker-end="url(#ar)"/>
+    <line x1="210" y1="126" x2="264" y2="132" marker-end="url(#ar)"/>
+    <line x1="180" y1="92" x2="180" y2="60" marker-end="url(#ar)"/>
+  </g>
+
+  <!-- neurona -->
+  <g transform="translate(60 60)">
+    <circle r="10" fill="#d9b8ea" stroke="#7a4b99" stroke-width="1.5"/>
+    <g stroke="#7a4b99" stroke-width="1.6"><line x1="-7" y1="-7" x2="-15" y2="-14"/><line x1="-10" y1="2" x2="-20" y2="4"/><line x1="10" y1="0" x2="24" y2="6"/><line x1="0" y1="-10" x2="2" y2="-18"/></g>
+  </g>
+  <text x="60" y="94" text-anchor="middle" font-size="11" fill="#1d2a3a">neurona</text>
+
+  <!-- glóbulo rojo -->
+  <ellipse cx="180" cy="44" rx="16" ry="10" fill="#e05a6b"/>
+  <ellipse cx="180" cy="44" rx="7" ry="4" fill="#b8384a"/>
+  <text x="222" y="48" font-size="11" fill="#1d2a3a">glóbulo rojo</text>
+
+  <!-- músculo -->
+  <g transform="translate(300 58)">
+    <rect x="-22" y="-8" width="44" height="16" rx="8" fill="#f2a0a0" stroke="#b8384a" stroke-width="1.2"/>
+    <g stroke="#b8384a" stroke-width="1"><line x1="-12" y1="-7" x2="-12" y2="7"/><line x1="-4" y1="-7" x2="-4" y2="7"/><line x1="4" y1="-7" x2="4" y2="7"/><line x1="12" y1="-7" x2="12" y2="7"/></g>
+  </g>
+  <text x="300" y="88" text-anchor="middle" font-size="11" fill="#1d2a3a">músculo</text>
+
+  <!-- hueso -->
+  <g transform="translate(66 136)">
+    <rect x="-16" y="-4" width="32" height="8" fill="#f3ead6" stroke="#a08a66"/>
+    <circle cx="-18" cy="-5" r="5" fill="#f3ead6" stroke="#a08a66"/><circle cx="-18" cy="5" r="5" fill="#f3ead6" stroke="#a08a66"/>
+    <circle cx="18" cy="-5" r="5" fill="#f3ead6" stroke="#a08a66"/><circle cx="18" cy="5" r="5" fill="#f3ead6" stroke="#a08a66"/>
+  </g>
+  <text x="66" y="162" text-anchor="middle" font-size="11" fill="#1d2a3a">hueso</text>
+
+  <!-- piel -->
+  <g transform="translate(296 136)" stroke="#c0864a" stroke-width="1.2" fill="#f6d5b4">
+    <rect x="-24" y="-8" width="16" height="16"/><rect x="-8" y="-8" width="16" height="16"/><rect x="8" y="-8" width="16" height="16"/>
+  </g>
+  <text x="296" y="162" text-anchor="middle" font-size="11" fill="#1d2a3a">piel</text>
+
+  <rect x="12" y="180" width="336" height="100" rx="10" fill="#f1ede3"/>
+  <text x="24" y="199" font-size="12" font-weight="800" fill="#1d2a3a">Diferenciación celular:</text>
+  <text x="24" y="214" font-size="11.5" fill="#1d2a3a">la célula madre se convierte en otros tipos de célula.</text>
+  <text x="24" y="235" font-size="12" font-weight="800" fill="#1d2a3a">¿Dónde hay células madre?</text>
+  <text x="24" y="251" font-size="11.5" fill="#1d2a3a">• Embrión (embrionarias: forman cualquier célula)</text>
+  <text x="24" y="266" font-size="11.5" fill="#1d2a3a">• Cordón umbilical  • Médula ósea (adultas)</text>
+</svg>

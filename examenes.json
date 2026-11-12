@@ -917,6 +917,12 @@
           "text": "Esfera 3 · La célula y sus partes"
         },
         {
+          "type": "image",
+          "src": "img/biologia/celulas.svg",
+          "alt": "Célula vegetal y célula animal con sus partes",
+          "caption": "Toca la imagen para verla en grande"
+        },
+        {
           "type": "qa",
           "q": "Es una estructura rígida que da sostén y forma a la célula vegetal.",
           "a": "Pared celular"
@@ -958,6 +964,12 @@
           ]
         },
         {
+          "type": "image",
+          "src": "img/biologia/nucleo.svg",
+          "alt": "Partes del núcleo: envoltura, poros, nucléolo, nucleoplasma y material genético",
+          "caption": "El núcleo por dentro"
+        },
+        {
           "type": "qa",
           "q": "Explica cuál es la función principal del núcleo.",
           "a": "Guarda el material genético del organismo; además regula las funciones vitales de la célula y el proceso de división celular."
@@ -966,6 +978,12 @@
           "type": "qa",
           "q": "¿Cuál es la diferencia entre el citosol y el citoesqueleto?",
           "a": "El citosol es la fase coloide (líquida) del citoplasma que permite que los organelos se desplacen; el citoesqueleto es la fase de soporte y está formado por una red de filamentos."
+        },
+        {
+          "type": "image",
+          "src": "img/biologia/energia.svg",
+          "alt": "Cloroplasto hace fotosíntesis; mitocondria hace respiración celular",
+          "caption": "Lo que sale del cloroplasto es lo que usa la mitocondria"
         },
         {
           "type": "qa",
@@ -1043,6 +1061,11 @@
           "text": "Esfera 4 · Nutrición, comunicación y división celular"
         },
         {
+          "type": "image",
+          "src": "img/biologia/nutricion.svg",
+          "alt": "Autótrofos (plantas) y heterótrofos (humanos, animales, hongos)"
+        },
+        {
           "type": "qa",
           "q": "¿Qué son los seres vivos autótrofos?",
           "a": "Los que pueden formar su propio alimento. Ejemplo: las plantas terrestres o acuáticas."
@@ -1064,6 +1087,11 @@
           ]
         },
         {
+          "type": "image",
+          "src": "img/biologia/comunicacion.svg",
+          "alt": "Los 5 tipos de comunicación celular con ejemplos"
+        },
+        {
           "type": "qa",
           "q": "Describe los 5 mecanismos de comunicación celular.",
           "a": [
@@ -1080,6 +1108,11 @@
           "a": "Mitosis (células somáticas) y meiosis (células sexuales)."
         },
         {
+          "type": "image",
+          "src": "img/biologia/endosimbiosis.svg",
+          "alt": "Teoría endosimbiótica en 3 pasos y sus 3 evidencias"
+        },
+        {
           "type": "qa",
           "q": "¿Cómo evolucionaron los organelos para dar lugar a las células eucariotas?",
           "a": "Según la teoría endosimbiótica, la célula eucariota surgió de la unión de varias células procariotas que lograron convivir: unas pequeñas dentro de otras más grandes."
@@ -1094,6 +1127,12 @@
           ]
         },
         {
+          "type": "image",
+          "src": "img/biologia/mitosis-meiosis.svg",
+          "alt": "Comparación de mitosis y meiosis",
+          "caption": "Mitosis: 2 iguales · Meiosis: 4 diferentes"
+        },
+        {
           "type": "qa",
           "q": "¿Para qué sirve la mitosis? Da un ejemplo.",
           "a": "Para sustituir y reponer las células que mueren porque terminó su ciclo de vida. Ejemplo: la regeneración de las células de la piel."
@@ -1102,6 +1141,12 @@
           "type": "qa",
           "q": "¿Por qué ocurre la meiosis? Da un ejemplo en tu cuerpo.",
           "a": "Para producir células sexuales que permiten la reproducción. Ejemplo: los óvulos y los espermatozoides."
+        },
+        {
+          "type": "image",
+          "src": "img/biologia/mitosis.svg",
+          "alt": "Las 4 fases de la mitosis: profase, metafase, anafase y telofase",
+          "caption": "Truco: Pro-Meta-Ana-Telo"
         },
         {
           "type": "qa",
@@ -1141,6 +1186,11 @@
           "a": "Células sexuales masculinas (espermatozoides) y femeninas (óvulos)."
         },
         {
+          "type": "image",
+          "src": "img/biologia/celulas-madre.svg",
+          "alt": "Células madre y en qué células se pueden convertir"
+        },
+        {
           "type": "qa",
           "q": "¿Cómo se llaman las células que pueden formar cualquier tipo de célula, tejido u órgano?",
           "a": "Células madre"
@@ -1164,6 +1214,11 @@
             "V · En la médula ósea están las células madre hematopoyéticas, que forman glóbulos rojos, glóbulos blancos y otras células sanguíneas",
             "F · La diferenciación celular no es indispensable en el desarrollo de un nuevo ser vivo (sí es indispensable)"
           ]
+        },
+        {
+          "type": "image",
+          "src": "img/biologia/inflamacion.svg",
+          "alt": "Cómo se inflama la piel al cortarse y sus 5 signos"
         },
         {
           "type": "qa",
