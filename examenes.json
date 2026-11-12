@@ -907,6 +907,285 @@
           ]
         }
       ]
+    },
+    "biologia": {
+      "title": "Ciencias Biología · Esferas 3 y 4",
+      "intro": "Temario de la segunda evaluación del primer trimestre. Son las preguntas que dejó la maestra con sus respuestas: tápalas, pregúntale a tu hijo(a) y luego toca la pregunta para revisar.",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Esfera 3 · La célula y sus partes"
+        },
+        {
+          "type": "qa",
+          "q": "Es una estructura rígida que da sostén y forma a la célula vegetal.",
+          "a": "Pared celular"
+        },
+        {
+          "type": "qa",
+          "q": "¿Cómo se les llama a las perforaciones que tiene la pared celular?",
+          "a": "Plasmodesmos"
+        },
+        {
+          "type": "qa",
+          "q": "Dentro de la pared celular hay una bicapa lipídica que separa el espacio intracelular del extracelular. ¿Cómo se llama?",
+          "a": "Membrana celular"
+        },
+        {
+          "type": "qa",
+          "q": "¿En dónde se encuentran contenidos los organelos celulares?",
+          "a": "Citoplasma"
+        },
+        {
+          "type": "qa",
+          "q": "El material genético de la célula se encuentra en resguardo dentro del…",
+          "a": "Núcleo"
+        },
+        {
+          "type": "qa",
+          "q": "¿Por qué es necesaria una pared celular en las células vegetales?",
+          "a": "Porque da rigidez para que los cambios de presión osmótica (entrada y salida de agua) no rompan la membrana."
+        },
+        {
+          "type": "qa",
+          "q": "¿Célula animal o vegetal? (5 enunciados)",
+          "a": [
+            "Utiliza cloroplastos para alimentarse y obtener energía → Célula vegetal",
+            "Guarda su material genético dentro de un núcleo → Animal y vegetal",
+            "Utiliza ribosomas para sintetizar proteínas y construir nuevas células y tejidos → Célula animal",
+            "Posee pared celular sobre su membrana para tener rigidez → Célula vegetal",
+            "Es la unidad fundamental de la formación de tejidos en los mamíferos → Célula animal"
+          ]
+        },
+        {
+          "type": "qa",
+          "q": "Explica cuál es la función principal del núcleo.",
+          "a": "Guarda el material genético del organismo; además regula las funciones vitales de la célula y el proceso de división celular."
+        },
+        {
+          "type": "qa",
+          "q": "¿Cuál es la diferencia entre el citosol y el citoesqueleto?",
+          "a": "El citosol es la fase coloide (líquida) del citoplasma que permite que los organelos se desplacen; el citoesqueleto es la fase de soporte y está formado por una red de filamentos."
+        },
+        {
+          "type": "qa",
+          "q": "Organelo exclusivo de las plantas que usa dióxido de carbono, agua y luz del Sol para producir azúcar (energía) y oxígeno.",
+          "a": "El cloroplasto"
+        },
+        {
+          "type": "qa",
+          "q": "Organelo de la célula animal donde ocurre la respiración celular y que da energía usando oxígeno y azúcar.",
+          "a": "Mitocondria"
+        },
+        {
+          "type": "qa",
+          "q": "¿Qué funciones puede realizar la membrana celular?",
+          "a": "Transporte; reconocimiento y comunicación; y formación de tejidos."
+        },
+        {
+          "type": "qa",
+          "q": "¿Por qué el citoplasma permite el movimiento de los organelos?",
+          "a": "Porque contiene el citosol, que es principalmente agua, y eso permite que los organelos se desplacen."
+        },
+        {
+          "type": "qa",
+          "q": "¿Por qué el citoplasma le da soporte a la célula?",
+          "a": "Porque contiene el citoesqueleto, que es una red de filamentos."
+        },
+        {
+          "type": "qa",
+          "q": "Bacteria que transforma los desechos de los astronautas en biomasa nutritiva.",
+          "a": "Methylococcus capsulatus"
+        },
+        {
+          "type": "qa",
+          "q": "Técnica para trasplantar células, tejidos u órganos de un cerdo a un humano.",
+          "a": "Xenotrasplante (xenotrasplantación)"
+        },
+        {
+          "type": "qa",
+          "q": "Trasplantes de células troncales (células madre) para reparar tejidos dañados por enfermedades como leucemia, anemia hereditaria o esclerosis múltiple. ¿Cómo se le conoce?",
+          "a": "Medicina regenerativa"
+        },
+        {
+          "type": "qa",
+          "q": "M (membrana), C (citoplasma) o N (núcleo)",
+          "a": [
+            "C · Es el medio dentro de la célula que permite a los organelos obtener los materiales que necesitan",
+            "N · Posee una membrana propia y en su interior guarda material genético",
+            "M · Regula la entrada de nutrientes y la salida de lo que la célula no necesita",
+            "C · Junto con el citoesqueleto, da soporte a la célula y permite la comunicación entre organelos",
+            "M · Una de sus funciones es unirse a otras células para formar tejidos"
+          ]
+        },
+        {
+          "type": "qa",
+          "q": "Verdadero o falso sobre el citoplasma",
+          "a": [
+            "V · El citoplasma permite el movimiento de los organelos",
+            "V · El citoplasma provee soporte a la célula",
+            "F · El citoplasma proporciona los nutrientes que necesita la célula"
+          ]
+        },
+        {
+          "type": "qa",
+          "q": "Relaciona las partes del núcleo",
+          "a": [
+            "Núcleo → almacena el material genético de la célula",
+            "Envoltura nuclear → formada por dos membranas, delimita al núcleo y es porosa",
+            "Nucléolo → organelo que se encuentra en el interior del núcleo",
+            "Nucleoplasma → es el citosol del núcleo",
+            "Poros nucleares → canales que permiten la entrada y salida de moléculas entre el núcleo y el citoplasma"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Esfera 4 · Nutrición, comunicación y división celular"
+        },
+        {
+          "type": "qa",
+          "q": "¿Qué son los seres vivos autótrofos?",
+          "a": "Los que pueden formar su propio alimento. Ejemplo: las plantas terrestres o acuáticas."
+        },
+        {
+          "type": "qa",
+          "q": "¿Qué son los seres vivos heterótrofos?",
+          "a": "Los que no pueden producir su propio alimento y tienen que comerse a otro para sobrevivir. Ejemplo: los seres humanos, los animales y los hongos."
+        },
+        {
+          "type": "qa",
+          "q": "A (autótrofo) o H (heterótrofo)",
+          "a": [
+            "A · Generan su propio alimento",
+            "H · Se alimentan de otros organismos",
+            "A · Utilizan la luz como fuente de energía",
+            "H · Animales y hongos pertenecen a esta clasificación",
+            "A · Convierten materia inorgánica en materia orgánica"
+          ]
+        },
+        {
+          "type": "qa",
+          "q": "Describe los 5 mecanismos de comunicación celular.",
+          "a": [
+            "Endocrina: libera hormonas al torrente sanguíneo. Ej.: el crecimiento o la pubertad",
+            "Paracrina: libera moléculas que captan las células vecinas. Ej.: sensación de apetito o saciedad",
+            "Autocrina: libera sustancias que capta ella misma (autorregulación). Ej.: los linfocitos T estimulan su propia proliferación",
+            "Sináptica: entre neuronas, mediante neurotransmisores. Ej.: memoria y aprendizaje",
+            "Por contacto (yuxtacrina): contacto directo por adhesión para el crecimiento y la formación de tejidos. Ej.: los músculos"
+          ]
+        },
+        {
+          "type": "qa",
+          "q": "¿Cuáles son los 2 tipos de división de las células eucariotas?",
+          "a": "Mitosis (células somáticas) y meiosis (células sexuales)."
+        },
+        {
+          "type": "qa",
+          "q": "¿Cómo evolucionaron los organelos para dar lugar a las células eucariotas?",
+          "a": "Según la teoría endosimbiótica, la célula eucariota surgió de la unión de varias células procariotas que lograron convivir: unas pequeñas dentro de otras más grandes."
+        },
+        {
+          "type": "qa",
+          "q": "Tres evidencias de la teoría endosimbiótica",
+          "a": [
+            "Las mitocondrias y los cloroplastos tienen su propio ADN",
+            "El tamaño de las mitocondrias es parecido al de algunas bacterias",
+            "Los cloroplastos y las mitocondrias están rodeados por una doble membrana"
+          ]
+        },
+        {
+          "type": "qa",
+          "q": "¿Para qué sirve la mitosis? Da un ejemplo.",
+          "a": "Para sustituir y reponer las células que mueren porque terminó su ciclo de vida. Ejemplo: la regeneración de las células de la piel."
+        },
+        {
+          "type": "qa",
+          "q": "¿Por qué ocurre la meiosis? Da un ejemplo en tu cuerpo.",
+          "a": "Para producir células sexuales que permiten la reproducción. Ejemplo: los óvulos y los espermatozoides."
+        },
+        {
+          "type": "qa",
+          "q": "¿En cuántas fases se divide la mitosis?",
+          "a": "4 fases: 1. Profase, 2. Metafase, 3. Anafase y 4. Telofase."
+        },
+        {
+          "type": "qa",
+          "q": "Semejanzas entre mitosis y meiosis",
+          "a": [
+            "Las dos permiten que las células se reproduzcan",
+            "Las dos requieren material genético"
+          ]
+        },
+        {
+          "type": "qa",
+          "q": "Diferencias entre mitosis y meiosis",
+          "a": [
+            "La mitosis da origen a células de distintos tejidos; la meiosis, a células sexuales",
+            "Mitosis: 2 células idénticas a la original, con la misma cantidad de cromosomas",
+            "Meiosis: 4 células NO idénticas, con la mitad de los cromosomas"
+          ]
+        },
+        {
+          "type": "qa",
+          "q": "¿Qué pasaría si las células sexuales se replicaran por mitosis?",
+          "a": "Se formarían células idénticas y no existiría la variabilidad en las especies."
+        },
+        {
+          "type": "qa",
+          "q": "Ejemplos de células que se reproducen por mitosis",
+          "a": "Células epiteliales (piel) y células que forman hueso (osteocitos)."
+        },
+        {
+          "type": "qa",
+          "q": "Ejemplos de células que se reproducen por meiosis",
+          "a": "Células sexuales masculinas (espermatozoides) y femeninas (óvulos)."
+        },
+        {
+          "type": "qa",
+          "q": "¿Cómo se llaman las células que pueden formar cualquier tipo de célula, tejido u órgano?",
+          "a": "Células madre"
+        },
+        {
+          "type": "qa",
+          "q": "¿Qué tejido y sangre del recién nacido conserva abundantes células madre?",
+          "a": "El cordón umbilical"
+        },
+        {
+          "type": "qa",
+          "q": "¿Qué es la diferenciación celular?",
+          "a": "Es la capacidad de las células madre de formar un organismo en orden (convertirse en los distintos tipos de células)."
+        },
+        {
+          "type": "qa",
+          "q": "Verdadero o falso sobre células madre (este ejercicio venía sin respuestas; estas son las correctas)",
+          "a": [
+            "V · Las células madre embrionarias pueden diferenciarse en cualquier tipo de célula del ser humano",
+            "V · En el cuerpo hay células que no se diferenciaron y se conocen como células madre adultas",
+            "V · En la médula ósea están las células madre hematopoyéticas, que forman glóbulos rojos, glóbulos blancos y otras células sanguíneas",
+            "F · La diferenciación celular no es indispensable en el desarrollo de un nuevo ser vivo (sí es indispensable)"
+          ]
+        },
+        {
+          "type": "qa",
+          "q": "¿Cuáles son los cinco signos de la inflamación de la piel?",
+          "a": "Rubor (enrojecimiento), calor, dolor, hinchazón y disminución de funciones."
+        },
+        {
+          "type": "qa",
+          "q": "Tres células del sistema inmune que participan en la inflamación",
+          "a": "Leucocitos, basófilos y neutrófilos."
+        },
+        {
+          "type": "qa",
+          "q": "¿Qué tipo de comunicación usan las células del sistema inmune para reparar el daño?",
+          "a": "Comunicación endocrina"
+        },
+        {
+          "type": "qa",
+          "q": "¿Por qué se inflama la piel cuando te cortas?",
+          "a": "Porque las células de la zona dañada liberan sustancias químicas que atraen a células del sistema inmune, y estas se encargan de reparar la zona."
+        }
+      ]
     }
   },
   "practica": {
@@ -2526,6 +2805,520 @@
         ],
         "a": 0,
         "why": "a + 2a + a + 2a = 6a."
+      }
+    ],
+    "biologia": [
+      {
+        "q": "¿Qué estructura rígida da sostén y forma a la célula vegetal?",
+        "o": [
+          "Pared celular",
+          "Membrana celular",
+          "Citoplasma",
+          "Núcleo"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cómo se llaman las perforaciones de la pared celular?",
+        "o": [
+          "Plasmodesmos",
+          "Poros nucleares",
+          "Ribosomas",
+          "Cloroplastos"
+        ],
+        "a": 0
+      },
+      {
+        "q": "La bicapa lipídica que separa el interior de la célula del exterior se llama…",
+        "o": [
+          "Membrana celular",
+          "Pared celular",
+          "Envoltura nuclear",
+          "Citoesqueleto"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Dónde se encuentran contenidos los organelos celulares?",
+        "o": [
+          "Citoplasma",
+          "Núcleo",
+          "Pared celular",
+          "Nucléolo"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Dónde se resguarda el material genético de la célula?",
+        "o": [
+          "Núcleo",
+          "Mitocondria",
+          "Citosol",
+          "Membrana celular"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Por qué las células vegetales necesitan pared celular?",
+        "o": [
+          "Para tener rigidez y que los cambios de presión osmótica no rompan la membrana",
+          "Para producir su propio alimento",
+          "Para guardar el material genético",
+          "Para moverse de un lugar a otro"
+        ],
+        "a": 0
+      },
+      {
+        "q": "“Utiliza cloroplastos para alimentarse y obtener energía.” ¿A qué célula pertenece?",
+        "o": [
+          "Célula vegetal",
+          "Célula animal",
+          "A las dos",
+          "A ninguna"
+        ],
+        "a": 0
+      },
+      {
+        "q": "“Guarda su material genético dentro de un núcleo.” ¿A qué célula pertenece?",
+        "o": [
+          "A la animal y a la vegetal",
+          "Solo a la vegetal",
+          "Solo a la animal",
+          "A ninguna"
+        ],
+        "a": 0
+      },
+      {
+        "q": "“Es la unidad fundamental que forma los tejidos de los mamíferos.” ¿Qué célula es?",
+        "o": [
+          "Célula animal",
+          "Célula vegetal",
+          "Bacteria",
+          "Célula procariota"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cuál es la función principal del núcleo?",
+        "o": [
+          "Guardar el material genético y regular las funciones vitales y la división celular",
+          "Producir energía con oxígeno y azúcar",
+          "Hacer la fotosíntesis",
+          "Dar rigidez a la célula"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cuál es la diferencia entre citosol y citoesqueleto?",
+        "o": [
+          "El citosol es líquido y deja moverse a los organelos; el citoesqueleto es una red de filamentos que da soporte",
+          "El citosol da soporte y el citoesqueleto es líquido",
+          "Los dos son partes del núcleo",
+          "No hay diferencia, son lo mismo"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Organelo exclusivo de las plantas que convierte la luz del Sol, el agua y el CO₂ en azúcar y oxígeno.",
+        "o": [
+          "Cloroplasto",
+          "Mitocondria",
+          "Ribosoma",
+          "Nucléolo"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿En qué organelo ocurre la respiración celular, que da energía usando oxígeno y azúcar?",
+        "o": [
+          "Mitocondria",
+          "Cloroplasto",
+          "Núcleo",
+          "Pared celular"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué funciones realiza la membrana celular?",
+        "o": [
+          "Transporte, reconocimiento y comunicación, y formación de tejidos",
+          "Fotosíntesis y respiración",
+          "Guardar el material genético",
+          "Solo dar rigidez"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Por qué el citoplasma permite que se muevan los organelos?",
+        "o": [
+          "Porque tiene citosol, que es principalmente agua",
+          "Porque tiene pared celular",
+          "Porque tiene poros nucleares",
+          "Porque tiene cloroplastos"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué parte del citoplasma le da soporte a la célula?",
+        "o": [
+          "El citoesqueleto",
+          "El citosol",
+          "El nucléolo",
+          "Los plasmodesmos"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué bacteria transforma los desechos de los astronautas en biomasa nutritiva?",
+        "o": [
+          "Methylococcus capsulatus",
+          "Escherichia coli",
+          "Lactobacillus",
+          "Salmonella"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cómo se llama el trasplante de células, tejidos u órganos de un cerdo a un humano?",
+        "o": [
+          "Xenotrasplante",
+          "Autotrasplante",
+          "Medicina regenerativa",
+          "Transfusión"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Usar células madre para reparar tejidos dañados por leucemia o esclerosis múltiple se conoce como…",
+        "o": [
+          "Medicina regenerativa",
+          "Xenotrasplante",
+          "Diferenciación celular",
+          "Meiosis"
+        ],
+        "a": 0
+      },
+      {
+        "q": "“Regula la entrada de nutrientes y la salida de lo que la célula no necesita.” ¿Qué parte es?",
+        "o": [
+          "Membrana",
+          "Citoplasma",
+          "Núcleo",
+          "Nucléolo"
+        ],
+        "a": 0
+      },
+      {
+        "q": "“Posee una membrana propia y en su interior guarda material genético.” ¿Qué parte es?",
+        "o": [
+          "Núcleo",
+          "Membrana",
+          "Citoplasma",
+          "Citosol"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cuál enunciado sobre el citoplasma es FALSO?",
+        "o": [
+          "Proporciona los nutrientes que necesita la célula",
+          "Permite el movimiento de los organelos",
+          "Provee soporte a la célula",
+          "Contiene a los organelos"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué es el nucleoplasma?",
+        "o": [
+          "El citosol del núcleo",
+          "Un organelo dentro del núcleo",
+          "Los canales del núcleo",
+          "La doble membrana del núcleo"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Organelo que se encuentra en el interior del núcleo:",
+        "o": [
+          "Nucléolo",
+          "Nucleoplasma",
+          "Mitocondria",
+          "Ribosoma"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Estructura formada por dos membranas que delimita al núcleo y es porosa:",
+        "o": [
+          "Envoltura nuclear",
+          "Pared celular",
+          "Nucleoplasma",
+          "Citoesqueleto"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Canales que permiten la entrada y salida de moléculas entre el núcleo y el citoplasma:",
+        "o": [
+          "Poros nucleares",
+          "Plasmodesmos",
+          "Nucléolos",
+          "Mitocondrias"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué son los seres vivos autótrofos?",
+        "o": [
+          "Los que forman su propio alimento, como las plantas",
+          "Los que se comen a otros para sobrevivir",
+          "Solo los hongos",
+          "Los que no necesitan energía"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cuál de estos es heterótrofo?",
+        "o": [
+          "Un hongo",
+          "Un helecho",
+          "Un alga",
+          "Un árbol"
+        ],
+        "a": 0,
+        "why": "Los humanos, los animales y los hongos son heterótrofos."
+      },
+      {
+        "q": "“Convierten materia inorgánica en materia orgánica.” ¿Es característica de…?",
+        "o": [
+          "Autótrofos",
+          "Heterótrofos",
+          "Hongos",
+          "Animales"
+        ],
+        "a": 0
+      },
+      {
+        "q": "La célula libera hormonas al torrente sanguíneo (ej.: la pubertad). ¿Qué comunicación es?",
+        "o": [
+          "Endocrina",
+          "Paracrina",
+          "Autocrina",
+          "Sináptica"
+        ],
+        "a": 0
+      },
+      {
+        "q": "La célula libera moléculas que captan las células vecinas (ej.: apetito o saciedad). ¿Qué comunicación es?",
+        "o": [
+          "Paracrina",
+          "Endocrina",
+          "Autocrina",
+          "Yuxtacrina"
+        ],
+        "a": 0
+      },
+      {
+        "q": "La célula libera sustancias que capta ella misma (ej.: linfocitos T). ¿Qué comunicación es?",
+        "o": [
+          "Autocrina",
+          "Paracrina",
+          "Endocrina",
+          "Sináptica"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Comunicación entre neuronas mediante neurotransmisores (ej.: memoria y aprendizaje):",
+        "o": [
+          "Sináptica",
+          "Endocrina",
+          "Yuxtacrina",
+          "Autocrina"
+        ],
+        "a": 0
+      },
+      {
+        "q": "Comunicación por contacto directo entre células para formar tejidos como los músculos:",
+        "o": [
+          "Por contacto (yuxtacrina)",
+          "Endocrina",
+          "Paracrina",
+          "Sináptica"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cuáles son los 2 tipos de división de las células eucariotas?",
+        "o": [
+          "Mitosis y meiosis",
+          "Fotosíntesis y respiración",
+          "Profase y telofase",
+          "Endocrina y paracrina"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué teoría explica que la célula eucariota surgió de células procariotas que vivieron unas dentro de otras?",
+        "o": [
+          "Teoría endosimbiótica",
+          "Teoría celular",
+          "Generación espontánea",
+          "Teoría de la evolución química"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cuál es una evidencia de la teoría endosimbiótica?",
+        "o": [
+          "Las mitocondrias y los cloroplastos tienen su propio ADN",
+          "Las plantas tienen pared celular",
+          "Las neuronas usan neurotransmisores",
+          "La piel se inflama al cortarse"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Para qué sirve la mitosis?",
+        "o": [
+          "Para reponer células que mueren, como las de la piel",
+          "Para producir óvulos y espermatozoides",
+          "Para hacer la fotosíntesis",
+          "Para comunicar neuronas"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Para qué ocurre la meiosis?",
+        "o": [
+          "Para producir células sexuales (óvulos y espermatozoides)",
+          "Para regenerar la piel",
+          "Para formar hueso",
+          "Para producir energía"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cuál es el orden correcto de las fases de la mitosis?",
+        "o": [
+          "Profase, metafase, anafase, telofase",
+          "Metafase, profase, telofase, anafase",
+          "Anafase, profase, metafase, telofase",
+          "Telofase, anafase, metafase, profase"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué produce la meiosis?",
+        "o": [
+          "4 células no idénticas con la mitad de los cromosomas",
+          "2 células idénticas con los mismos cromosomas",
+          "4 células idénticas",
+          "1 sola célula más grande"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué produce la mitosis?",
+        "o": [
+          "2 células idénticas con la misma cantidad de cromosomas",
+          "4 células con la mitad de los cromosomas",
+          "Solo células sexuales",
+          "Células sin núcleo"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué pasaría si las células sexuales se replicaran por mitosis?",
+        "o": [
+          "Serían idénticas y no habría variabilidad en las especies",
+          "Habría más variedad de especies",
+          "No se podría regenerar la piel",
+          "Las plantas no podrían hacer fotosíntesis"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cuáles células se reproducen por mitosis?",
+        "o": [
+          "Las de la piel y los osteocitos (hueso)",
+          "Óvulos y espermatozoides",
+          "Solo las neuronas",
+          "Solo las bacterias"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cómo se llaman las células que pueden formar cualquier tipo de célula, tejido u órgano?",
+        "o": [
+          "Células madre",
+          "Células sexuales",
+          "Osteocitos",
+          "Neutrófilos"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué tejido del recién nacido conserva muchas células madre?",
+        "o": [
+          "El cordón umbilical",
+          "La piel",
+          "El cabello",
+          "Las uñas"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Qué es la diferenciación celular?",
+        "o": [
+          "La capacidad de las células madre de formar un organismo en orden",
+          "Cuando una célula se divide en 4",
+          "Cuando una célula muere",
+          "La comunicación entre neuronas"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cuál enunciado sobre las células madre es FALSO?",
+        "o": [
+          "La diferenciación celular no es indispensable para el desarrollo de un nuevo ser vivo",
+          "Las células madre embrionarias pueden convertirse en cualquier célula",
+          "En la médula ósea hay células madre que forman células sanguíneas",
+          "Existen células madre adultas en el cuerpo"
+        ],
+        "a": 0,
+        "why": "La diferenciación sí es indispensable para que se desarrolle un nuevo ser vivo."
+      },
+      {
+        "q": "¿Cuáles son los 5 signos de la inflamación de la piel?",
+        "o": [
+          "Rubor, calor, dolor, hinchazón y disminución de funciones",
+          "Fiebre, tos, dolor, comezón y sueño",
+          "Rubor, frío, picazón, sangrado y mareo",
+          "Calor, sudor, dolor, palidez y hambre"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Cuáles células del sistema inmune participan en la inflamación?",
+        "o": [
+          "Leucocitos, basófilos y neutrófilos",
+          "Osteocitos, neuronas y óvulos",
+          "Cloroplastos y mitocondrias",
+          "Células epiteliales"
+        ],
+        "a": 0
+      },
+      {
+        "q": "¿Por qué se inflama la piel cuando te cortas?",
+        "o": [
+          "Las células dañadas liberan sustancias que atraen al sistema inmune para reparar la zona",
+          "Porque entra aire a la herida",
+          "Porque la piel hace fotosíntesis",
+          "Porque las células se dividen por meiosis"
+        ],
+        "a": 0
       }
     ]
   }
